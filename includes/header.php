@@ -21,13 +21,34 @@
       position: relative;
     }
 
+    /* ハンバーガーメニュー */
+    .header_navicon,
+    .header_navicon::after,
+    .header_navicon::before {
+      content: " ";
+      display: block;
+      width: 24px;
+      height: 3px;
+      background: #7F5539;
+      position: absolute;
+    }
 
+    .header_navicon::before {
+      bottom: 10px;
+    }
 
+    .header_navicon::after {
+      top: 10px;
+    }
 
     /* 各グローバルメニュー要素の調整 */
     .header_logo {
       min-width: 60px;
+      text-align: right;
+      flex-basis: 50%;
     }
+
+
 
     .header_icons {
       position: absolute;
@@ -71,7 +92,20 @@
 <header>
   <div class="common_header_bwrapper">
     <nav class="header_gmenu">
-
+      <div class="header_hammenu_box">
+        <button id="open_button">
+          <span class="header_navicon"></span></button>
+        <div class="hammenu_close">
+          <div class="hammenu_logos"><img src="../common/images/logo.svg" alt="c.c.donutsのロゴ"><button id="hammenu_close_icon"></button></div>
+          <ul class="header_hammenu">
+            <li><a href="index.php">top</a></li>
+            <li><a href="concept.html">商品一覧</a></li>
+            <li><a href="#!">よくある質問</a></li>
+            <li><a href="#!">問い合わせ</a></li>
+            <li><a href="#!">当サイトのポリシー</a></li>
+          </ul>
+        </div>
+      </div>
       <div class="header_logo">
         <a href="../index.php"> <img src="../common/images/logo.svg" alt="c.c.donutsのロゴ"></a>
       </div>
@@ -84,3 +118,14 @@
   </div>
 
 </header>
+
+<script>
+  const hammenu = document.querySelector('.hammenu_close');
+  const openButton = document.getElementById('open_button');
+  const closeButton = document.getElementById('hammenu_close_icon');
+
+  openButton.onclick = function() {
+    hammenu.classList.remove('hammenu_close');
+    hammenu.classList.add('hammenu_open');
+  }
+</script>
