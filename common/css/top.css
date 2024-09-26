@@ -1,7 +1,47 @@
 @charset "utf-8";
 
-h1>img {
+/* パンくず＆ユーザー名 */
+.navigator {
   width: 100%;
+  padding: 12px 0 12px 20px;
+  text-align: left;
+  color: #7f5539;
+  font-size: 12px;
+}
+
+.bread_crumb {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.bread_crumb li {
+  position: relative;
+}
+
+.bread_crumb li:not(:first-child) {
+  padding-left: 15px;
+}
+
+.bread_crumb li:not(:last-child)::after {
+  content: ">";
+  position: absolute;
+  top: -3px;
+  right: -12px;
+  font-size: 16px;
+}
+
+.brown_line {
+  width: 100%;
+  color: #7f5539;
+}
+
+/* SP main領域 */
+.hero_sp {
+  width: 100%;
+}
+
+.hero_pc {
+  display: none;
 }
 
 .sec_1 {
@@ -42,7 +82,6 @@ h1>img {
 }
 
 .new_mark {
-  font-family: "Noto Sans JP", sans-serif;
   font-size: clamp(0.75rem, 0.3rem + 1.8vw, 1.125rem);
   font-weight: bold;
   color: #fff;
@@ -56,7 +95,6 @@ h1>img {
   color: #fff;
   font-size: clamp(0.75rem, 0.3rem + 1.8vw, 1.125rem);
   font-weight: bold;
-  font-family: "Noto Sans JP", sans-serif;
 }
 
 .donuts_life {
@@ -75,7 +113,6 @@ h1>img {
   color: #fff;
   font-size: clamp(0.75rem, 0.3rem + 1.8vw, 1.125rem);
   font-weight: bold;
-  font-family: "Noto Sans JP", sans-serif;
 }
 
 .banner {
@@ -94,7 +131,6 @@ h1>img {
   color: #7f5539;
   font-size: clamp(0.75rem, 0.4rem + 1.8vw, 1.125rem);
   font-weight: bold;
-  font-family: "Noto Sans JP", sans-serif;
 }
 
 .sec_2 {
@@ -120,7 +156,6 @@ h1>img {
   height: 100%;
   text-align: center;
   color: #fff;
-  font-family: "Noto Sans JP", sans-serif;
 }
 
 h2 {
@@ -131,6 +166,7 @@ h2 {
   margin-bottom: 3%;
 }
 
+.sub_title,
 .sub_text {
   font-size: clamp(1rem, 0.523rem + 2.04vw, 1.5rem);
 }
@@ -143,4 +179,104 @@ h2 {
   font-size: clamp(1.25rem, 0.773rem + 2.04vw, 1.75rem);
   text-transform: capitalize;
   margin-bottom: 2%;
+}
+
+@media screen and (min-width: 768px) {
+
+  /*　パンくず＆ユーザー名 */
+  .navigator {
+    padding: 12px 0 12px 103px;
+  }
+
+  .bread_crumb li:not(:last-child):hover {
+    text-decoration: underline;
+    text-decoration-color: #7f5539;
+  }
+
+  /* PC main領域 */
+  .hero_sp {
+    display: none;
+  }
+
+  .hero_pc {
+    display: block;
+    width: 100%;
+  }
+
+  .grid {
+    width: 76%;
+    max-width: 1040px;
+    margin: 0 auto;
+  }
+
+  .new_mark {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 29%;
+    height: 29%;
+  }
+
+  .new_mark {
+    font-size: clamp(1.3rem, -0.3rem + 3vw, 2.25rem);
+    font-weight: normal;
+  }
+
+  .new_item::after {
+    bottom: 2%;
+    right: 2%;
+    font-size: clamp(1.3rem, -0.3rem + 3vw, 2.25rem);
+  }
+
+  .donuts_life {
+    padding-left: 8%;
+  }
+
+  .donuts_life::after {
+    bottom: 2%;
+    right: 2%;
+    font-size: clamp(1.3rem, -0.3rem + 3vw, 2.25rem);
+  }
+
+  .banner::after {
+    bottom: 3%;
+    right: 1%;
+    font-size: clamp(1.3rem, -0.3rem + 3vw, 2.25rem);
+  }
+
+  .bg_sp {
+    display: none;
+  }
+
+  .bg_pc {
+    display: block;
+    width: 100%;
+  }
+
+  .bg_pc img {
+    width: 100%;
+  }
+
+  h2 {
+    font-size: 36px;
+    margin-top: 14%;
+    margin-bottom: 1.5%;
+  }
+
+  .sub_title {
+    font-size: 20px;
+  }
+
+  .inner {
+    margin-top: 3%;
+  }
+
+  .main_text {
+    font-size: 24px;
+    margin-bottom: 1.5%;
+  }
+
+  .sub_text {
+    font-size: 24px;
+  }
 }
