@@ -15,9 +15,11 @@
 
 <body>
   <main>
+
     <?php
     require 'includes/header.php';
     ?>
+
     <!-- パンくず -->
     <nav class="navigator">
       <ol class="bread_crumb">
@@ -29,6 +31,7 @@
 
     <!-- ようこそユーザー名 -->
     <div class="navigator">
+
       <?php
       session_start();
       // データベース接続、SQL文の準備・実行
@@ -41,6 +44,7 @@
         echo '<p class="greeting">ようこそ　ゲスト様</p>';
       }
       ?>
+
     </div>
     <hr class="brown_line">
 
@@ -97,6 +101,7 @@
   </main>
 
   <!-- パンくずJasonLD-->
+
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
