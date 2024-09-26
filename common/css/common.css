@@ -1,5 +1,252 @@
-@charset "UTF-8";
 
+@charset "utf-8";
 * {
     font-family: "Noto Sans JP", sans-serif;
 }
+/* ヘッダー用 */
+/* 最大幅時調整用の入れ物 */
+.common_header_bwrapper {
+  background: #EDE0D4;
+  padding-top: 16px;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-bottom: 12px;
+}
+
+.header_gmenu {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+/* ハンバーガーメニュー */
+.header_navicon,
+.header_navicon::after,
+.header_navicon::before {
+  content: " ";
+  display: block;
+  width: 24px;
+  height: 3px;
+  background: #7F5539;
+  position: absolute;
+}
+
+.header_navicon::before {
+  bottom: 10px;
+}
+
+.header_navicon::after {
+  top: 10px;
+}
+
+#open_button {
+  width: 24px;
+  height: 20px;
+}
+
+.hammenu_contents {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: -100vw;
+  z-index: 99;
+  background: rgba(127, 85, 57, 0.75);
+  font-family: "Noto Sans JP", system-ui;
+  padding: 12px;
+  transition: left 0.3s ease;
+}
+
+
+
+.header_hammenu a {
+  color: #fff;
+  padding: 16px 12px;
+  display: block;
+}
+
+.header_hammenu li:hover a {
+  color: #D9D9D9;
+}
+
+.header_hammenu li {
+  border-bottom: #fff solid 1px;
+}
+
+.hammenu_logos {
+  position: relative;
+  margin-bottom: 60px;
+}
+
+#hammenu_close_icon {
+  position: absolute;
+  top: 1rem;
+  right: 0;
+  width: 26px;
+  height: 26px;
+}
+
+.hammenu_close_span::before,
+.hammenu_close_span::after {
+  content: " ";
+  display: block;
+  width: 24px;
+  height: 5px;
+  background: #FFF;
+  position: absolute;
+  top: 50%;
+  right: 0;
+}
+
+#hammenu_close_icon:hover .hammenu_close_span::before,
+#hammenu_close_icon:hover .hammenu_close_span::after {
+  background: #D9D9D9;
+}
+
+.hammenu_close_span::before {
+  transform: rotate(45deg);
+}
+
+.hammenu_close_span::after {
+  transform: rotate(-45deg);
+
+}
+
+
+
+/* 各グローバルメニュー要素の調整 */
+.header_logo {
+  min-width: 60px;
+  text-align: right;
+  flex-basis: 50%;
+}
+
+
+
+.header_icons {
+  position: absolute;
+  right: 0;
+}
+
+.header_search {
+  margin-top: 12px;
+  margin-bottom: 12px;
+  text-wrap: nowrap;
+}
+
+.header_search button {
+  padding: 8px;
+  text-align: center;
+  background: #D9D9D9;
+  border: 1px solid #7F5539;
+  aspect-ratio: 1 / 1;
+}
+
+.header_search button img {
+  max-width: 100%;
+}
+
+.header_search input[type=text] {
+  background: #fff;
+  border: 1px solid #7F5539;
+  width: 90.4%;
+  padding: 8px;
+
+}
+
+
+/* pc用 */
+@media screen and (min-width: 768px) {
+  .common_header_bwrapper {
+    padding: 0;
+  }
+
+  .header_gmenu {
+    padding-top: 29px;
+    margin-right: 7%;
+    margin-left: 7%;
+    margin-bottom: 29px;
+  }
+
+  .header_logo img {
+    min-width: 80px;
+  }
+
+  .header_icons img {
+    min-width: 40px;
+    margin-left: 32px;
+  }
+
+  .header_icons .header_loginicon {
+    min-width: 48px;
+  }
+
+  .header_search {
+    background: #B392AC;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: right;
+  }
+
+  .header_search input[type=text] {
+    width: 26%;
+    max-width: 360px;
+    margin-right: 7%;
+  }
+
+  #open_button {
+    width: 48px;
+    height: 40px;
+  }
+
+  .header_navicon,
+  .header_navicon::after,
+  .header_navicon::before {
+    width: 48px;
+  }
+
+  .header_navicon::before {
+    bottom: 20px;
+  }
+
+  .header_navicon::after {
+    top: 20px;
+  }
+
+  .hammenu_contents {
+    width: 43vw;
+    max-width: 600px;
+  }
+
+  .hammenu_logos img {
+    width: 14%;
+    min-width: 60px;
+  }
+
+  .hammenu_close_span::before,
+  .hammenu_close_span::after {
+    width: 54px;
+  }
+
+  .header_hammenu a {
+    font-size: 24px;
+    padding: 20px 12px;
+  }
+
+  .header_hammenu li {
+    text-shadow:
+      1px 1px 0 #7F5539,
+      -1px 1px 0 #7F5539,
+      -1px -1px 0 #7F5539,
+      1px -1px 0 #7F5539;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .header_gmenu {
+    max-width: 1366px;
+  }
+}
+
+/* ここまでヘッダーです */
+
