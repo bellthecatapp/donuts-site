@@ -27,7 +27,19 @@
                 <section class="product_hero">
                     <h1 class="product_title">商品一覧</h1>
                     <?php
+                    //データベース接続
                     $pdo = new PDO('mysql:host=localhost;dbname=donuts;charset=utf8', 'donuts', 'password');
+                    // SQL文の準備
+                    $sql = $pdo->prepare('select * from product where id=?');
+                    // SQL文の実行
+                    $sql->execute([
+                        $_REQUEST['id']
+                    ]);
+
+                    //HTMLの生成・出力
+                    echo <<<END
+
+                    END;
                     ?>
                 </section>
             </form>
