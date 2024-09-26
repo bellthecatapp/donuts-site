@@ -16,14 +16,14 @@
         </div>
       </div>
       <div class="header_logo">
-        <a href="../index.php"> <img src="../common/images/logo.svg" alt="c.c.donutsのロゴ"></a>
+        <a href="index.php"> <img src="common/images/logo.svg" alt="c.c.donutsのロゴ"></a>
       </div>
       <div class="header_icons">
-        <button><a href="../login-input.php"><img class="header_loginicon" src="../common/images/header-login.svg" alt="ログインアイコン"></a></button>
-        <button><a href="../cart-show.php"><img src="../common/images/header-cart.svg" alt="カートアイコン"></a></button>
+        <button><a href="login-input.php"><img class="header_loginicon" src="../common/images/header-login.svg" alt="ログインアイコン"></a></button>
+        <button><a href="cart-show.php"><img src="common/images/header-cart.svg" alt="カートアイコン"></a></button>
       </div>
     </nav>
-    <div class="header_search"><button><img src="../common/images/header-vector.svg" alt="検索アイコン"></button><input type="text"></div>
+    <div class="header_search"><button><img src="common/images/header-vector.svg" alt="検索アイコン"></button><input type="text"></div>
   </div>
 
 </header>
