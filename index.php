@@ -15,6 +15,9 @@
 
 <body>
   <main>
+    <?php
+    require 'includes/header.php';
+    ?>
     <!-- パンくず -->
     <nav class="navigator">
       <ol class="bread_crumb">
@@ -26,7 +29,18 @@
 
     <!-- ようこそユーザー名 -->
     <div class="navigator">
-      <p class="greeting">ようこそ</p>
+      <?php
+      session_start();
+      // データベース接続、SQL文の準備・実行
+      require 'includes/database.php';
+      $sql = $pdo->prepare('select * from customer where login=?');
+      // ログインしていたらユーザー名表示、していなければゲスト様を表示
+      if (isset($_SESSION['customer'])) {
+        echo '<p class="greeting">ようこそ　', $_SESSION['customer']['name'], '様</p>';
+      } else {
+        echo '<p class="greeting">ようこそ　ゲスト様</p>';
+      }
+      ?>
     </div>
     <hr class="brown_line">
 
