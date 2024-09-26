@@ -13,10 +13,15 @@
 </head>
 
 <body>
-    <main>
+    <form action="product.php" method="post">
         <section class="product_hero">
             <h1 class="product_title">商品一覧</h1>
-            <div class="product_content">
+            <?php
+            $pdo = new PDO('mysql:host=localhost;dbname=donuts;charset=utf8', 'donuts', 'password');
+            ?>
+        </section>
+    </form>
+    <!-- <div class="product_content">
                 <div class="product_menu">
                     <div class="product_img"><a href="detail.php"><img src="common/images/products-CCoriginal.png" alt="CCdonuts"></a></div>
                     <p class="product_submenu"><a href="detail.php">CCドーナツ 当店オリジナル （5個入り）</a></p>
@@ -55,7 +60,6 @@
                 </div>
             </div>
         </section>
-        <!-- バラエティセット -->
         <section class="product_subhero">
             <h2 class="subtitle">バラエティセット</h2>
             <div class="product_content">
@@ -95,11 +99,9 @@
                     <p class="product_money"><a href="detail.php">税込 &yen;2,800</a><span class="product_favorite"><img src="common/images/heart.png" alt="favorite"></span></p>
                     <p class="product_button"><a href="cart-input.php"><input type="submit" class="product_submit" value="カートに入れる"></a></p>
                 </div>
-            </div>
+            </div> -->
 
 
-        </section>
-    </main>
 </body>
 
 </html>
