@@ -6,6 +6,8 @@
     border: solid 2px #e8c2ca;
     padding: 20px 12px;
     margin: 0 auto 24px;
+    position: relative;
+
 }
 
 .common_subpage {
@@ -66,4 +68,22 @@
 
 .input_last {
     margin-bottom: 40px;
+}
+
+/* login_complete */
+.common_login_frame_sm {
+    position: relative;
+    height: 84px;
+    width: 295px;
+    border: solid 2px #e8c2ca;
+    padding: 20px 12px;
+    margin: 0 auto 24px;
+}
+
+.login_complete {
+    font-size: 12px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
 }
