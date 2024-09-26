@@ -1,5 +1,8 @@
-@charset "utf-8";
 
+@charset "utf-8";
+* {
+    font-family: "Noto Sans JP", sans-serif;
+}
 /* ヘッダー用 */
 /* 最大幅時調整用の入れ物 */
 .common_header_bwrapper {
@@ -246,3 +249,4 @@
 }
 
 /* ここまでヘッダーです */
+
