@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="">
     <!-- ↑ページ別の.cssをリンク -->
-    <title>product_page｜donuts-site</title>
+    <title>productpage｜donuts-site</title>
 </head>
 
 <body>

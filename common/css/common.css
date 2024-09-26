@@ -1,8 +1,5 @@
-
 @charset "utf-8";
-* {
-    font-family: "Noto Sans JP", sans-serif;
-}
+
 /* ヘッダー用 */
 /* 最大幅時調整用の入れ物 */
 .common_header_bwrapper {
@@ -240,6 +237,10 @@
       -1px -1px 0 #7F5539,
       1px -1px 0 #7F5539;
   }
+
+  .header_search {
+    margin-bottom: 0;
+  }
 }
 
 @media screen and (min-width: 1200px) {
@@ -249,4 +250,3 @@
 }
 
 /* ここまでヘッダーです */
-
