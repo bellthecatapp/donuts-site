@@ -10,7 +10,7 @@
      margin: 0 auto;
  }
 
- .common_title {
+ .product_title {
      font-weight: 500px;
      font-size: 20px;
      padding-bottom: 8px;
@@ -30,12 +30,13 @@
      color: #7f5539;
      width: 160px;
      margin: 8px auto;
+     margin-bottom: 40px;
  }
 
 
- .common_menu {
+ .product_menu {
      width: 47%;
-     margin: 40px 0 80px;
+     margin-bottom: 80px;
  }
 
 
@@ -45,6 +46,8 @@
 
  .product_img img {
      width: 100%;
+     height: 157.5px;
+     object-fit: fill;
  }
 
 
@@ -81,4 +84,13 @@
 
  .product_favorite {
      float: right;
+ }
+
+ /* pc版 */
+ @media screen and (min-width: 768px) {
+     .product_menu {
+         width: 30%;
+     }
+
+
  }

@@ -15,37 +15,88 @@
 <body>
     <main>
         <section class="product_hero">
-            <h1 class="common_title">商品一覧</h1>
+            <h1 class="product_title">商品一覧</h1>
             <div class="product_content">
-                <div class="common_menu">
+                <div class="product_menu">
                     <div class="product_img"><a href="detail.php"><img src="common/images/products-CCoriginal.png" alt="CCdonuts"></a></div>
                     <p class="product_submenu"><a href="detail.php">CCドーナツ 当店オリジナル （5個入り）</a></p>
                     <p class="product_money"><a href="detail.php">税込 &yen;1,500</a><span class="product_favorite"><img src="common/images/heart.png" alt="favorite"></span></p>
                     <p class="product_button"><a href="cart-input.php"><input type="submit" class="product_submit" value="カートに入れる"></a></p>
                 </div>
-                <div class="common_menu">
+                <div class="product_menu">
                     <p class="product_img"><a href="detail.php"><img src="common/images/products-chocolate.png" alt="CCdonuts"></a></p>
                     <p class="product_submenu"><a href="detail.php">チョコレートデライト （5個入り）</a></p>
                     <p class="product_money"><a href="detail.php">税込 &yen;1,600</a><span class="product_favorite"><img src="common/images/heart.png" alt="favorite"></span></p>
                     <p class="product_button"><a href="cart-input.php"><input type="submit" class="product_submit" value="カートに入れる"></a></p>
                 </div>
-                <div class="common_menu">
+                <div class="product_menu">
                     <div class="product_img"><a href="detail.php"><img src="common/images/products-caramel.png" alt="CCdonuts"></a></div>
                     <p class="product_submenu"><a href="detail.php">キャラメルクリーム （5個入り）</a></p>
                     <p class="product_money"><a href="detail.php">税込 &yen;1,600</a><span class="product_favorite"><img src="common/images/heart.png" alt="favorite"></span></p>
                     <p class="product_button"><a href="cart-input.php"><input type="submit" class="product_submit" value="カートに入れる"></a></p>
                 </div>
-
+                <div class="product_menu">
+                    <div class="product_img"><a href="detail.php"><img src="common/images/products-plane.png" alt="CCdonuts"></a></div>
+                    <p class="product_submenu"><a href="detail.php">プレーンクラシック （5個入り）</a></p>
+                    <p class="product_money"><a href="detail.php">税込 &yen;1,500</a><span class="product_favorite"><img src="common/images/heart.png" alt="favorite"></span></p>
+                    <p class="product_button"><a href="cart-input.php"><input type="submit" class="product_submit" value="カートに入れる"></a></p>
+                </div>
+                <div class="product_menu">
+                    <div class="product_img"><a href="detail.php"><img src="common/images/products-citrus.png" alt="CCdonuts"></a></div>
+                    <p class="product_submenu"><a href="detail.php">【新作】 サマーシトラス （5個入り）</a></p>
+                    <p class="product_money"><a href="detail.php">税込 &yen;1,600</a><span class="product_favorite"><img src="common/images/heart.png" alt="favorite"></span></p>
+                    <p class="product_button"><a href="cart-input.php"><input type="submit" class="product_submit" value="カートに入れる"></a></p>
+                </div>
+                <div class="product_menu">
+                    <div class="product_img"><a href="detail.php"><img src="common/images/products-strawberry.png" alt="CCdonuts"></a></div>
+                    <p class="product_submenu"><a href="detail.php">ストロベリークラッシュ （5個入り）</a></p>
+                    <p class="product_money"><a href="detail.php">税込 &yen;1,800</a><span class="product_favorite"><img src="common/images/heart.png" alt="favorite"></span></p>
+                    <p class="product_button"><a href="cart-input.php"><input type="submit" class="product_submit" value="カートに入れる"></a></p>
+                </div>
             </div>
         </section>
+        <!-- バラエティセット -->
         <section class="product_subhero">
             <h2 class="subtitle">バラエティセット</h2>
-            <div class="common_menu">
-                <p class="product_img"><a href="detail.php"><img src="common/images/variety-fruit12.png" alt="CCdonuts"></a></p>
-                <p class="product_submenu"><a href="detail.php">フルーツドーナツセット （5個入り）</a></p>
-                <p class="product_money"><a href="detail.php">税込 &yen;3,500</a><span class="product_favorite"><img src="common/images/heart.png" alt="favorite"></span></p>
-                <p class="product_button"><a href="cart-input.php"><input type="submit" class="product_submit" value="カートに入れる"></a></p>
+            <div class="product_content">
+                <div class="product_menu">
+                    <p class="product_img"><a href="detail.php"><img src="common/images/variety-fruit12.png" alt="CCdonuts"></a></p>
+                    <p class="product_submenu"><a href="detail.php">フルーツドーナツセット （12個入り）</a></p>
+                    <p class="product_money"><a href="detail.php">税込 &yen;3,500</a><span class="product_favorite"><img src="common/images/heart.png" alt="favorite"></span></p>
+                    <p class="product_button"><a href="cart-input.php"><input type="submit" class="product_submit" value="カートに入れる"></a></p>
+                </div>
+                <div class="product_menu">
+                    <p class="product_img"><a href="detail.php"><img src="common/images/variety-fruit14.png" alt="CCdonuts"></a></p>
+                    <p class="product_submenu"><a href="detail.php">フルーツドーナツセット （14個入り）</a></p>
+                    <p class="product_money"><a href="detail.php">税込 &yen;4,000</a><span class="product_favorite"><img src="common/images/heart.png" alt="favorite"></span></p>
+                    <p class="product_button"><a href="cart-input.php"><input type="submit" class="product_submit" value="カートに入れる"></a></p>
+                </div>
+                <div class="product_menu">
+                    <div class="product_img"><a href="detail.php"><img src="common/images/variety-best4.png" alt="CCdonuts"></a></div>
+                    <p class="product_submenu"><a href="detail.php">ベストセクションボックス （4個入り）</a></p>
+                    <p class="product_money"><a href="detail.php">税込 &yen;1,200</a><span class="product_favorite"><img src="common/images/heart.png" alt="favorite"></span></p>
+                    <p class="product_button"><a href="cart-input.php"><input type="submit" class="product_submit" value="カートに入れる"></a></p>
+                </div>
+                <div class="product_menu">
+                    <div class="product_img"><a href="detail.php"><img src="common/images/variety-chocolate7.png" alt="CCdonuts"></a></div>
+                    <p class="product_submenu"><a href="detail.php">チョコクラッシュボックス （7個入り）</a></p>
+                    <p class="product_money"><a href="detail.php">税込 &yen;2,400</a><span class="product_favorite"><img src="common/images/heart.png" alt="favorite"></span></p>
+                    <p class="product_button"><a href="cart-input.php"><input type="submit" class="product_submit" value="カートに入れる"></a></p>
+                </div>
+                <div class="product_menu">
+                    <div class="product_img"><a href="detail.php"><img src="common/images/variety-cream4.png" alt="CCdonuts"></a></div>
+                    <p class="product_submenu"><a href="detail.php">クリームボックス （4個入り）</a></p>
+                    <p class="product_money"><a href="detail.php">税込 &yen;1,400</a><span class="product_favorite"><img src="common/images/heart.png" alt="favorite"></span></p>
+                    <p class="product_button"><a href="cart-input.php"><input type="submit" class="product_submit" value="カートに入れる"></a></p>
+                </div>
+                <div class="product_menu">
+                    <div class="product_img"><a href="detail.php"><img src="common/images/variety-cream7.png" alt="CCdonuts"></a></div>
+                    <p class="product_submenu"><a href="detail.php">クリームボックス （9個入り）</a></p>
+                    <p class="product_money"><a href="detail.php">税込 &yen;2,800</a><span class="product_favorite"><img src="common/images/heart.png" alt="favorite"></span></p>
+                    <p class="product_button"><a href="cart-input.php"><input type="submit" class="product_submit" value="カートに入れる"></a></p>
+                </div>
             </div>
+
 
         </section>
     </main>
