@@ -71,42 +71,40 @@
         </a>
       </div>
       </div>
+    </section>
 
-      <!-- セクション2 -->
-      <section class="sec_2">
-        <!-- SP用背景 -->
-        <div class="bg_sp">
-          <img src="common/images/top-bg-sp.png" alt="">
-        </div>
-        <!-- PC用背景 -->
-        <div class="bg_pc">
-          <img src="common/images/top-bg-pc.png" alt="">
-        </div>
-        <div class="container">
-          <h2>philosophy</h2>
-          <div>
-            <p class="sub_title">私たちの信念</p>
-          </div>
-          <div class="inner">
-            <p class="main_text">"creating connections"</p>
-            <p class="sub_text">ドーナツでつながる</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- セクション3 -->
-      <section>
-        <h3 class="title">人気ランキング</h3>
-      </section>
-      <div class="back_to_top">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-square top_btn" viewBox="0 0 16 16">
-          <path fill-rule="evenodd" d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm8.5 9.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z" />
-        </svg>
-        <!-- <img src="common/images/top-btn.svg" alt="ページトップへ戻るボタン" class="top_btn"> -->
+    <!-- セクション2 -->
+    <section class="sec_2">
+      <!-- SP用背景 -->
+      <div class="bg_sp">
+        <img src="common/images/top-bg-sp.png" alt="">
       </div>
-  </main>
-  <!-- パンくずJsonLD-->
+      <!-- PC用背景 -->
+      <div class="bg_pc">
+        <img src="common/images/top-bg-pc.png" alt="">
+      </div>
+      <div class="container">
+        <h2>philosophy</h2>
+        <div>
+          <p class="sub_title">私たちの信念</p>
+        </div>
+        <div class="inner">
+          <p class="main_text">"creating connections"</p>
+          <p class="sub_text">ドーナツでつながる</p>
+        </div>
+      </div>
+    </section>
 
+    <!-- セクション3 -->
+    <section>
+      <h3 class="title">人気ランキング</h3>
+    </section>
+    <div class="back_to_top">
+      <button class="top_btn"></button>
+    </div>
+  </main>
+
+  <!-- パンくずJsonLD-->
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -126,7 +124,7 @@
       ]
     }
   </script>
-
+  <script src="common/js/back_to_top.js"></script>
   <?php
   require 'includes/footer.php';
   ?>
