@@ -21,39 +21,43 @@
     <!-- ユーザー名 -->
 
     <!-- コンテンツ -->
-    <header><img src="common/images/logo.svg" alt="c.c.donutsのロゴ"></header>
+    <header>
+        <div class="customer_wrapper"><img src="common/images/logo.svg" alt="c.c.donutsのロゴ"></div>
+    </header>
 
     <main>
-        <h1>会員登録</h1>
+        <div class="customer_wrapper">
+            <h1>会員登録</h1>
 
-        <form action="customer-confirm.php" method="post">
-            <fieldset>
-                <legend>お名前<span>(必須)</span></legend>
-                <input type="text" required>
-            </fieldset>
-            <fieldset>
-                <legend>お名前(フリガナ)<span>(必須)</span></legend>
-                <input type="text" required>
-            </fieldset>
-            <fieldset>
-                <legend>郵便番号<span>(必須)</span></legend>
-                <input type="text" required>
-            </fieldset>
-            <fieldset>
-                <legend>住所<span>(必須)</span></legend>
-                <input type="text" required>
-            </fieldset>
-            <fieldset>
-                <legend>メールアドレス<span>(必須)</span></legend>
-                <input type="email" required>
-            </fieldset>
-            <fieldset>
-                <legend>パスワード<span>(必須)</span></legend>
-                <input type="password" required>
-            </fieldset>
-            <input type="submit" value="ご入力内容を確認する">
-        </form>
+            <form action="customer-confirm.php" method="post">
+                <fieldset>
+                    <legend>お名前<span class="customer_req">(必須)</span></legend>
+                    <input type="text" name="cus_name" required>
+                </fieldset>
+                <fieldset>
+                    <legend>お名前(フリガナ)<span class="customer_req">(必須)</span></legend>
+                    <input type="text" name="cus_ruby" required>
+                </fieldset>
+                <fieldset class="customer_addnum">
+                    <legend>郵便番号<span class="customer_req">(必須)</span></legend>
+                    <input type="text" name="cus_addnum" required>
+                </fieldset>
+                <fieldset>
+                    <legend>住所<span class="customer_req">(必須)</span></legend>
+                    <input type="text" name="cus_address" required>
+                </fieldset>
+                <fieldset>
+                    <legend>メールアドレス<span class="customer_req">(必須)</span></legend>
+                    <input type="email" name="cus_mail" required>
+                </fieldset>
+                <fieldset>
+                    <legend>パスワード<span class="customer_req">(必須)</span></legend>
+                    <p class="customer_pass"><small>A-Z、a-z、0-9を少なくとも各１つは含めて８文字以上で入力してください。</small></p>
+                    <input type="password" name="cus_pass" required>
+                </fieldset>
+                <!-- ボタンクラス　共通のやつつける、あとで -->
+                <div class="form_submit"><input type="submit" value="ご入力内容を確認する"></div>
+            </form>
+        </div>
     </main>
-</body>
-
-</html>
+    <?php require 'includes/footer.php'; ?>
