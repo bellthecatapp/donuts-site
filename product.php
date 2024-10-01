@@ -32,7 +32,7 @@
                 //データベース接続
                 $pdo = new PDO('mysql:host=localhost;dbname=donuts;charset=utf8', 'donuts', 'password');
                 // SQL文の準備
-                $sql = $pdo->prepare('select * from product where id=?');
+                $sql = $pdo->prepare('select * from product where id=1-6');
                 // SQL文の実行
                 foreach ($pdo->query('select * from product') as $row) {
                     // echo '<p>';
@@ -42,7 +42,7 @@
                     echo <<<END
                         <form action="cart.php" method="post" class="product_menu">                        <p class="product_img"><img alt="image" src="common/images/{$row['id']}.png"></p>
                         <p class="product_submenu"><a href="detail.php">{$row['name']}</a></p>
-                         <p>税込 &yen;{$row['price']}<span class="product_favorite"><img src="common/images/heart.png" alt="favorite"></span></p>
+                         <p class="product_money">税込 &yen;{$row['price']}<span class="product_favorite"><img src="common/images/heart.png" alt="favorite"></span></p>
                         END;
 
                     // ヒアドキュメント2つ目
