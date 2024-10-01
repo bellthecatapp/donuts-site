@@ -39,7 +39,7 @@
                     //HTMLの生成・出力
                     echo <<<END
 
-                    END;
+END;
                     ?>
                 </section>
             </form>
