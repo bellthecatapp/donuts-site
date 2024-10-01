@@ -35,14 +35,19 @@
                     // SQL文の準備
                     $sql = $pdo->prepare('select * from product where id=?');
                     // SQL文の実行
-                    $sql->execute([
-                        $_REQUEST['id']
-                    ]);
-
+                    foreach ($pdo->query('select * from product') as $row) {
+                        echo '<p>';
+                        echo $row['id'];
+                        echo $row['name'];
+                        echo $row['price'];
+                        echo '</p>';
+                    }
                     //HTMLの生成・出力
-                    echo <<<END
 
-END;
+                    //                     echo <<<END
+                    //                     <p>$row[id]</p>
+
+                    // END;
                     ?>
                 </section>
             </form>
