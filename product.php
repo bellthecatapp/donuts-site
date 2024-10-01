@@ -25,6 +25,7 @@
         <body>
             <!-- test -->
             <!--  -->
+            <p></p>
             <form action="product.php" method="post">
                 <section class="product_hero">
                     <h1 class="product_title">商品一覧</h1>
