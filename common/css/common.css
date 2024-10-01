@@ -300,8 +300,7 @@ footer {
   font-family: "Noto Sans JP", system-ui;
   background: #EDE0D4;
   width: 100vw;
-  position: fixed;
-  bottom: 0;
+
   color: #7F5539;
   padding: 12px;
 }
