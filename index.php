@@ -100,7 +100,7 @@
     </section>
   </main>
 
-  <!-- パンくずJasonLD-->
+  <!-- パンくずJsonLD-->
 
   <script type="application/ld+json">
     {
@@ -121,6 +121,8 @@
       ]
     }
   </script>
-</body>
+  <?php
+  require 'includes/footer.php';
+  ?>
 
 </html>
