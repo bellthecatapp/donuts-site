@@ -24,50 +24,48 @@
     <main>
 
 
-        <!-- test -->
-        <!--             
-            <form action="product.php" method="post">
-                <section class="product_hero">
-                    <h1 class="product_title">商品一覧</h1> -->
-
-        <?php
-        //データベース接続
-        $pdo = new PDO('mysql:host=localhost;dbname=donuts;charset=utf8', 'donuts', 'password');
-        // SQL文の準備
-        $sql = $pdo->prepare('select * from product where id=?');
-        // SQL文の実行
-        foreach ($pdo->query('select * from product') as $row) {
-            // echo '<p>';
-            // echo $row['name'];
-            // echo $row['price'];
-            // echo '</p>';
-            echo <<<END
-                        <form action="cart.php" method="post">                        <p><img alt="image" src="common/images/{$row['id']}.png"></p>
+        <!-- <form action="product.php" method="post"> -->
+        <section class="product_hero">
+            <h1 class="product_title">商品一覧</h1>
+            <div class="product_content">
+                <?php
+                //データベース接続
+                $pdo = new PDO('mysql:host=localhost;dbname=donuts;charset=utf8', 'donuts', 'password');
+                // SQL文の準備
+                $sql = $pdo->prepare('select * from product where id=1-6');
+                // SQL文の実行
+                foreach ($pdo->query('select * from product') as $row) {
+                    // echo '<p>';
+                    // echo $row['name'];
+                    // echo $row['price'];
+                    // echo '</p>';
+                    echo <<<END
+                        <form action="cart.php" method="post" class="product_menu">                        <p class="product_img"><img alt="image" src="common/images/{$row['id']}.png"></p>
                         <p class="product_submenu"><a href="detail.php">{$row['name']}</a></p>
-                         <p>{$row['price']}</p>
+                         <p class="product_money">税込 &yen;{$row['price']}<span class="product_favorite"><img src="common/images/heart.png" alt="favorite"></span></p>
                         END;
 
-            // ヒアドキュメント2つ目
-            echo <<<END
+                    // ヒアドキュメント2つ目
+                    echo <<<END
                         <input type="hidden" name="id" value="{$row['id']}">
                         <input type="hidden" name="name" value="{$row['name']}">
                         <input type="hidden" name="price" value="{$row['price']}">
-                        <p><input type="submit" class="product_submit" value="カートに追加"></p>
+                        <p><input type="submit" class="product_submit" value="カートに入れる"></p>
                         </form>
                         END;
-        }
-        //HTMLの生成・出力
+                }
+                //HTMLの生成・出力
 
-        //                     echo <<<END
-        //                     <p>$row[id]</p>
+                //                     echo <<<END
+                //                     <p>$row[id]</p>
 
-        // END;
-        ?>
-
-        <!-- </section>
+                // END;
+                ?>
+            </div>
+            <!-- </section>
         </form> -->
 
-        <!-- <div class="product_content">
+            <!-- <div class="product_content">
                 <div class="product_menu">
                     <div class="product_img"><a href="detail.php"><img src="common/images/products-CCoriginal.png" alt="CCdonuts"></a></div>
                     <p class="product_submenu"><a href="detail.php">CCドーナツ 当店オリジナル （5個入り）</a></p>
