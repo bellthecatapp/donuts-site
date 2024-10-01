@@ -15,6 +15,10 @@
 </head>
 
 <body>
+
+    <?php
+    require 'includes/header.php';
+    ?>
     <!-- パンくず -->
 
     <!-- ユーザー名 -->
@@ -34,6 +38,10 @@
             </div>
         </div>
     </div>
+
+    <?php
+    require 'includes/footer.php';
+    ?>
 </body>
 
 </html>
