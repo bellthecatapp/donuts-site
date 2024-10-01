@@ -100,7 +100,7 @@
       <h3 class="title">人気ランキング</h3>
     </section>
     <div class="back_to_top">
-      <button class="top_btn"></button>
+      <button class="top_btn scroll_top"></button>
     </div>
   </main>
 
