@@ -59,8 +59,6 @@
   transition: left 0.3s ease;
 }
 
-
-
 .header_hammenu a {
   color: #fff;
   padding: 16px 12px;
@@ -111,9 +109,7 @@
 
 .hammenu_close_span::after {
   transform: rotate(-45deg);
-
 }
-
 
 
 /* 各グローバルメニュー要素の調整 */
@@ -122,8 +118,6 @@
   text-align: right;
   flex-basis: 50%;
 }
-
-
 
 .header_icons {
   position: absolute;
@@ -153,7 +147,41 @@
   border: 1px solid #7F5539;
   width: 90.4%;
   padding: 8px;
+}
 
+/* パンくず＆ユーザー名 */
+.navigator {
+  width: 100%;
+  padding: 12px 0 12px 20px;
+  text-align: left;
+  color: #7f5539;
+  font-size: 12px;
+}
+
+.bread_crumb {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.bread_crumb li {
+  position: relative;
+}
+
+.bread_crumb li:not(:first-child) {
+  padding-left: 15px;
+}
+
+.bread_crumb li:not(:last-child)::after {
+  content: ">";
+  position: absolute;
+  top: -3px;
+  right: -12px;
+  font-size: 16px;
+}
+
+.brown_line {
+  width: 100%;
+  color: #7f5539;
 }
 
 
@@ -256,9 +284,20 @@
 
 /* ここまでヘッダーです */
 
+/*　PC用　パンくず＆ユーザー名 */
+.navigator {
+  padding: 12px 0 12px 103px;
+}
+
+.bread_crumb li:not(:last-child):hover {
+  text-decoration: underline;
+  text-decoration-color: #7f5539;
+}
 
 /* ここからフッター です*/
 footer {
+  font-size: 12px;
+  font-family: "Noto Sans JP", system-ui;
   background: #EDE0D4;
   width: 100vw;
   position: fixed;
@@ -276,6 +315,10 @@ footer {
   border-left: #B392AC 2px solid;
 }
 
+.footer_menu li a {
+  display: inline-block;
+}
+
 .footer_snslink {
   display: flex;
   margin-bottom: 24px;
@@ -289,6 +332,68 @@ footer {
 .footer_snslink li a img {
   width: 32px;
   margin-right: 20px;
+}
+
+.footer_small {
+
+  font-size: 8px;
+  text-align: center;
+  display: block;
+  margin-bottom: 24px;
+}
+
+@media screen and (min-width: 768px) {
+  footer {
+    font-size: 16px;
+  }
+
+  .footer_menu {
+    display: flex;
+    margin-bottom: 40px;
+  }
+
+  .footer_menu li {
+    margin: 0;
+    padding-left: 12px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-right: 62px;
+
+  }
+
+  .footer_logo {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .footer_logo img {
+    width: 140px;
+  }
+
+  .footer_snslink {
+    margin-bottom: 60px;
+  }
+
+  .footer_snslink li a img {
+    width: 64px;
+    margin-right: 80px;
+  }
+
+  .footer_small {
+    margin-bottom: 65px;
+    font-size: 12px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  footer {
+    display: grid;
+    place-content: center;
+  }
+
+  .footer_wrapper {
+    width: 1200px;
+  }
 }
 
 /* ここまでフッター */
