@@ -5,7 +5,7 @@
         <button id="open_button">
           <span class="header_navicon"></span></button>
         <div class="hammenu_contents">
-          <div class="hammenu_logos"><a href="index.php"><img src="../common/images/logo.svg" alt="c.c.donutsのロゴ"></a><button id="hammenu_close_icon"><span class="hammenu_close_span"></span></button></div>
+          <div class="hammenu_logos"><a href="index.php"><img src="common/images/logo.svg" alt="c.c.donutsのロゴ"></a><button id="hammenu_close_icon"><span class="hammenu_close_span"></span></button></div>
           <ul class="header_hammenu">
             <li><a href="index.php">TOP</a></li>
             <li><a href="concept.html">商品一覧</a></li>
