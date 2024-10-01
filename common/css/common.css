@@ -59,8 +59,6 @@
   transition: left 0.3s ease;
 }
 
-
-
 .header_hammenu a {
   color: #fff;
   padding: 16px 12px;
@@ -111,9 +109,7 @@
 
 .hammenu_close_span::after {
   transform: rotate(-45deg);
-
 }
-
 
 
 /* 各グローバルメニュー要素の調整 */
@@ -122,8 +118,6 @@
   text-align: right;
   flex-basis: 50%;
 }
-
-
 
 .header_icons {
   position: absolute;
@@ -153,7 +147,41 @@
   border: 1px solid #7F5539;
   width: 90.4%;
   padding: 8px;
+}
 
+/* パンくず＆ユーザー名 */
+.navigator {
+  width: 100%;
+  padding: 12px 0 12px 20px;
+  text-align: left;
+  color: #7f5539;
+  font-size: 12px;
+}
+
+.bread_crumb {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.bread_crumb li {
+  position: relative;
+}
+
+.bread_crumb li:not(:first-child) {
+  padding-left: 15px;
+}
+
+.bread_crumb li:not(:last-child)::after {
+  content: ">";
+  position: absolute;
+  top: -3px;
+  right: -12px;
+  font-size: 16px;
+}
+
+.brown_line {
+  width: 100%;
+  color: #7f5539;
 }
 
 
@@ -256,6 +284,15 @@
 
 /* ここまでヘッダーです */
 
+/*　PC用　パンくず＆ユーザー名 */
+.navigator {
+  padding: 12px 0 12px 103px;
+}
+
+.bread_crumb li:not(:last-child):hover {
+  text-decoration: underline;
+  text-decoration-color: #7f5539;
+}
 
 /* ここからフッター です*/
 footer {
@@ -266,8 +303,6 @@ footer {
   color: #7F5539;
   padding: 12px;
 }
-
-
 
 .footer_menu li {
   margin-bottom: 24px;
