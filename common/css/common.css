@@ -296,6 +296,8 @@
 
 /* ここからフッター です*/
 footer {
+  font-size: 12px;
+  font-family: "Noto Sans JP", system-ui;
   background: #EDE0D4;
   width: 100vw;
   position: fixed;
@@ -304,11 +306,17 @@ footer {
   padding: 12px;
 }
 
+
+
 .footer_menu li {
   margin-bottom: 24px;
   margin-top: 24px;
   padding-left: 12px;
   border-left: #B392AC 2px solid;
+}
+
+.footer_menu li a {
+  display: inline-block;
 }
 
 .footer_snslink {
@@ -324,6 +332,68 @@ footer {
 .footer_snslink li a img {
   width: 32px;
   margin-right: 20px;
+}
+
+.footer_small {
+
+  font-size: 8px;
+  text-align: center;
+  display: block;
+  margin-bottom: 24px;
+}
+
+@media screen and (min-width: 768px) {
+  footer {
+    font-size: 16px;
+  }
+
+  .footer_menu {
+    display: flex;
+    margin-bottom: 40px;
+  }
+
+  .footer_menu li {
+    margin: 0;
+    padding-left: 12px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-right: 62px;
+
+  }
+
+  .footer_logo {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .footer_logo img {
+    width: 140px;
+  }
+
+  .footer_snslink {
+    margin-bottom: 60px;
+  }
+
+  .footer_snslink li a img {
+    width: 64px;
+    margin-right: 80px;
+  }
+
+  .footer_small {
+    margin-bottom: 65px;
+    font-size: 12px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  footer {
+    display: grid;
+    place-content: center;
+  }
+
+  .footer_wrapper {
+    width: 1200px;
+  }
 }
 
 /* ここまでフッター */
