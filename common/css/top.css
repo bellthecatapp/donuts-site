@@ -159,9 +159,34 @@ h2 {
   right: 10px;
   width: 40px;
   height: 40px;
-  border-radius: 5px;
-  fill: #7F5539;
-  background: #ede0d4c2;
+  border-radius: 50%;
+  background: #7f5539ce;
+  transition: all 400ms;
+  opacity: 0;
+  visibility: hidden;
+  cursor: pointer;
+}
+
+.top_btn::after {
+  content: "";
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: 16px;
+  left: 12px;
+  border-right: 2px solid #fff;
+  border-top: 2px solid #fff;
+  transform: rotate(-45deg);
+}
+
+.top_btn.btn_active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.top_btn.btn_absolute {
+  position: absolute;
+  top: 0;
 }
 
 
@@ -264,7 +289,13 @@ h2 {
     right: 20px;
     width: 60px;
     height: 60px;
-    border-radius: 8px;
+  }
+
+  .top_btn::after {
+    width: 25px;
+    height: 25px;
+    top: 23px;
+    left: 17px;
   }
 
 }
