@@ -23,9 +23,6 @@
     height: 48px;
     margin: 0 auto;
     display: block;
-}
-
-.common_btn_brown {
     background-color: #7F5539;
     color: #fff;
     text-align: center;
@@ -35,7 +32,6 @@
     color: #7F5539;
     margin-bottom: 8px;
     font-size: 12px;
-
 }
 
 .common_linktext {
@@ -56,6 +52,7 @@
 
 .inner_wrapper2 {
     text-align: right;
+    margin-bottom: 80px;
 }
 
 .input_form {
@@ -68,6 +65,10 @@
 
 .input_last {
     margin-bottom: 40px;
+}
+
+input[type="email"] {
+    padding-left: 0.5em;
 }
 
 /* login_complete */
