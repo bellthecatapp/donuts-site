@@ -102,22 +102,32 @@
 
     <!-- セクション3 -->
     <section>
-      <h2 class="title">人気ランキング</h3>
-
-        <?php
-        // データベース接続、SQL文の準備・実行
-        // require 'includes/database.php';
-        // $sql = $pdo->prepare('select * from product where id=? and name=? and price=?');
-        // $sql->execute('');
-
-        // $lanking = [];
-        ?>
+      <h2 class="common_title">人気ランキング</h3>
+        <div class="product_content">
+          <form action="cart.php" method="post" class="product_menu">
+            <?php
+            // データベース接続、SQL文の準備・実行
+            require 'includes/database.php';
+            foreach ($pdo->query('select * from product') as $row) {
+              $ranking = [
+                '1' => $row['id'] = 1,
+                '2' => $row['id'] = 7,
+                '3' => $row['id'] = 8,
+                '4' => $row['id'] = 2,
+                '5' => $row['id'] = 9,
+                '6' => $row['id'] = 6
+              ];
+              foreach ($ranking as $key => $value) {
+                echo $key;
+                echo '<img src="common/image/', $value, '.png">';
+                // echo $row['name'];
+                // echo $row['price'];
+              }
+            };
+            ?>
+          </form>
+        </div>
     </section>
-
-    <!-- topへ戻るボタン -->
-    <!-- <div class="back_to_top">
-      <button class="top_btn scroll_top"></button>
-    </div> -->
   </main>
 
   <!-- パンくずJsonLD-->
@@ -140,7 +150,6 @@
       ]
     }
   </script> -->
-  <!-- <script src="common/js/back_to_top.js"></script> -->
   <?php
   require 'includes/footer.php';
   ?>
