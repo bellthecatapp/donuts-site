@@ -99,6 +99,8 @@
     <section>
       <h3 class="title">人気ランキング</h3>
     </section>
+
+    <!-- topへ戻るボタン -->
     <div class="back_to_top">
       <button class="top_btn scroll_top"></button>
     </div>
