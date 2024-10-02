@@ -263,6 +263,36 @@ footer {
   margin-bottom: 24px;
 }
 
+/* 共通input要素 */
+.common_input {
+  border: #7F5539 1px solid;
+  width: 100%;
+  padding: 4px;
+  text-align: left;
+}
+
+
+
+.common_shortinput {
+  width: 20%;
+}
+
+/* 共通　フォームの(必須) */
+.common_required {
+  color: #BF0000;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+/* 確認ページのdd要素 */
+.common_ddline {
+  border-left: 1px solid #7F5539;
+  padding: 4px;
+  margin-bottom: 20px;
+  margin-top: 8px;
+
+}
+
 @media screen and (min-width: 768px) {
 
   /* ヘッダーPC */
@@ -420,6 +450,22 @@ footer {
     height: 25px;
     top: 23px;
     left: 17px;
+  }
+
+  /* input要素 */
+
+  .common_input {
+
+    padding: 0.15rem;
+  }
+
+  .common_shortinput {
+    width: 30%;
+  }
+
+  /* 確認ページのdd要素 */
+  .common_ddline {
+    margin-bottom: 40px;
   }
 }
 
