@@ -23,7 +23,7 @@
 
     <!-- コンテンツ -->
     <header>
-        <div class="customer_wrapper"><img src="common/images/logo.svg" alt="c.c.donutsのロゴ"></div>
+        <div class="customer_wrapper"><a href="index.php"><img src="common/images/logo.svg" alt="c.c.donutsのロゴ"></a></div>
     </header>
     <main>
         <div class="customer_wrapper">
@@ -40,34 +40,49 @@
 
             if (isset($_REQUEST)) {
                 // 入力 あり　true
-                if (!preg_match('/^(?=.[a-z])(?=.[A-Z])(?=.[0-9])[a-zA-Z0-9]{8,}$/', $_REQUEST['cus_pass'])) {
+                if (!preg_match('/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]{8,}$/', $_REQUEST['cus_pass'])) {
                     // パスワード入力不備 true　エラー表示
                     echo <<<END
                 <p>パスワードの入力を確認してください。再入力をお願いいたします。</p>
                     <a href="customer-input.php">入力ページへ戻る</a>
 END;
+                } elseif (!preg_match('/^[0-9]{7}$/', $_REQUEST['cus_addnum'])) {
+                    // 郵便番号が不適切
+                    echo <<<END
+                    <p>郵便番号の入力を確認してください。ハイフンなしの7桁で再入力をお願いいたします。</p>
+                        <a href="customer-input.php">入力ページへ戻る</a>
+    END;
                 } else {
                     // 全部の入力問題なし　false
-                    echo <<< END
-            <form action="customer-complete.php" method="post">
-<input type="hidden" value={$name}>
-<input type="hidden" value={$ruby}>
-<input type="hidden" value={$addnum}>
-<input type="hidden" value={$address}>
-<input type="hidden" value={$mail}>
-<input type="hidden" value={$pass}>
-
-                <div class="form_submit"><input type="submit" value="ご入力内容を確認する"></div>
-            </form>?>
-        </div>
+                    // 表示
+                    echo '<dl>';
+                    foreach ($datalist as $key => $data) {
+                        echo '<dt>', $data, '</dt>';
+                        if ($key == 'cus_pass') {
+                            // パスだけ隠して表示させてみる
+                            echo '<dd>', str_repeat('・', strlen($_REQUEST['cus_pass'])), '</dd>';
+                        } else {
+                            echo '<dd>', $_REQUEST[$key], '</dd>';
+                        }
+                    }
+                    echo ' </div">';
+                    echo '</dl>';
+                    // 隠しデータを送れるように
+                    echo ' <form action="customer-complete.php" method="post">';
+                    foreach ($datalist as $key => $data) {
+                        echo '<input type="hidden" name="', $key, '" value="', $_REQUEST[$key], '">';
+                        echo '</dl>';
+                    }
+                    echo <<<END
+<div class="form_submit"><input type="submit" value="ご入力内容を確認する"></div>
+            </form>
 END;
                 }
             } else {
                 // 入力が確認できない場合 エラーメッセージ
                 echo '
-<p>パスワードの入力を確認してください。再入力をお願いいたします。</p>
+<p>再入力をお願いいたします。</p>
 <a href="customer-input.php">入力ページへ戻る</a>';
-            }
-            ?>
+            } ?>
     </main>
     <?php require 'includes/footer.php'; ?>
