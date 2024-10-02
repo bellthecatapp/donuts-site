@@ -16,7 +16,7 @@ const footer = document.querySelector("footer");
 // windowの高さを取得
 const window_height = window.innerHeight;
 // ブラウザの上端からフッターまでの距離を取得
-// const distance = footer.offsetTop;
+const distance = footer.offsetTop;
 
 window.addEventListener('scroll', () => {
   // スクロールの高さを取得
@@ -29,9 +29,9 @@ window.addEventListener('scroll', () => {
     top_btn.classList.remove('btn_active');
   }
   // footer上部でボタンのスクロール止まる
-  //   if (scroll_Y >= (distance - window_height)) {
-  //     top_btn.classList.add('btn_absolute');
-  //   } else {
-  //     top_btn.classList.remove('btn_absolute');
-  //   }
+  if (scroll_Y >= (distance - window_height)) {
+    top_btn.classList.add('btn_absolute');
+  } else {
+    top_btn.classList.remove('btn_absolute');
+  }
 });
