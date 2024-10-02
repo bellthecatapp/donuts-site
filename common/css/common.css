@@ -202,7 +202,7 @@ footer {
   font-size: 12px;
   font-family: "Noto Sans JP", system-ui;
   background: #EDE0D4;
-  width: 100vw;
+  width: 100%;
 
   color: #7F5539;
   padding: 12px;
@@ -263,8 +263,9 @@ footer {
   }
 
   .header_icons img {
-    min-width: 40px;
+    width: 40px;
     margin-left: 32px;
+    height: 60px;
   }
 
   .header_icons .header_loginicon {
