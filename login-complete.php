@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="common/css/login_out.css">
     <!-- ↑ページ別の.cssをリンク -->
-    <title>ログイン完了｜donuts-site</title>
+    <title>ログイン完了｜C.C.Donuts</title>
 </head>
 
 <body>

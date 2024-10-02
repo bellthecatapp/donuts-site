@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="">
     <!-- ↑ページ別の.cssをリンク -->
-    <title>ページ名入力｜donuts-site</title>
+    <title>ページ名入力｜C.C.Donuts</title>
 </head>
 
 <body>
