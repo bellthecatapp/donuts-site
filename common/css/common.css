@@ -263,8 +263,9 @@ footer {
   }
 
   .header_icons img {
-    min-width: 40px;
+    width: 40px;
     margin-left: 32px;
+    height: 60px;
   }
 
   .header_icons .header_loginicon {
