@@ -14,11 +14,12 @@
 </head>
 
 <body>
+  <?php
+  require 'includes/header.php';
+  ?>
   <main>
 
-    <?php
-    require 'includes/header.php';
-    ?>
+
 
     <!-- パンくず -->
     <nav class="navigator">
@@ -105,20 +106,22 @@
 
         <?php
         // データベース接続、SQL文の準備・実行
-        require 'includes/database.php';
-        $pdo =
-          $lanking = []
+        // require 'includes/database.php';
+        // $sql = $pdo->prepare('select * from product where id=? and name=? and price=?');
+        // $sql->execute('');
+
+        // $lanking = [];
         ?>
     </section>
 
     <!-- topへ戻るボタン -->
-    <div class="back_to_top">
+    <!-- <div class="back_to_top">
       <button class="top_btn scroll_top"></button>
-    </div>
+    </div> -->
   </main>
 
   <!-- パンくずJsonLD-->
-  <script type="application/ld+json">
+  <!-- <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
@@ -136,8 +139,8 @@
         }
       ]
     }
-  </script>
-  <script src="common/js/back_to_top.js"></script>
+  </script> -->
+  <!-- <script src="common/js/back_to_top.js"></script> -->
   <?php
   require 'includes/footer.php';
   ?>

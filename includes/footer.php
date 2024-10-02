@@ -1,4 +1,9 @@
 <footer>
+  <!-- トップページへ戻るボタン -->
+  <div class="back_to_top">
+    <button class="top_btn scroll_top"></button>
+  </div>
+
   <div class="footer_wrapper">
 
     <ul class="footer_menu">
@@ -17,6 +22,7 @@
   </div>
 </footer>
 <script src="common/js/header_menu.js"></script>
+<script src="common/js/back_to_top.js"></script>
 </body>
 
 </html>
