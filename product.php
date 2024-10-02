@@ -33,24 +33,22 @@
                 <?php
                 //データベース接続
                 $pdo = new PDO('mysql:host=localhost;dbname=donuts;charset=utf8', 'donuts', 'password');
-                // SQL文の準備
-                $sql = $pdo->prepare('select * from product where id=?');
-                // SQL文の実行
 
-
+                // html準備
                 $shop = $pdo->query('select * from product limit 6');
 
 
                 foreach ($shop as $row) {
+                    $id = $row['id'];
                     echo <<<END
-                        <form action="cart.php" method="post" class="product_menu">                        <p class="product_img"><a href="detail.php?id='$row[id]'"><img alt="image" src="common/images/{$row['id']}.png"></a></p>
-                        <p class="product_submenu"><a href="detail.php?id='$row[id]'">{$row['name']}</a></p>
-                         <p class="product_money"><a href="detail.php?id='$row[id]'">税込 &yen;{$row['price']}</a><span class="product_favorite"><img src="common/images/heart.png" alt="favorite"></span></p>
+                        <form action="cart.php" method="post" class="product_menu">                        <p class="product_img"><a href="detail.php?id={$id}"><img alt="image" src="common/images/{$id}.png"></a></p>
+                        <p class="product_submenu"><a href="detail.php?id={$id}">{$row['name']}</a></p>
+                         <p class="product_money"><a href="detail.php?id={$id}">税込 &yen;{$row['price']}</a><span class="product_favorite"><img src="common/images/heart.png" alt="favorite"></span></p>
                         END;
 
                     // ヒアドキュメント2つ目
                     echo <<<END
-                        <input type="hidden" name="id" value="{$row['id']}">
+                        <input type="hidden" name="id" value="{$id}">
                         <input type="hidden" name="name" value="{$row['name']}">
                         <input type="hidden" name="price" value="{$row['price']}">
                         <p><input type="submit" class="product_submit" value="カートに入れる"></p>
@@ -62,19 +60,20 @@
             <h2 class="subtitle">バラエティセット</h2>
             <div class="product_content">
                 <?php
-                $shop2 = $pdo->query('select * from product limit 12 offset 6');
+                $shop = $pdo->query('select * from product limit 12 offset 6');
 
 
-                foreach ($shop2 as $row2) {
+                foreach ($shop as $row) {
+                    $id = $row['id'];
                     echo <<<END
-        <form action="cart.php" method="post" class="product_menu">                        <p class="product_img"><a href="detail.php?id='$row[id]'"><img alt="image" src="common/images/{$row2['id']}.png"></a></p>
-        <p class="product_submenu"><a href="detail.php?id='$row2[id]'">{$row2['name']}</a></p>
-         <p class="product_money"><a href="detail.php?id='$row[id]'">税込 &yen;{$row2['price']}</a><span class="product_favorite"><img src="common/images/heart.png" alt="favorite"></span></p>
+        <form action="cart.php" method="post" class="product_menu">                        <p class="product_img"><a href="detail.php?id={$id}"><img alt="image" src="common/images/{$id}.png"></a></p>
+        <p class="product_submenu"><a href="detail.php?id={$id}">{$row['name']}</a></p>
+         <p class="product_money"><a href="detail.php?id={$id}">税込 &yen;{$row['price']}</a><span class="product_favorite"><img src="common/images/heart.png" alt="favorite"></span></p>
         END;
 
                     // ヒアドキュメント2つ目
                     echo <<<END
-        <input type="hidden" name="id" value="{$row['id']}">
+        <input type="hidden" name="id" value="{$id}">
         <input type="hidden" name="name" value="{$row['name']}">
         <input type="hidden" name="price" value="{$row['price']}">
         <p><input type="submit" class="product_submit" value="カートに入れる"></p>
