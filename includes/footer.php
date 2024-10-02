@@ -11,7 +11,7 @@
       <li><a href="#!"><img src="common/images/footer-facebook.svg" alt="facebookアイコン"></a></li>
       <li><a href="#!"><img src="common/images/footer-x.svg" alt="xアイコン"></a></li>
     </ul>
-    <div class="footer_logo"><img src="common/images/logo.svg" alt="c.c.donutsロゴ"></div>
+    <div class="footer_logo"><a href="index.php"><img src="common/images/logo.svg" alt="c.c.donutsロゴ"></a></div>
 
     <small class="footer_small">Copyright (C) c.c.donuts All Rights Reserved</small>
   </div>
