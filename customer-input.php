@@ -31,27 +31,27 @@
 
             <form action="customer-confirm.php" method="post">
                 <fieldset>
-                    <legend>お名前<span class="customer_req">(必須)</span></legend>
+                    <legend>お名前<span class="common_required">(必須)</span></legend>
                     <input type="text" name="cus_name" class="common_input" required>
                 </fieldset>
                 <fieldset>
-                    <legend>お名前(フリガナ)<span class="customer_req">(必須)</span></legend>
+                    <legend>お名前(フリガナ)<span class="common_required">(必須)</span></legend>
                     <input type="text" name="cus_ruby" class="common_input" required>
                 </fieldset>
                 <fieldset class="customer_addnum">
-                    <legend>郵便番号<span class="customer_req">(必須)</span></legend>
+                    <legend>郵便番号<span class="common_required">(必須)</span></legend>
                     <input type="text" name="cus_addnum" class="common_input" required>
                 </fieldset>
                 <fieldset>
-                    <legend>住所<span class="customer_req">(必須)</span></legend>
+                    <legend>住所<span class="common_required">(必須)</span></legend>
                     <input type="text" name="cus_address" class="common_input" required>
                 </fieldset>
                 <fieldset>
-                    <legend>メールアドレス<span class="customer_req">(必須)</span></legend>
+                    <legend>メールアドレス<span class="common_required">(必須)</span></legend>
                     <input type="email" name="cus_mail" class="common_input" required>
                 </fieldset>
                 <fieldset>
-                    <legend>パスワード<span class="customer_req">(必須)</span></legend>
+                    <legend>パスワード<span class="common_required">(必須)</span></legend>
                     <p class="customer_pass"><small>A-Z、a-z、0-9を少なくとも各１つは含めて８文字以上で入力してください。</small></p>
                     <input type="password" name="cus_pass" class="common_input" required>
                 </fieldset>

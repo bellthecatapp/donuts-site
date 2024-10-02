@@ -22,7 +22,7 @@ h1 {
   font-size: 20px;
   margin-bottom: 40px;
   margin-top: 40px;
-
+  color: #7F5539;
 }
 
 form {
@@ -49,16 +49,12 @@ legend {
   text-align: left;
 }
 
-legend span {
+.customer_req {
   margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }
 
-form .common_input {
-  border: #7F5539 1px solid;
-  width: 100%;
-  padding: 4px;
-  text-align: left;
-}
+
 
 .customer_addnum {
   text-align: left;
@@ -100,14 +96,45 @@ dl {
 
 dt {
   font-weight: 400;
-  margin-bottom: 8px;
   font-size: 12px;
 }
 
-dd {
-  border-left: 1px solid #7F5539;
+/* complete */
+.result_box {
+  border: #E8C2CA 2px solid;
+  width: 78%;
+  margin: 0 auto;
+  text-align: center;
+  color: #7F5539;
+  margin-bottom: 416px;
+  padding-top: 24px;
+  padding-bottom: 20px;
+}
+
+.result_box p {
+  margin-bottom: 12px;
+  font-size: 12px;
+
+}
+
+.link_pr {
+
+  display: inline-block;
+  margin-top: 24px;
+}
+
+.link_pr a {
+  color: #7F5539;
   padding: 4px;
-  margin-bottom: 20px;
+  display: block;
+  border-bottom: #7F5539 1px solid;
+}
+
+.link_pr a:hover {
+  color: #B392AC;
+  transition: all 0.3s ease-in;
+  border-bottom: #B392AC 1px solid;
+
 }
 
 @media screen and (min-width: 768px) {
@@ -134,10 +161,7 @@ dd {
     margin: 0 auto;
   }
 
-  form .common_input {
-    padding: 0;
-    line-height: 1.3;
-  }
+
 
   fieldset {
     margin-bottom: 40px;
@@ -171,11 +195,26 @@ dd {
     font-size: 24px;
   }
 
-  dd {
+  .result_box {
+    width: 78%;
+    max-width: 600px;
+    padding-top: 80px;
+    padding-bottom: 70px;
 
-    margin-bottom: 40px;
+    margin-bottom: 638px;
+
   }
 
+  .result_box p {
+    font-size: 24px;
+
+  }
+
+  .link_pr {
+    margin-top: 40px;
+
+    font-size: 20px;
+  }
 }
 
 @media screen and (min-width: 1200px) {
