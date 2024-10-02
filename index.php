@@ -57,16 +57,19 @@
     <!-- セクション１ -->
     <section class="sec_1">
       <div class="grid">
+        <h2 class="h2_new">サマーシトラス</h2>
         <a href="" class="new_item">
           <img src="common/images/5.png" alt="新商品の画像">
           <div class="new_mark">
             <p>新商品</p>
           </div>
         </a>
+        <h2 class="h2_life">ドーナツのある生活</h2>
         <a href="#" class="donuts_life">
           <img src="common/images/top-dounutslife.png" alt="ドーナツのある生活画像">
         </a>
-        <a href="product.php" class="banner">
+        <h2 class="h2_banner">商品一覧</h2>
+        <a href=" product.php" class="banner">
           <img src="common/images/top-banner.png" alt="商品一覧へ行くバナー">
         </a>
       </div>
@@ -83,6 +86,7 @@
       <div class="bg_pc">
         <img src="common/images/top-bg-pc.png" alt="">
       </div>
+
       <div class="container">
         <h2>philosophy</h2>
         <div>
@@ -97,7 +101,14 @@
 
     <!-- セクション3 -->
     <section>
-      <h3 class="title">人気ランキング</h3>
+      <h2 class="title">人気ランキング</h3>
+
+        <?php
+        // データベース接続、SQL文の準備・実行
+        require 'includes/database.php';
+        $pdo =
+          $lanking = []
+        ?>
     </section>
 
     <!-- topへ戻るボタン -->
