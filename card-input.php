@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="">
     <!-- ↑ページ別の.cssをリンク -->
-    <title>カード情報登録｜donuts-site</title>
+    <title>カード情報登録｜C.C.Donuts</title>
 </head>
 
 <body>
