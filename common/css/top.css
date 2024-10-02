@@ -18,11 +18,12 @@
   width: 100%;
   height: 100%;
   display: grid;
-  grid-template-columns: 48% 52%;
-  grid-template-rows: 60% 40%;
+  grid-template-columns: 48% 48%;
+  grid-template-rows: 60% 34%;
+  grid-row-gap: 6%;
+  grid-column-gap: 4%;
+  position: relative;
 }
-
-/* ガターで隙間調整 */
 
 .grid img {
   width: 100%;
@@ -48,56 +49,59 @@
   align-items: center;
 }
 
-.new_mark {
+.new_mark p {
   font-size: clamp(0.75rem, 0.3rem + 1.8vw, 1.125rem);
   font-weight: bold;
   color: #fff;
 }
 
-.new_item::after {
-  content: "サマーシトラス";
+.h2_new,
+.h2_life,
+.h2_banner {
   position: absolute;
-  bottom: 3%;
-  right: 3%;
-  color: #fff;
   font-size: clamp(0.75rem, 0.3rem + 1.8vw, 1.125rem);
   font-weight: bold;
+  z-index: 100;
+}
+
+.h2_new {
+  color: #fff;
+  bottom: 38%;
+  left: 24%;
+}
+
+.h2_life {
+  color: #fff;
+  bottom: 38%;
+  right: 2%;
+}
+
+.h2_banner {
+  bottom: -2%;
+  right: 2%;
+  color: #7f5539;
 }
 
 .donuts_life {
   grid-row: 1/2;
   grid-column: 2/3;
   width: 100%;
-  margin-left: 10%;
-  position: relative;
-}
-
-.donuts_life::after {
-  content: "ドーナツのある生活";
-  position: absolute;
-  bottom: 3%;
-  right: 3%;
-  color: #fff;
-  font-size: clamp(0.75rem, 0.3rem + 1.8vw, 1.125rem);
-  font-weight: bold;
 }
 
 .banner {
   grid-row: 2/3;
   grid-column: 1/3;
   width: 100%;
-  padding-top: 5%;
-  position: relative;
 }
 
-.banner::after {
-  content: "商品一覧";
+.h2_banner {
   position: absolute;
-  bottom: 6%;
-  right: 3%;
+  bottom: -2%;
+  right: 2%;
   color: #7f5539;
-  font-size: clamp(0.75rem, 0.4rem + 1.8vw, 1.125rem);
+  font-size: clamp(0.75rem, 0.3rem + 1.8vw, 1.125rem);
   font-weight: bold;
+  z-index: 100;
 }
 
 .sec_2 {
@@ -148,6 +152,7 @@ h2 {
   margin-bottom: 2%;
 }
 
+/* PCサイズ */
 @media screen and (min-width: 768px) {
 
   /* PC main領域 */
@@ -164,41 +169,46 @@ h2 {
     width: 76%;
     max-width: 1040px;
     margin: 0 auto;
+    grid-template-columns: 49.9% 49.9%;
+    grid-column-gap: 0.2%;
   }
 
   .new_mark {
     position: absolute;
     top: 10px;
     left: 10px;
-    width: 29%;
-    height: 29%;
+    width: 28%;
+    height: 30%;
   }
 
-  .new_mark {
+  .new_mark p {
     font-size: clamp(1.3rem, -0.3rem + 3vw, 2.25rem);
     font-weight: normal;
   }
 
-  .new_item::after {
-    bottom: 2%;
+  .h2_new,
+  .h2_life,
+  .h2_banner {
+    font-size: clamp(1.2rem, -0.3rem + 2.8vw, 2rem);
+  }
+
+  .h2_new {
+    bottom: 39%;
+    left: 23%;
+  }
+
+  .h2_life {
+    bottom: 39%;
     right: 2%;
-    font-size: clamp(1.3rem, -0.3rem + 3vw, 2.25rem);
+  }
+
+  .h2_banner {
+    bottom: -0.8%;
+    right: 1%;
   }
 
   .donuts_life {
     padding-left: 8%;
-  }
-
-  .donuts_life::after {
-    bottom: 2%;
-    right: 2%;
-    font-size: clamp(1.3rem, -0.3rem + 3vw, 2.25rem);
-  }
-
-  .banner::after {
-    bottom: 3%;
-    right: 1%;
-    font-size: clamp(1.3rem, -0.3rem + 3vw, 2.25rem);
   }
 
   .bg_sp {
