@@ -34,7 +34,12 @@
                 // SQL文の準備
                 $sql = $pdo->prepare('select * from product where id=?');
                 // SQL文の実行
-                foreach ($pdo->query('select * from product') as $row) {
+
+
+                $shop = $pdo->query('select * from product limit 6');
+
+
+                foreach ($shop as $row) {
                     // echo '<p>';
                     // echo $row['name'];
                     // echo $row['price'];
@@ -54,12 +59,44 @@
                         </form>
                         END;
                 }
+
+
+
+
                 //HTMLの生成・出力
 
                 //                     echo <<<END
                 //                     <p>$row[id]</p>
 
                 // END;
+                ?></div>
+
+            <h2 class="subtitle">バラエティセット</h2>
+            <div class="product_content">
+                <?php
+                $shop2 = $pdo->query('select * from product limit 12 offset 6');
+
+
+                foreach ($shop2 as $row2) {
+                    // echo '<p>';
+                    // echo $row['name'];
+                    // echo $row['price'];
+                    // echo '</p>';
+                    echo <<<END
+        <form action="cart.php" method="post" class="product_menu">                        <p class="product_img"><img alt="image" src="common/images/{$row2['id']}.png"></p>
+        <p class="product_submenu"><a href="detail.php?id='$row2[id]'">{$row2['name']}</a></p>
+         <p class="product_money">税込 &yen;{$row2['price']}<span class="product_favorite"><img src="common/images/heart.png" alt="favorite"></span></p>
+        END;
+
+                    // ヒアドキュメント2つ目
+                    echo <<<END
+        <input type="hidden" name="id" value="{$row['id']}">
+        <input type="hidden" name="name" value="{$row['name']}">
+        <input type="hidden" name="price" value="{$row['price']}">
+        <p><input type="submit" class="product_submit" value="カートに入れる"></p>
+        </form>
+        END;
+                }
                 ?>
             </div>
             <!-- </section>
