@@ -27,12 +27,12 @@
 
         // ランキングの連想配列 (順位 => 商品ID)
         $ranking = [
-            1 => 5,
-            2 => 3,
+            1 => 1,
+            2 => 7,
             3 => 8,
-            4 => 6,
-            5 => 2,
-            6 => 9,
+            4 => 2,
+            5 => 9,
+            6 => 6,
         ];
 
         // ランキングの1位から6位の商品情報を取得し、表示
@@ -48,7 +48,7 @@
             // 結果をdivに表示
             if ($product) {
                 // 商品IDに対応する画像のファイルパス
-                $imagePath = "images/{$id}.png";  // imagesフォルダ内にIDと同名の画像がある前提
+                $imagePath = "common/images/{$id}.png";
 
                 // div構造を出力
                 echo "<div class='product'>";
@@ -56,8 +56,6 @@
                 echo "<h2>{$product['name']}</h2>";
                 echo "<p>価格: ¥{$product['price']}</p>";
                 echo "</div>";
-            } else {
-                echo "<div class='product'>Rank {$rank}: 商品が見つかりませんでした。</div>";
             }
         }
         ?>
