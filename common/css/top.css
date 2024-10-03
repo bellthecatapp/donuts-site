@@ -66,18 +66,18 @@
 
 .h2_new {
   color: #fff;
-  bottom: 38%;
-  left: 24%;
+  bottom: 42%;
+  left: 25%;
 }
 
 .h2_life {
   color: #fff;
-  bottom: 38%;
+  bottom: 42%;
   right: 2%;
 }
 
 .h2_banner {
-  bottom: -2%;
+  bottom: 2%;
   right: 2%;
   color: #7f5539;
 }
@@ -92,16 +92,6 @@
   grid-row: 2/3;
   grid-column: 1/3;
   width: 100%;
-}
-
-.h2_banner {
-  position: absolute;
-  bottom: -2%;
-  right: 2%;
-  color: #7f5539;
-  font-size: clamp(0.75rem, 0.3rem + 1.8vw, 1.125rem);
-  font-weight: bold;
-  z-index: 100;
 }
 
 .sec_2 {
@@ -129,7 +119,7 @@
   color: #fff;
 }
 
-h2 {
+.h2_sec2 {
   font-size: clamp(1.5rem, 0.546rem + 4.07vw, 2.5rem);
   font-weight: bold;
   text-transform: capitalize;
@@ -150,6 +140,41 @@ h2 {
   font-size: clamp(1.25rem, 0.773rem + 2.04vw, 1.75rem);
   text-transform: capitalize;
   margin-bottom: 2%;
+}
+
+.sec_3 {
+  width: 100%;
+  padding-top: 32px;
+  text-align: center;
+}
+
+.common_title {
+  display: inline-block;
+  font-size: 20px;
+  padding: 0 6px 8px;
+  border-bottom: 4px solid #ffd233;
+}
+
+.common_product_content {
+  padding: 0 5%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 72px;
+}
+
+.common_items {
+  width: 40%;
+  text-align: center;
+}
+
+.ranking_num {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  background-color: #ffd233;
+  color: #fff;
+  font-size: 16px;
+  align-items: center;
 }
 
 /* PCサイズ */
@@ -193,17 +218,17 @@ h2 {
   }
 
   .h2_new {
-    bottom: 39%;
+    bottom: 41%;
     left: 23%;
   }
 
   .h2_life {
-    bottom: 39%;
+    bottom: 41%;
     right: 2%;
   }
 
   .h2_banner {
-    bottom: -0.8%;
+    bottom: 1%;
     right: 1%;
   }
 
@@ -224,7 +249,7 @@ h2 {
     width: 100%;
   }
 
-  h2 {
+  .h2_sec2 {
     font-size: 36px;
     margin-top: 14%;
     margin-bottom: 1.5%;

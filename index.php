@@ -89,7 +89,7 @@
       </div>
 
       <div class="container">
-        <h2>philosophy</h2>
+        <h2 class="h2_sec2">philosophy</h2>
         <div>
           <p class="sub_title">私たちの信念</p>
         </div>
@@ -101,31 +101,52 @@
     </section>
 
     <!-- セクション3 -->
-    <section>
+    <section class="sec_3">
       <h2 class="common_title">人気ランキング</h3>
-        <div class="product_content">
-          <form action="cart.php" method="post" class="product_menu">
-            <?php
-            // データベース接続、SQL文の準備・実行
-            require 'includes/database.php';
-            foreach ($pdo->query('select * from product') as $row) {
-              $ranking = [
-                '1' => $row['id'] = 1,
-                '2' => $row['id'] = 7,
-                '3' => $row['id'] = 8,
-                '4' => $row['id'] = 2,
-                '5' => $row['id'] = 9,
-                '6' => $row['id'] = 6
-              ];
-              foreach ($ranking as $key => $value) {
-                echo $key;
-                echo '<img src="common/image/', $value, '.png">';
-                // echo $row['name'];
-                // echo $row['price'];
-              }
-            };
-            ?>
-          </form>
+        <form action="cart.php" method="post" class="common_product_content">
+          <?php
+          // データベース接続
+          require 'includes/database.php';
+          // ランキングの連想配列 (順位 => 商品ID)
+          $ranking = [
+            1 => 1,
+            2 => 7,
+            3 => 8,
+            4 => 2,
+            5 => 9,
+            6 => 6,
+          ];
+
+          // ランキングの1位から6位の商品情報を取得し、表示
+          foreach ($ranking as $rank => $id) {
+            // SQLクエリでIDをもとに商品を取得
+            $stmt = $pdo->prepare("SELECT name, price FROM product WHERE id = :id");
+            $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+            $stmt->execute();
+
+            // 結果を取得
+            $product = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            // 結果をdivに表示
+            if ($product) {
+              // 商品IDに対応する画像のファイルパス
+              $imagePath = "common/images/{$id}.png";  // imagesフォルダ内にIDと同名の画像がある前提
+              // HTMLに出力
+              echo <<<END
+              <div class="common_items">
+                <div class="ranking_num"> $rank</div>
+                <a>
+                <img src='{$imagePath}' alt='{$product['name']}' />
+                </a>
+                <a>{$product['name']}</a>
+                <p>価格: ¥{$product['price']}</p>
+                <input type="submit" class="product_submit" value="カートに入れる">
+                </div>
+END;
+            }
+          }
+          ?>
+        </form>
         </div>
     </section>
   </main>
