@@ -23,9 +23,6 @@
 
     <!-- コンテンツ -->
     <main>
-
-
-        <!-- <form action="product.php" method="post"> -->
         <section class="product_hero">
             <h1 class="product_title">商品一覧</h1>
             <div class="product_content">
@@ -33,9 +30,7 @@
                 //データベース接続
                 $pdo = new PDO('mysql:host=localhost;dbname=donuts;charset=utf8', 'donuts', 'password');
 
-                // html準備
                 $shop = $pdo->query('select * from product limit 6');
-
 
                 foreach ($shop as $row) {
                     $id = $row['id'];
@@ -84,6 +79,3 @@
 
     </main>
     <?php require 'includes/footer.php'; ?>
-</body>
-
-</html>

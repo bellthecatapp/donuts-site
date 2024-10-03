@@ -21,6 +21,44 @@
 
     <!-- コンテンツ -->
     <main>
+        <?php
+        // DB接続を行う
+        $pdo = new PDO('mysql:host=localhost;dbname=donuts', 'donuts', 'password');
+
+        // ランキングの連想配列 (順位 => 商品ID)
+        $ranking = [
+            1 => 1,
+            2 => 7,
+            3 => 8,
+            4 => 2,
+            5 => 9,
+            6 => 6,
+        ];
+
+        // ランキングの1位から6位の商品情報を取得し、表示
+        foreach ($ranking as $rank => $id) {
+            // SQLクエリでIDをもとに商品を取得
+            $stmt = $pdo->prepare("SELECT name, price FROM product WHERE id = :id");
+            $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+            $stmt->execute();
+
+            // 結果を取得
+            $product = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            // 結果をdivに表示
+            if ($product) {
+                // 商品IDに対応する画像のファイルパス
+                $imagePath = "common/images/{$id}.png";
+
+                // div構造を出力
+                echo "<div class='product'>";
+                echo "<img src='{$imagePath}' alt='{$product['name']}' />";
+                echo "<h2>{$product['name']}</h2>";
+                echo "<p>価格: ¥{$product['price']}</p>";
+                echo "</div>";
+            }
+        }
+        ?>
 
     </main>
 </body>
