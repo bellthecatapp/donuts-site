@@ -44,7 +44,10 @@ main {
 
 .detail_favorite {
     padding-left: 20px;
+    vertical-align: top;
 }
+
+
 
 .detail_buy {
     display: flex;
@@ -55,10 +58,11 @@ main {
     border: 1px solid #7f5539;
     width: 56px;
     height: 36px;
-    margin-right: 4px;
+    font-size: 16px;
+    vertical-align: text-bottom;
 }
 
-.detail_submit {
+.common_btn_sm {
     margin-left: 12px;
     border: 1px solid #7f5539;
     background-color: #7f5539;
@@ -68,7 +72,9 @@ main {
     height: 36px;
 }
 
-.detail_span {
-    margin-top: 20px;
+.detail_num {
     font-weight: 400;
 }
+
+/* pc版 */
+@media screen and (min-width: 768px) {}
