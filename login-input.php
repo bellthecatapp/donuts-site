@@ -15,30 +15,34 @@
 </head>
 
 <body>
+    <main>
+        <?php
+        require 'includes/header.php';
+        ?>
+        <!-- パンくず -->
 
-    <?php
-    require 'includes/header.php';
-    ?>
-    <!-- パンくず -->
+        <!-- ユーザー名 -->
+        <div class="inner">
+            <h1 class="common_subpage">ログイン</h1>
 
-    <!-- ユーザー名 -->
-    <div class="inner">
-        <h1 class="common_subpage">ログイン</h1>
-
-        <div class="inner_wrapper">
-            <div class="common_login_frame">
-                <form action="login-complete.php" method="post">
-                    <p class="common_form_label">メールアドレス</p><input type="email" name="login" class="input_form">
-                    <p class="common_form_label">パスワード</p><input type="password" name="password" class="input_form input_last" />
-                    <input type="submit" value="ログインする" class="common_btn_lg common_btn_brown">
-                </form>
-            </div>
-            <div class="inner_wrapper2">
-                <p class="common_linktext"><a href="customer-input.php">会員登録がお済みでない方はこちら</a></p>
+            <div class="login_wrapper">
+                <div class="common_login_frame">
+                    <form action="login-complete.php" method="post">
+                        <fieldset>
+                            <legend>メールアドレス</legend><input type="email" name="login" class="common_input">
+                        </fieldset>
+                        <fieldset>
+                            <legend>パスワード</legend><input type="password" name="password" class="common_input input_last" />
+                        </fieldset>
+                        <input type="submit" value="ログインする" class="common_btn_lg">
+                    </form>
+                </div>
+                <div class="login_wrapper2">
+                    <p class="common_linktext"><a href="customer-input.php">会員登録がお済みでない方はこちら</a></p>
+                </div>
             </div>
         </div>
-    </div>
-
+    </main>
     <?php
     require 'includes/footer.php';
     ?>
