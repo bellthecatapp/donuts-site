@@ -101,11 +101,12 @@ dt {
 
 /* complete */
 .result_box {
+  color: #333333;
+
   border: #E8C2CA 2px solid;
   width: 78%;
   margin: 0 auto;
   text-align: center;
-  color: #7F5539;
   margin-bottom: 416px;
   padding-top: 24px;
   padding-bottom: 20px;
@@ -118,7 +119,6 @@ dt {
 }
 
 .link_pr {
-
   display: inline-block;
   margin-top: 24px;
 }
