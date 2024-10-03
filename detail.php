@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="common/css/detail.css">
-    <title>detailpage｜C.C.Donuts</title>
+    <title>商品詳細｜C.C.Donuts</title>
 </head>
 
 <body>
@@ -46,9 +46,9 @@
     <p class="detail_explain">{$row['description']}</p>
     <p class="detail_money">税込&emsp;&yen;{$row['price']}<span class="detail_favorite"><img src="common/images/heart.png" alt="favorite"></span></p>
  <div class="detail_buy">
- </p><input type="text" name="count" pattern="^[0-9]{1,9}$" class="detail_text">
- <span class="detail_span">個</span></p>
-<p class="detail_button"><input type="submit" class="detail_submit" value="カートに入れる"></p>
+ <p class="detail_num"><input type="text" name="count" pattern="^[0-9]{1,9}$" class="detail_text" placeholder="半角数字">
+ 個</p>
+<p class="detail_button"><input type="submit" class="common_btn_sm" value="カートに入れる"></p>
 END;
 
             // ヒアドキュメント2つ目
