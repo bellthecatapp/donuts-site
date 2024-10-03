@@ -26,10 +26,10 @@
             <h1 class="common_subpage">ログイン</h1>
 
             <div class="login_wrapper">
-                <div class="common_login_frame">
+                <div class="login_frame">
                     <form action="login-complete.php" method="post">
                         <fieldset>
-                            <legend>メールアドレス</legend><input type="email" name="login" class="common_input">
+                            <legend>メールアドレス</legend><input type="email" name="login" class="common_input" id="mail">
                         </fieldset>
                         <fieldset>
                             <legend>パスワード</legend><input type="password" name="password" class="common_input input_last" />
@@ -37,7 +37,7 @@
                         <input type="submit" value="ログインする" class="common_btn_lg">
                     </form>
                 </div>
-                <div class="login_wrapper2">
+                <div class="login_frame2">
                     <p class="linkedtext"><a href="customer-input.php">会員登録がお済みでない方はこちら</a></p>
                 </div>
             </div>

@@ -26,20 +26,17 @@
     <!-- コンテンツ -->
     <main>
         <div class="inner">
-            <h1 class="common_subpage">ログイン</h1>
-            <h1>会員登録完了</h1>
-            <div class="result_box">
-                <p>会員登録が完了しました</p>
-                <p class="linkedtext"><a href="index.php">TOPページへ戻る</a></p>
+            <h1 class="common_subpage">ログイン完了</h1>
+            <div class="login_wrapper">
+                <div class="login_frame">
+                    <p class="complete_text">ログインが完了しました。</p>
+                </div>
+                <div class="login_frame2">
+                    <p class="linkedtext"><a href="index.php">TOPページへ戻る</a></p>
+                </div>
+
             </div>
-            <!-- <div class="inner_wrapper">
-                <div class="common_login_frame_sm">
-                    <p class="login_complete">ログインが完了しました。</p>
-                </div>
-                <div class="inner_wrapper2">
-                    <p class="common_linkedtext"><a href="customer-input.php">TOPページへ戻る</a></p>
-                </div>
-            </div> -->
+        </div>
         </div>
 
     </main>
