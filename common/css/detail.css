@@ -1,0 +1,74 @@
+@charset "UTF-8";
+
+main {
+    width: 100%;
+    margin-bottom: 80px;
+}
+
+.detail_menu {
+    width: 90%;
+    margin: 20px auto;
+}
+
+.detail_img {
+    margin-bottom: 20px;
+}
+
+.detail_img img {
+    width: 100%;
+    height: 335px;
+}
+
+.detail_submenu {
+    color: #7f5539;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.detail_explain {
+    color: #7f5539;
+    font-size: 16px;
+    font-weight: 400;
+    border-top: 1px solid #ede0d4;
+    border-bottom: 1px solid #ede0d4;
+    padding: 20px 0;
+}
+
+.detail_money {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 20px 0 24px;
+    color: #bf0007;
+}
+
+.detail_favorite {
+    padding-left: 20px;
+}
+
+.detail_buy {
+    display: flex;
+}
+
+
+.detail_text {
+    border: 1px solid #7f5539;
+    width: 56px;
+    height: 36px;
+    margin-right: 4px;
+}
+
+.detail_submit {
+    margin-left: 12px;
+    border: 1px solid #7f5539;
+    background-color: #7f5539;
+    text-align: center;
+    color: #fff;
+    width: 160px;
+    height: 36px;
+}
+
+.detail_span {
+    margin-top: 20px;
+    font-weight: 400;
+}

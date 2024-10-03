@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="common/css/product.css">
     <!-- ↑ページ別の.cssをリンク -->
-    <title>productpage｜donuts-site</title>
+    <title>商品一覧｜C.C.Donuts</title>
 </head>
 
 <body>
