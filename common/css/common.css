@@ -271,13 +271,16 @@ footer {
   text-align: left;
 }
 
-
-
 .common_shortinput {
   width: 20%;
 }
 
 /* 共通　フォームの(必須) */
+legend,
+.customer_pass {
+  margin-bottom: 8px;
+}
+
 .common_required {
   color: #BF0000;
   margin-left: 0.5rem;
@@ -290,7 +293,6 @@ footer {
   padding: 4px;
   margin-bottom: 20px;
   margin-top: 8px;
-
 }
 
 @media screen and (min-width: 768px) {
@@ -407,11 +409,7 @@ footer {
 
   .footer_menu li {
     margin: 0;
-    padding-left: 12px;
-    padding-top: 12px;
-    padding-bottom: 12px;
-    padding-right: 62px;
-
+    padding: 12px 62px 12px 12px;
   }
 
   .footer_logo {
@@ -455,7 +453,6 @@ footer {
   /* input要素 */
 
   .common_input {
-
     padding: 0.15rem;
   }
 

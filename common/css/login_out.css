@@ -2,7 +2,6 @@
 
 .common_login_frame {
     width: 295px;
-    height: 228px;
     border: solid 2px #e8c2ca;
     padding: 20px 12px;
     margin: 0 auto 24px;
@@ -26,15 +25,18 @@
     background-color: #7F5539;
     color: #fff;
     text-align: center;
+    font-size: 1rem;
 }
 
-.common_form_label {
+.common_btn_lg:hover {
+    background-color: #EDE0D4;
+    border: 1px solid #7F5539;
+    transition: all 0.2s ease-in;
     color: #7F5539;
-    margin-bottom: 8px;
-    font-size: 12px;
+    font-weight: 700;
 }
 
-.common_linktext {
+.linkedtext {
     display: inline-block;
     margin-left: auto;
     font-size: 12px;
@@ -44,31 +46,20 @@
     border-bottom: solid 1px #7F5539;
 }
 
-.inner_wrapper,
-.inner_wrapper2 {
+.login_wrapper,
+.login_wrapper2 {
     width: 295px;
     margin: 0 auto;
+    font-size: 12px;
 }
 
-.inner_wrapper2 {
+.login_wrapper2 {
     text-align: right;
     margin-bottom: 80px;
 }
 
-.input_form {
-    border: solid 1px #7F5539;
-    width: 100%;
-    height: 20px;
-    font-size: 1em;
-    margin-bottom: 20px;
-}
-
-.input_last {
+fieldset {
     margin-bottom: 40px;
-}
-
-input[type="email"] {
-    padding-left: 0.5em;
 }
 
 /* login_complete */
@@ -89,4 +80,38 @@ input[type="email"] {
     transform: translateX(-50%) translateY(-50%);
 }
 
-@media screen and (min-width: 768px) {}
+@media screen and (min-width: 768px) {
+
+    /* login-input */
+    .common_btn_lg {
+        width: 300px;
+        font-size: 1.25rem;
+    }
+
+    .common_login_frame {
+        width: 600px;
+        padding: 40px 100px;
+        margin: 0 auto 20px;
+    }
+
+    .login_wrapper,
+    .login_wrapper2 {
+        width: 600px;
+        margin: 0 auto 370px;
+        font-size: 24px;
+    }
+
+    .linkedtext {
+        display: inline-block;
+        margin-left: auto;
+        font-size: 20px;
+
+        padding-bottom: 8px;
+        color: #7F5539;
+        border-bottom: solid 1px #7F5539;
+    }
+
+
+
+    /*ここまで　 @media screen and (min-width: 768px) */
+}

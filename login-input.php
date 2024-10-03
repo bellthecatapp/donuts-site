@@ -38,7 +38,7 @@
                     </form>
                 </div>
                 <div class="login_wrapper2">
-                    <p class="common_linktext"><a href="customer-input.php">会員登録がお済みでない方はこちら</a></p>
+                    <p class="linkedtext"><a href="customer-input.php">会員登録がお済みでない方はこちら</a></p>
                 </div>
             </div>
         </div>
