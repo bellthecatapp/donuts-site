@@ -62,6 +62,7 @@
   font-size: clamp(0.75rem, 0.3rem + 1.8vw, 1.125rem);
   font-weight: bold;
   z-index: 100;
+  pointer-events: none;
 }
 
 .h2_new {
@@ -156,26 +157,59 @@
 }
 
 .common_product_content {
-  padding: 0 5%;
+  width: 89%;
   display: flex;
   flex-wrap: wrap;
-  margin-top: 72px;
+  justify-content: space-between;
+  margin: 72px auto 0;
+  align-items: stretch;
 }
 
 .common_items {
-  width: 40%;
+  width: 47%;
   text-align: center;
+  margin-bottom: 80px;
 }
 
 .ranking_num {
   display: inline-block;
   width: 35px;
-  height: 35px;
-  background-color: #ffd233;
+  padding: 9.5px;
   color: #fff;
   font-size: 16px;
+  background-color: #e8c2ca;
   align-items: center;
+  margin-bottom: 20px;
 }
+
+.ranking_num:first-child {
+  background-color: #ffd233;
+}
+
+.common_produts_img {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.common_products_name {
+  color: #7f5539;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 22px;
+  text-align: left
+}
+
+.common_pricearia {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.common_price {
+  color: #bf0000;
+}
+
 
 /* PCサイズ */
 @media screen and (min-width: 768px) {

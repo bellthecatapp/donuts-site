@@ -135,11 +135,16 @@
               echo <<<END
               <div class="common_items">
                 <div class="ranking_num"> $rank</div>
-                <a>
-                <img src='{$imagePath}' alt='{$product['name']}' />
+                <a href=""> 
+                <img src='{$imagePath}' alt='{$product['name']}' class="common_produts_img"/>
                 </a>
-                <a>{$product['name']}</a>
-                <p>価格: ¥{$product['price']}</p>
+                <a href="" class="common_products_name">{$product['name']}</a>
+                <div class="common_pricearia">
+                <p class="common_price">税込み　 ¥{$product['price']}</p>
+                <a>
+                <img src="common/images/heart.png" alt="お気に入りボタン">
+                </a>
+                </div>
                 <input type="submit" class="product_submit" value="カートに入れる">
                 </div>
 END;
