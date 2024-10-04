@@ -103,54 +103,60 @@
     <!-- セクション3 -->
     <section class="sec_3">
       <h2 class="common_title">人気ランキング</h3>
-        <form action="cart.php" method="post" class="common_product_content">
-          <?php
-          // データベース接続
-          require 'includes/database.php';
-          // ランキングの連想配列 (順位 => 商品ID)
-          $ranking = [
-            1 => 1,
-            2 => 7,
-            3 => 8,
-            4 => 2,
-            5 => 9,
-            6 => 6,
-          ];
+        <form action="cart.php" method="post" class="common_product_form">
+          <ol class="common_product_content">
+            <?php
+            // データベース接続
+            require 'includes/database.php';
+            // ランキングの連想配列 (順位 => 商品ID)
+            $ranking = [
+              1 => 1,
+              2 => 7,
+              3 => 8,
+              4 => 2,
+              5 => 9,
+              6 => 6,
+            ];
+            // ランキングの1位から6位の商品情報を取得し、表示
+            foreach ($ranking as $rank => $id) {
+              // SQLクエリでIDをもとに商品を取得
+              $stmt = $pdo->prepare("SELECT name, price FROM product WHERE id = :id");
+              $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+              $stmt->execute();
 
-          // ランキングの1位から6位の商品情報を取得し、表示
-          foreach ($ranking as $rank => $id) {
-            // SQLクエリでIDをもとに商品を取得
-            $stmt = $pdo->prepare("SELECT name, price FROM product WHERE id = :id");
-            $stmt->bindParam(':id', $id, PDO::PARAM_INT);
-            $stmt->execute();
+              // 結果を取得
+              $product = $stmt->fetch(PDO::FETCH_ASSOC);
 
-            // 結果を取得
-            $product = $stmt->fetch(PDO::FETCH_ASSOC);
+              // 結果をdivに表示
+              if ($product) {
+                // 商品IDに対応する画像のファイルパス
+                $imagePath = "common/images/{$id}.png";
 
-            // 結果をdivに表示
-            if ($product) {
-              // 商品IDに対応する画像のファイルパス
-              $imagePath = "common/images/{$id}.png";  // imagesフォルダ内にIDと同名の画像がある前提
-              // HTMLに出力
-              echo <<<END
-              <div class="common_items">
-                <div class="ranking_num"> $rank</div>
+                // HTMLに出力
+                echo <<<END
+                <li class="common_product_items">
+                <div class="ranking_num">$rank</div>
                 <a href=""> 
-                <img src='{$imagePath}' alt='{$product['name']}' class="common_produts_img"/>
+                 <img src='{$imagePath}' alt='{$product['name']}' class="common_produts_img"/>
                 </a>
-                <a href="" class="common_products_name">{$product['name']}</a>
+                <a href="" class="flex_grow">
+                 <p class="common_products_name">{$product['name']}</p>
+                </a>
                 <div class="common_pricearia">
-                <p class="common_price">税込み　 ¥{$product['price']}</p>
-                <a>
-                <img src="common/images/heart.png" alt="お気に入りボタン">
-                </a>
+                 <p class="common_price">税込み　 ¥{$product['price']}</p>
+                 <a>
+                 <img src="common/images/heart.png" alt="お気に入りボタン" class="common_heart">
+                 </a>
                 </div>
-                <input type="submit" class="product_submit" value="カートに入れる">
+                <div class="common_btn_cart">
+                <input type="submit" value="カートに入れる">
                 </div>
+              </li>
 END;
+              }
             }
-          }
-          ?>
+            ?>
+          </ol>
         </form>
         </div>
     </section>

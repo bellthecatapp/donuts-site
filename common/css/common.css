@@ -303,9 +303,6 @@ footer {
 /* 送信ボタンここまで */
 
 /* カートに入れるボタン　ここから*/
-.common_btn_cart {
-  /* margin-top: 40px; */
-}
 
 .common_btn_cart input {
   text-align: center;
