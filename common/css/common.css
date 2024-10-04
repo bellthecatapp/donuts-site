@@ -375,6 +375,10 @@ legend,
     width: 48px;
   }
 
+  .header_icons .header_logouticon {
+    width: 61px;
+  }
+
   .header_search {
     background: #B392AC;
     padding-top: 12px;

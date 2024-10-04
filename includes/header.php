@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <header>
   <div class="common_header_bwrapper">
     <nav class="header_gmenu">
@@ -19,7 +20,17 @@
         <a href="index.php"> <img src="common/images/logo.svg" alt="c.c.donutsのロゴ"></a>
       </div>
       <div class="header_icons">
+        <?php
+        if (isset($_SESSION['customer'])) {
+          echo <<<END
+          <button><a href="logout-input.php"><img class="header_logouticon" src="common/images/header-logout.svg" alt="ログアウトアイコン"></a></button>
+  END;
+        } else {
+          echo <<<END
         <button><a href="login-input.php"><img class="header_loginicon" src="common/images/header-login.svg" alt="ログインアイコン"></a></button>
+  END;
+        }
+        ?>
         <button><a href="cart-show.php"><img src="common/images/header-cart.svg" alt="カートアイコン"></a></button>
       </div>
     </nav>
