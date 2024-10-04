@@ -34,10 +34,8 @@
     <div class="navigator">
 
       <?php
-      session_start();
       // データベース接続、SQL文の準備・実行
       require 'includes/database.php';
-      $sql = $pdo->prepare('select * from customer where login=?');
       // ログインしていたらユーザー名表示、していなければゲスト様を表示
       if (isset($_SESSION['customer'])) {
         echo '<p class="greeting">ようこそ　', $_SESSION['customer']['name'], '様</p>';
@@ -131,7 +129,7 @@
               if ($product) {
                 // 商品IDに対応する画像のファイルパス
                 $imagePath = "common/images/{$id}.png";
-
+                $price = number_format($product['price']);
                 // HTMLに出力
                 echo <<<END
                 <li class="common_product_items">
@@ -142,8 +140,8 @@
                 <a href="" class="flex_grow">
                  <p class="common_products_name">{$product['name']}</p>
                 </a>
-                <div class="common_pricearia">
-                 <p class="common_price">税込み　 ¥{$product['price']}</p>
+                <div class="common_pricearea">
+                 <p class="common_price">税込み　 ¥{$price}</p>
                  <a>
                  <img src="common/images/heart.png" alt="お気に入りボタン" class="common_heart">
                  </a>
@@ -182,6 +180,7 @@ END;
       ]
     }
   </script> -->
+  <script src="common/js/ranking_color.js"></script>
   <?php
   require 'includes/footer.php';
   ?>

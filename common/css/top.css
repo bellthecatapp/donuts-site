@@ -181,6 +181,14 @@
   color: #fff;
   font-size: 16px;
   margin: 0 auto 20px;
+  background-color: #e8c2ca;
+}
+
+.ranking_num.yellow {
+  background-color: #e8c2ca;
+}
+
+.ranking_num.pink {
   background-color: #ffd233;
 }
 
@@ -202,7 +210,7 @@
   text-align: left;
 }
 
-.common_pricearia {
+.common_pricearea {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
