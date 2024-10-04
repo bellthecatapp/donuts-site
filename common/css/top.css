@@ -159,11 +159,14 @@
 }
 
 .ranking_num.yellow {
-  background-color: #ffd233;
+  /* background-color: #ffd233; */
+  background-color: #e8c2ca;
+
 }
 
 .ranking_num.pink {
-  background-color: #e8c2ca;
+  background-color: #ffd233;
+  /* background-color: #e8c2ca; */
 }
 
 
