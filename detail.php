@@ -46,7 +46,7 @@
     <p class="detail_explain">{$row['description']}</p>
     <p class="detail_money">税込&emsp;&yen;{$row['price']}<span class="detail_favorite"><img src="common/images/heart.png" alt="favorite"></span></p>
  <div class="detail_buy">
- <p class="detail_num"><input type="text" name="count" pattern="^[0-9]{1,9}$" class="detail_text" placeholder="半角数字">
+ <p class="detail_num"><input type="text" name="count" pattern="^[0-9]{1,9}$" class="detail_text">
  個</p>
 <p class="detail_button"><input type="submit" class="common_btn_sm" value="カートに入れる"></p>
 END;
