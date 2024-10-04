@@ -155,14 +155,13 @@
   color: #fff;
   font-size: 16px;
   margin: 0 auto 20px;
-  background-color: #e8c2ca;
 }
 
-.ranking_num.yellow {
+.yellow {
   background-color: #ffd233;
 }
 
-.ranking_num.pink {
+.pink {
   background-color: #e8c2ca;
 }
 
