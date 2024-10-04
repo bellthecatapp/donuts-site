@@ -15,6 +15,8 @@
 </head>
 
 <body>
+    <!-- セッション開始 -->
+    <?php session_start(); ?>
     <?php
     require 'includes/header.php';
     ?>
@@ -24,6 +26,37 @@
     <!-- ユーザー名 -->
 
     <!-- コンテンツ -->
+    <?php
+    //既存のセッション破棄
+    unset($_SESSION['customer']);
+    //データベース接続
+    require 'includes/database.php';
+    //SQL文の準備
+    $sql = $pdo->prepare('select * customer where mail=? and password=?');
+    // SQL文の実行
+    $sql->execute([
+        $_REQUEST['login'],
+        $_REQUEST['password']
+    ]);
+    // 取得したデータをセッションのcustomer変数に保存
+    foreach ($sql as $row) {
+        $_SESSION['customer'] = [
+            'id' => $row['id'],
+            'name' => $row['name'],
+            'address' => $row['address'],
+            'mail' => $row['mail'],
+            'password' => $row['password']
+        ];
+    }
+    if (isset($_SESSION['customer'])) {
+        echo <<<END
+
+
+            END;
+    } else {
+        echo 'ログイン名またはパスワードが違います';
+    }
+    ?>
     <main>
         <div class="inner">
             <h1 class="common_subpage">ログイン完了</h1>
@@ -40,6 +73,7 @@
         </div>
 
     </main>
+
     <?php
     require 'includes/footer.php';
     ?>
