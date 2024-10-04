@@ -15,6 +15,7 @@
 </head>
 
 <body>
+    <?php session_start(); ?>
     <?php
     require 'includes/header.php';
     ?>
@@ -25,6 +26,10 @@
 
     <!-- コンテンツ -->
     <main>
+        <?php
+        if (isset($_SESSION['customer'])) {
+            unset($_SESSION['customer']);
+            echo <<<END
         <div class="inner">
             <h1 class="common_subpage">ログアウト完了</h1>
             <div class="login_wrapper">
@@ -38,6 +43,25 @@
             </div>
         </div>
 
+        END;
+        } else {
+            echo <<<END
+        <div class="inner">
+            <h1 class="common_subpage">ログアウト失敗</h1>
+            <div class="login_wrapper">
+                <div class="login_frame_complete">
+                    <p class="complete_text">すでにログアウトしています。</p>
+                </div>
+                <div class="login_frame2">
+                    <p class="linkedtext"><a href="index.php">TOPページへ戻る</a></p>
+                </div>
+
+            </div>
+        </div>
+
+        END;
+        }
+        ?>
     </main>
     <?php
     require 'includes/footer.php';
