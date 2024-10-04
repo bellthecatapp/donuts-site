@@ -156,39 +156,50 @@
   border-bottom: 4px solid #ffd233;
 }
 
-.common_product_content {
+.common_product_form {
   width: 89%;
+  margin: 72px auto 0;
+}
+
+.common_product_content {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin: 72px auto 0;
-  align-items: stretch;
 }
 
-.common_items {
+.common_product_items {
   width: 47%;
   text-align: center;
   margin-bottom: 80px;
+  display: flex;
+  flex-direction: column;
 }
 
 .ranking_num {
-  display: inline-block;
   width: 35px;
   padding: 9.5px;
   color: #fff;
   font-size: 16px;
+  margin: 0 auto 20px;
   background-color: #e8c2ca;
-  align-items: center;
-  margin-bottom: 20px;
 }
 
-.ranking_num:first-child {
+.ranking_num.yellow {
+  background-color: #e8c2ca;
+}
+
+.ranking_num.pink {
   background-color: #ffd233;
 }
 
 .common_produts_img {
+  display: block;
   width: 100%;
   margin-bottom: 20px;
+}
+
+.flex_grow {
+  flex-grow: 1;
 }
 
 .common_products_name {
@@ -196,18 +207,26 @@
   font-size: 16px;
   line-height: 1.6;
   margin-bottom: 22px;
-  text-align: left
+  text-align: left;
 }
 
-.common_pricearia {
+.common_pricearea {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  margin-bottom: 20px;
 }
 
 .common_price {
   color: #bf0000;
+  font-size: 16px;
+}
+
+.common_heart {
+  width: 20px;
+  height: 20px;
+  align-items: center;
 }
 
 
@@ -304,5 +323,50 @@
 
   .sub_text {
     font-size: 24px;
+  }
+
+  /* sekusyonn 3 */
+  .sec_3 {
+    padding-top: 80px;
+  }
+
+  .common_title {
+    font-size: 32px;
+    padding: 0 8px 12px;
+    border-bottom: 8px solid #ffd233;
+  }
+
+  .common_product_form {
+    width: 79%;
+    max-width: 1080px;
+    margin: 80px auto 0;
+  }
+
+  .common_product_items {
+    width: 30%;
+  }
+
+  .ranking_num {
+    width: 60px;
+    padding: 18px;
+    font-size: 24px;
+  }
+
+  .flex_grow {
+    flex-grow: 1;
+  }
+
+  .common_products_name {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .common_price {
+    font-size: 24px;
+  }
+
+  .common_heart {
+    width: 24px;
+    height: 24px;
   }
 }
