@@ -101,7 +101,7 @@
     <!-- セクション3 -->
     <section class="sec_3">
       <h2 class="common_title">人気ランキング</h2>
-      <form action="cart.php" method="post" class="common_product_form">
+      <form action="cart-input.php" method="post" class="common_product_form">
         <ol class="common_product_content">
           <?php
           // データベース接続
@@ -131,9 +131,14 @@
               $imagePath = "common/images/{$id}.png";
               $price = number_format($product['price']);
               // HTMLに出力
+
+              echo '<li class="common_product_items">';
+              if ($rank == 1) {
+                echo '<div class="ranking_num yellow">', $rank, '</div>';
+              } else {
+                echo '<div class="ranking_num pink">', $rank, '</div>';
+              }
               echo <<<END
-                <li class="common_product_items">
-                <div class="ranking_num">$rank</div>
                 <a href="detail.php?id={$id}"> 
                  <img src='{$imagePath}' alt='{$product['name']}' class="common_produts_img"/>
                 </a>
@@ -180,15 +185,6 @@ END;
       ]
     }
   </script> -->
-  <script src="common/js/ranking_color.js">
-    const ranking_num = document.querySelector('.ranking_num');
-    const rank = '<?php echo $rank ?>';
-    if (rank == 1) {
-      ranking_num.classList.add("pink");
-    } else {
-      ranking_num.classList.add("yellow");
-    }
-  </script>
   <?php
   require 'includes/footer.php';
   ?>

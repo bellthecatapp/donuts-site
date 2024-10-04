@@ -155,18 +155,15 @@
   color: #fff;
   font-size: 16px;
   margin: 0 auto 20px;
-  background-color: #e8c2ca;
 }
 
-.ranking_num.yellow {
-  /* background-color: #ffd233; */
-  background-color: #e8c2ca;
-
-}
-
-.ranking_num.pink {
+.yellow {
   background-color: #ffd233;
-  /* background-color: #e8c2ca; */
+}
+
+.pink {
+  background-color: #e8c2ca;
+
 }
 
 

@@ -46,21 +46,26 @@
     <main>
         <section class="product_hero">
             <h1 class="common_title">商品一覧</h1>
-            <form action="cart.php" method="post" class="common_product_form">
+            <form action="cart-input.php" method="post" class="common_product_form">
                 <ul class="common_product_content">
                     <?php
                     //データベース接続
-                    $pdo = new PDO('mysql:host=localhost;dbname=donuts;charset=utf8', 'donuts', 'password');
+                    require 'includes/database.php';
 
                     $shop = $pdo->query('select * from product limit 6');
 
                     foreach ($shop as $row) {
                         $id = $row['id'];
                         echo <<<END
-                    <li class="common_product_items"></li>
-                    <a href="detail.php?id={$id}"><img alt="image" src="common/images/{$id}.png"></a></p>
-                        <p class="product_submenu"><a href="detail.php?id={$id}">{$row['name']}</a></p>
+                    <li class="common_product_items">
+                     <a href="detail.php?id={$id}">
+                         <img alt="image" src="common/images/{$id}.png" class="common_produts_img">
+                     </a>
+                     <a href="detail.php?id={$id}" class="flex_grow">
+                         <p class="common_products_name">{$row['name']}</p>
+                     </a>
                          <p class="product_money"><a href="detail.php?id={$id}">税込 &yen;{$row['price']}</a><span class="product_favorite"><img src="common/images/heart.png" alt="favorite"></span></p>
+                         </li>
  END;
 
                         // ヒアドキュメント2つ目
@@ -84,7 +89,7 @@
                         foreach ($shop as $row) {
                             $id = $row['id'];
                             echo <<<END
-        <form action="cart.php" method="post" class="product_menu">                        <p class="product_img"><a href="detail.php?id={$id}"><img alt="image" src="common/images/{$id}.png"></a></p>
+        <form action="cart-input.php" method="post" class="product_menu">                        <p class="product_img"><a href="detail.php?id={$id}"><img alt="image" src="common/images/{$id}.png"></a></p>
         <p class="product_submenu"><a href="detail.php?id={$id}">{$row['name']}</a></p>
          <p class="product_money"><a href="detail.php?id={$id}">税込 &yen;{$row['price']}</a><span class="product_favorite"><img src="common/images/heart.png" alt="favorite"></span></p>
         END;
