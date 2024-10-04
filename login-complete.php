@@ -16,7 +16,6 @@
 
 <body>
     <!-- セッション開始 -->
-    <?php session_start(); ?>
     <?php
     require 'includes/header.php';
     ?>
