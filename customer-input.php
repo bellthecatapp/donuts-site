@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="">
     <!-- ↑ページ別の.cssをリンク -->
-    <title>会員登録｜donuts-site</title>
+    <title>会員登録｜C.C.Donuts</title>
 </head>
 
 <body>
