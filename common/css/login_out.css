@@ -6,7 +6,6 @@
     padding: 20px 12px;
     margin: 0 auto 24px;
     position: relative;
-
 }
 
 .common_subpage {
@@ -62,12 +61,26 @@ fieldset {
 }
 
 /* login_complete */
-.login_complete {
+.complete_text {
     font-size: 12px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
+    color: #7F5539;
+    text-align: center;
+}
+
+.login_frame_complete {
+    padding: 36px 12px;
+    width: 295px;
+    border: solid 2px #e8c2ca;
+    margin: 0 auto 24px;
+    position: relative;
+}
+
+/* logout_input */
+p.logout {
+    color: #7F5539;
+    font-size: 12px;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 @media screen and (min-width: 768px) {
@@ -111,7 +124,20 @@ fieldset {
         color: #7F5539;
     }
 
+    .login_frame_complete {
+        padding: 80px 12px;
+        width: 600px;
+        margin: 0 auto 20px;
+    }
 
+
+
+
+    /* logout_input */
+    p.logout {
+        margin-bottom: 40px;
+        font-size: 24px;
+    }
 
 
     /*ここまで　 @media screen and (min-width: 768px) */
