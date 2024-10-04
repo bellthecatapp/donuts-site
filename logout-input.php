@@ -33,9 +33,11 @@
                         <input type="submit" value="ログアウトする" class="common_btn_lg">
                     </form>
                 </div>
-                <div class="login_frame2"> </div>
+                <div class="login_frame2">
+                </div>
             </div>
         </div>
+
 
     </main>
     <?php
