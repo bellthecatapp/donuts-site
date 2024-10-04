@@ -1,4 +1,4 @@
-<? session_start(); ?>
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -35,6 +35,20 @@
             ];
             // ログインしているかのチェック
 
+            if (!isset($_SESSION['customer'])) {
+                echo <<<END
+                <h1>エラー！</h1>
+          <div class="result_box">
+              <p>ログインが確認されませんでした。</p>
+              <p class="link_pr"><a href="login-input.php">ログインしてから出直してきてください。</a></p>
+          </div>
+          END;
+            } else {
+                // ログインしていたら、既にカードが登録済みか確認
+                $pdo = new PDO('mysql:host=localhost;dbname=donuts;charset=utf8', 'donuts', 'password');
+                $sql = $pdo->prepare('select * from card where id=?');
+                $sql->execute([$_SESSION['customer']['id']]);
+            }
 
             if (isset($_REQUEST)) {
                 // 入力 あり　true
@@ -53,11 +67,11 @@ END;
 <p>カード名義を確認してください。半角大文字での入力でお願いします。</p>
     <a href="card-input.php">入力ページへ戻る</a>
 END;
-                } elseif (!preg_match('/^[0-9]{1}$/', $_REQUEST['card_mlimit']) || !preg_match('/^[0-9]{4}$/', $_REQUEST['card_ylimit'])) {
+                } elseif (!preg_match('/^[0-9]{1,}$/', $_REQUEST['card_mlimit']) || !preg_match('/^[0-9]{4}$/', $_REQUEST['card_ylimit'])) {
                     // 有効期限が不適切 true
                     echo <<<END
                     <p>カードの有効期限を確認してください</p>
-                        <a href="card-input.php">入力ページへ戻る</a>
+                    <a href="card-input.php">入力ページへ戻る</a>
     END;
                 } elseif (!preg_match('/^[0-9]{3,}$/', $_REQUEST['card_secnum'])) {
                     // セキュリティコードが不適切　true
@@ -65,8 +79,8 @@ END;
                     <p>セキュリティコードを確認してください</p>
                         <a href="card-input.php">入力ページへ戻る</a>
     END;
-                } else {
-                    // 全部の入力問題なし　false
+                } elseif (empty($sql->fetchAll())) {
+                    // 全部の入力問題なしでログイン中　false
                     // 表示
                     echo '<dl>';
                     foreach ($datalist as $key => $data) {
@@ -93,12 +107,22 @@ END;
 <div class="form_submit"><input type="submit" value="この内容で登録する"></div>
             </form>
 END;
+                } else {
+                    // ログインできていない場合
+                    echo <<<END
+                    <h1>エラー！</h1>
+                <div class="result_box">
+                  <p>カードが登録済みです。</p>
+                  <p class="link_pr"><a href="purchase-confirm.php">購入画面に戻る</a></p>
+                </div>
+            END;
                 }
             } else {
                 // 入力が確認できない場合 エラーメッセージ
                 echo '
 <p>再入力をお願いいたします。</p>
 <a href="customer-input.php">入力ページへ戻る</a>';
-            } ?>
+            }
+            ?>
     </main>
     <?php require 'includes/footer.php'; ?>

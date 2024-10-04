@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -23,42 +24,56 @@
         <div class="customer_wrapper"><a href="index.php"><img src="common/images/logo.svg" alt="c.c.donutsのロゴ"></a></div>
     </header>
 
-    <!-- ユーザー名 -->
 
     <!-- コンテンツ -->
-    <div class="customer_wrapper">
-        <h1>カード情報登録</h1>
 
-        <form action="card-confirm.php" method="post">
-            <fieldset>
-                <legend>お名前<span class="common_required">(必須)</span></legend>
-                <input type="text" name="card_name" class="common_input" required>
-            </fieldset>
-            <fieldset class="card_company">
-                <legend>カード会社<span class="common_required">(必須)</span></legend>
-                <div>
-                    <label> <input type="radio" name="card_com" value="JCB" checked><span>JCB</span></label>
-                    <label> <input type="radio" name="card_com" value="Visa"><span>Visa</span></label>
-                    <label><input type="radio" name="card_com" value="Mastercard"><span>Mastercard</span></label>
-                </div>
-            </fieldset>
-            <fieldset class="card_num">
-                <legend>カード番号<span class="common_required">(必須)</span></legend>
-                <input type="text" name="card_num" class="common_input" required>
-            </fieldset>
-            <fieldset class="card_limit">
-                <legend>有効期限<span class="common_required">(必須)</span></legend>
-                <p><input type="text" name="card_mlimit" class="common_shortinput" required>月</p>
-                <p><input type="text" name="card_ylimit" class="common_shortinput" required>年</p>
-            </fieldset>
-            <fieldset>
-                <legend>セキュリティコード<span class="common_required">(必須)</span></legend>
-                <input type="text" name="card_secnum" class="common_shortinput" required>
-            </fieldset>
-            <!-- ボタンクラス　共通のやつつける、あとで -->
-            <div class="form_submit"><input type="submit" value="ご入力内容を確認する" class="common_btn_lg"></div>
-        </form>
-    </div>
+    <main>
+        <?php
+        if (!isset($_SESSION['customer'])) {
+            echo <<<END
+            <h1>エラー！</h1>
+            <div class="result_box">
+                <p>ログインが確認されませんでした。</p>
+                <p class="link_pr"><a href="login-input.php">ログインしてから出直してきてください。</a></p>
+            </div>
+END;
+        } else {
+            echo <<<END
+        <div class="customer_wrapper">
+            <h1>カード情報登録</h1>
 
+            <form action="card-confirm.php" method="post">
+                <fieldset>
+                    <legend>お名前<span class="common_required">(必須)</span></legend>
+                    <input type="text" name="card_name" class="common_input" required>
+                </fieldset>
+                <fieldset class="card_company">
+                    <legend>カード会社<span class="common_required">(必須)</span></legend>
+                    <div>
+                        <label> <input type="radio" name="card_com" value="JCB" checked><span>JCB</span></label>
+                        <label> <input type="radio" name="card_com" value="Visa"><span>Visa</span></label>
+                        <label><input type="radio" name="card_com" value="Mastercard"><span>Mastercard</span></label>
+                    </div>
+                </fieldset>
+                <fieldset class="card_num">
+                    <legend>カード番号<span class="common_required">(必須)</span></legend>
+                    <input type="text" name="card_num" class="common_input" required>
+                </fieldset>
+                <fieldset class="card_limit">
+                    <legend>有効期限<span class="common_required">(必須)</span></legend>
+                    <p><input type="text" name="card_mlimit" class="common_shortinput" required>月</p>
+                    <p><input type="text" name="card_ylimit" class="common_shortinput" required>年</p>
+                </fieldset>
+                <fieldset>
+                    <legend>セキュリティコード<span class="common_required">(必須)</span></legend>
+                    <input type="text" name="card_secnum" class="common_shortinput" required>
+                </fieldset>
+                <!-- ボタンクラス　共通のやつつける、あとで -->
+                <div class="form_submit"><input type="submit" value="ご入力内容を確認する" class="common_btn_lg"></div>
+            </form>
+        </div>
+END;
+        } ?>
+    </main>
 
     <?php require 'includes/footer.php'; ?>

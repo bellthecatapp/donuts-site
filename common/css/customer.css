@@ -26,8 +26,8 @@ h1 {
 }
 
 form {
-  margin-left: 40px;
-  margin-right: 40px;
+  max-width: 295px;
+  margin: 0 auto;
   margin-bottom: 80px;
 }
 

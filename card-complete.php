@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -6,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="common/css/reset.css">
     <link rel="stylesheet" href="common/css/common.css">
+    <link rel="stylesheet" href="common/css/card.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
@@ -28,19 +30,30 @@
     $ylimit = htmlspecialchars($_REQUEST['card_ylimit']);
     $secnum = htmlspecialchars($_REQUEST['card_secnum']);
 
+    if (!isset($_SESSION['customer'])) {
+        echo <<<END
+        <h1>エラー！</h1>
+  <div class="result_box">
+      <p>ログインが確認されませんでした。</p>
+      <p class="link_pr"><a href="login-input.php">ログインしてから出直してきてください。</a></p>
+  </div>
+  END;
+    } else {
+        // ログインしていたら、既にカードが登録済みか確認
+        $sql = $pdo->prepare('select * from card where card_no=?');
+        $sql->execute([$num]);
+    }
 
-    $sql = $pdo->prepare('select * from card where id=? and card_no=?');
-    $sql->execute([$_SESSION['customer']['id'], $num]);
     if (empty($sql->fetchAll())) {
-        $sql = $pdo->prepare('insert into card values(?,?,?,?,?,?,?');
+        $sql = $pdo->prepare('insert into card values(?,?,?,?,?,?,?)');
         if ($sql->execute([$_SESSION['customer']['id'], $name, $company, $num, $mlimit, $ylimit, $secnum])) {
             echo <<<END
                       <h1>カード情報登録完了</h1>
                 <div class="result_box">
                     <p>クレジットカード情報を登録しました。</p>
-                    <p class="link_pr"><a href="login-input.php">購入手続きを続ける</a></p>
+                    <p class="link_pr"><a href="purchase-comfirm.php">購入手続きを続ける</a></p>
                 </div>
-        END;
+ END;
         } else {
             echo <<<END
                     <h1>エラー！</h1>
@@ -54,11 +67,12 @@
         echo <<<END
         <h1>エラー！</h1>
     <div class="result_box">
-      <p>既に登録済みのカードです。</p>
-      <p class="link_pr"><a href="purchase-confirm.php">そのまま購入に進むか、カードが利用可能か確認してみてください。</a></p>
+      <p>カードが登録済みです。</p>
+      <p class="link_pr"><a href="purchase-confirm.php">購入画面に戻る</a></p>
     </div>
 END;
     }
+
     ?>
 
 
