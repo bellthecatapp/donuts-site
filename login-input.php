@@ -15,10 +15,10 @@
 </head>
 
 <body>
+    <?php
+    require 'includes/header.php';
+    ?>
     <main>
-        <?php
-        require 'includes/header.php';
-        ?>
         <!-- パンくず -->
 
         <!-- ユーザー名 -->
