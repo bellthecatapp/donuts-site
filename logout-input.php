@@ -29,7 +29,7 @@
             <div class="login_wrapper">
                 <div class="login_frame">
                     <p class="logout">ログアウトしますか？</p>
-                    <form action="login-complete.php" method="post">
+                    <form action="logout-complete.php" method="post">
                         <input type="submit" value="ログアウトする" class="common_btn_lg">
                     </form>
                 </div>
