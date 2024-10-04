@@ -18,64 +18,88 @@
     <?php require 'includes/header.php';
     ?>
     <!-- パンくず -->
+    <nav class="navigator">
+        <ol class="bread_crumb">
+            <li><a href="index.php">TOP</a></li>
+            <li>商品一覧</li>
+        </ol>
+    </nav>
+    <hr class="brown_line">
 
     <!-- ユーザー名 -->
+    <div class="navigator">
 
+        <?php
+        // データベース接続
+        require 'includes/database.php';
+        // ログインしていたらユーザー名表示、していなければゲスト様を表示
+        if (isset($_SESSION['customer'])) {
+            echo '<p class="greeting">ようこそ　', $_SESSION['customer']['name'], '様</p>';
+        } else {
+            echo '<p class="greeting">ようこそ　ゲスト様</p>';
+        }
+        ?>
+
+    </div>
+    <hr class="brown_line">
     <!-- コンテンツ -->
     <main>
         <section class="product_hero">
-            <h1 class="product_title">商品一覧</h1>
-            <div class="product_content">
-                <?php
-                //データベース接続
-                $pdo = new PDO('mysql:host=localhost;dbname=donuts;charset=utf8', 'donuts', 'password');
+            <h1 class="common_title">商品一覧</h1>
+            <form action="cart.php" method="post" class="common_product_form">
+                <ul class="common_product_content">
+                    <?php
+                    //データベース接続
+                    $pdo = new PDO('mysql:host=localhost;dbname=donuts;charset=utf8', 'donuts', 'password');
 
-                $shop = $pdo->query('select * from product limit 6');
+                    $shop = $pdo->query('select * from product limit 6');
 
-                foreach ($shop as $row) {
-                    $id = $row['id'];
-                    echo <<<END
-                        <form action="cart.php" method="post" class="product_menu">                        <p class="product_img"><a href="detail.php?id={$id}"><img alt="image" src="common/images/{$id}.png"></a></p>
+                    foreach ($shop as $row) {
+                        $id = $row['id'];
+                        echo <<<END
+                    <li class="common_product_items"></li>
+                    <a href="detail.php?id={$id}"><img alt="image" src="common/images/{$id}.png"></a></p>
                         <p class="product_submenu"><a href="detail.php?id={$id}">{$row['name']}</a></p>
                          <p class="product_money"><a href="detail.php?id={$id}">税込 &yen;{$row['price']}</a><span class="product_favorite"><img src="common/images/heart.png" alt="favorite"></span></p>
-                        END;
+ END;
 
-                    // ヒアドキュメント2つ目
-                    echo <<<END
+                        // ヒアドキュメント2つ目
+                        echo <<<END
                         <input type="hidden" name="id" value="{$id}">
                         <input type="hidden" name="name" value="{$row['name']}">
                         <input type="hidden" name="price" value="{$row['price']}">
                         <p><input type="submit" class="product_submit" value="カートに入れる"></p>
                         </form>
                         END;
-                }
-                ?></div>
+                    }
+                    ?>
+                    </div>
 
-            <h2 class="subtitle">バラエティセット</h2>
-            <div class="product_content">
-                <?php
-                $shop = $pdo->query('select * from product limit 12 offset 6');
+                    <h2 class="subtitle">バラエティセット</h2>
+                    <div class="product_content">
+                        <?php
+                        $shop = $pdo->query('select * from product limit 12 offset 6');
 
 
-                foreach ($shop as $row) {
-                    $id = $row['id'];
-                    echo <<<END
+                        foreach ($shop as $row) {
+                            $id = $row['id'];
+                            echo <<<END
         <form action="cart.php" method="post" class="product_menu">                        <p class="product_img"><a href="detail.php?id={$id}"><img alt="image" src="common/images/{$id}.png"></a></p>
         <p class="product_submenu"><a href="detail.php?id={$id}">{$row['name']}</a></p>
          <p class="product_money"><a href="detail.php?id={$id}">税込 &yen;{$row['price']}</a><span class="product_favorite"><img src="common/images/heart.png" alt="favorite"></span></p>
         END;
 
-                    // ヒアドキュメント2つ目
-                    echo <<<END
+                            // ヒアドキュメント2つ目
+                            echo <<<END
         <input type="hidden" name="id" value="{$id}">
         <input type="hidden" name="name" value="{$row['name']}">
         <input type="hidden" name="price" value="{$row['price']}">
         <p><input type="submit" class="product_submit" value="カートに入れる"></p>
         </form>
         END;
-                }
-                ?>
-            </div>
+                        }
+                        ?>
+                    </div>
 
     </main>
     <?php require 'includes/footer.php'; ?>
