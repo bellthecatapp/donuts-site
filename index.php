@@ -22,13 +22,13 @@
 
 
     <!-- パンくず -->
-    <nav class="navigator">
+    <!-- <nav class="navigator">
       <ol class="bread_crumb">
         <li><a href="index.php">TOP</a></li>
         <li>商品一覧</li>
       </ol>
     </nav>
-    <hr class="brown_line">
+    <hr class="brown_line"> -->
 
     <!-- ようこそユーザー名 -->
     <div class="navigator">
@@ -45,7 +45,7 @@
       ?>
 
     </div>
-    <hr class="brown_line">
+    <!-- <hr class="brown_line"> -->
 
     <!-- hero画像 -->
     <h1>
@@ -100,38 +100,38 @@
 
     <!-- セクション3 -->
     <section class="sec_3">
-      <h2 class="common_title">人気ランキング</h3>
-        <form action="cart.php" method="post" class="common_product_form">
-          <ol class="common_product_content">
-            <?php
-            // データベース接続
-            require 'includes/database.php';
-            // ランキングの連想配列 (順位 => 商品ID)
-            $ranking = [
-              1 => 1,
-              2 => 7,
-              3 => 8,
-              4 => 2,
-              5 => 9,
-              6 => 6,
-            ];
-            // ランキングの1位から6位の商品情報を取得し、表示
-            foreach ($ranking as $rank => $id) {
-              // SQLクエリでIDをもとに商品を取得
-              $stmt = $pdo->prepare("SELECT name, price FROM product WHERE id = :id");
-              $stmt->bindParam(':id', $id, PDO::PARAM_INT);
-              $stmt->execute();
+      <h2 class="common_title">人気ランキング</h2>
+      <form action="cart.php" method="post" class="common_product_form">
+        <ol class="common_product_content">
+          <?php
+          // データベース接続
+          require 'includes/database.php';
+          // ランキングの連想配列 (順位 => 商品ID)
+          $ranking = [
+            1 => 1,
+            2 => 7,
+            3 => 8,
+            4 => 2,
+            5 => 9,
+            6 => 6,
+          ];
+          // ランキングの1位から6位の商品情報を取得し、表示
+          foreach ($ranking as $rank => $id) {
+            // SQLクエリでIDをもとに商品を取得
+            $stmt = $pdo->prepare("SELECT name, price FROM product WHERE id = :id");
+            $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+            $stmt->execute();
 
-              // 結果を取得
-              $product = $stmt->fetch(PDO::FETCH_ASSOC);
+            // 結果を取得
+            $product = $stmt->fetch(PDO::FETCH_ASSOC);
 
-              // 結果をdivに表示
-              if ($product) {
-                // 商品IDに対応する画像のファイルパス
-                $imagePath = "common/images/{$id}.png";
-                $price = number_format($product['price']);
-                // HTMLに出力
-                echo <<<END
+            // 結果をdivに表示
+            if ($product) {
+              // 商品IDに対応する画像のファイルパス
+              $imagePath = "common/images/{$id}.png";
+              $price = number_format($product['price']);
+              // HTMLに出力
+              echo <<<END
                 <li class="common_product_items">
                 <div class="ranking_num">$rank</div>
                 <a href="detail.php?id={$id}"> 
@@ -151,12 +151,12 @@
                 </div>
               </li>
 END;
-              }
             }
-            ?>
-          </ol>
-        </form>
-        </div>
+          }
+          ?>
+        </ol>
+      </form>
+      </div>
     </section>
   </main>
 
