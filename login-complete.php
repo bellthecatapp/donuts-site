@@ -61,7 +61,7 @@
         <div class="inner">
             <h1 class="common_subpage">ログイン完了</h1>
             <div class="login_wrapper">
-                <div class="login_frame">
+                <div class="login_frame_complete">
                     <p class="complete_text">ログインが完了しました。</p>
                 </div>
                 <div class="login_frame2">
@@ -69,7 +69,6 @@
                 </div>
 
             </div>
-        </div>
         </div>
 
     </main>
