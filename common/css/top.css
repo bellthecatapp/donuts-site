@@ -149,7 +149,7 @@
   text-align: center;
 }
 
-.common_title {
+/* .common_title {
   display: inline-block;
   font-size: 20px;
   padding: 0 6px 8px;
@@ -173,7 +173,7 @@
   margin-bottom: 80px;
   display: flex;
   flex-direction: column;
-}
+} */
 
 .ranking_num {
   width: 35px;
@@ -185,14 +185,14 @@
 }
 
 .ranking_num.yellow {
-  background-color: #e8c2ca;
-}
-
-.ranking_num.pink {
   background-color: #ffd233;
 }
 
-.common_produts_img {
+.ranking_num.pink {
+  background-color: #e8c2ca;
+}
+
+/* .common_produts_img {
   display: block;
   width: 100%;
   margin-bottom: 20px;
@@ -227,7 +227,7 @@
   width: 20px;
   height: 20px;
   align-items: center;
-}
+} */
 
 
 /* PCサイズ */
@@ -330,7 +330,7 @@
     padding-top: 80px;
   }
 
-  .common_title {
+  /* .common_title {
     font-size: 32px;
     padding: 0 8px 12px;
     border-bottom: 8px solid #ffd233;
@@ -344,7 +344,7 @@
 
   .common_product_items {
     width: 30%;
-  }
+  } */
 
   .ranking_num {
     width: 60px;
@@ -352,7 +352,7 @@
     font-size: 24px;
   }
 
-  .flex_grow {
+  /* .flex_grow {
     flex-grow: 1;
   }
 
@@ -368,5 +368,5 @@
   .common_heart {
     width: 24px;
     height: 24px;
-  }
+  } */
 }

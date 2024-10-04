@@ -34,7 +34,7 @@
     <div class="navigator">
 
       <?php
-      // データベース接続、SQL文の準備・実行
+      // データベース接続
       require 'includes/database.php';
       // ログインしていたらユーザー名表示、していなければゲスト様を表示
       if (isset($_SESSION['customer'])) {
@@ -134,10 +134,10 @@
                 echo <<<END
                 <li class="common_product_items">
                 <div class="ranking_num">$rank</div>
-                <a href=""> 
+                <a href="detail.php?id={$id}"> 
                  <img src='{$imagePath}' alt='{$product['name']}' class="common_produts_img"/>
                 </a>
-                <a href="" class="flex_grow">
+                <a href="detail.php?id={$id}" class="flex_grow">
                  <p class="common_products_name">{$product['name']}</p>
                 </a>
                 <div class="common_pricearea">
@@ -180,7 +180,15 @@ END;
       ]
     }
   </script> -->
-  <script src="common/js/ranking_color.js"></script>
+  <script src="common/js/ranking_color.js">
+    const ranking_num = document.querySelector('.ranking_num');
+    const rank = '<?php echo $rank ?>';
+    if (rank == 1) {
+      ranking_num.classList.add("pink");
+    } else {
+      ranking_num.classList.add("yellow");
+    }
+  </script>
   <?php
   require 'includes/footer.php';
   ?>
