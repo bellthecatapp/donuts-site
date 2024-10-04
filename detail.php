@@ -40,7 +40,7 @@
         foreach ($sql as $row) {
             // ヒアドキュメント1つ目
             echo <<<END
-    <form action="cart.php" method="post" class="detail_menu">
+    <form action="cart-input.php" method="post" class="detail_menu">
     <p class="detail_img"><img alt="image" src="common/images/{$row['id']}.png"></p>
     <p class="detail_submenu">{$row['name']}</p>
     <p class="detail_explain">{$row['description']}</p>
