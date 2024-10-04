@@ -13,15 +13,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="">
     <!-- ↑ページ別の.cssをリンク -->
-    <title>ご入力内容の確認｜donuts-site</title>
+    <title>ご入力内容の確認｜C.C.Donuts</title>
 </head>
 
 <body>
-    <!-- パンくず -->
-
-    <!-- ユーザー名 -->
-
-    <!-- コンテンツ -->
     <header>
         <div class="customer_wrapper"><a href="index.php"><img src="common/images/logo.svg" alt="c.c.donutsのロゴ"></a></div>
     </header>
@@ -76,7 +71,7 @@ END;
                         echo '</dl>';
                     }
                     echo <<<END
-<div class="form_submit"><input type="submit" value="ご入力内容を確認する"></div>
+<div class="form_submit"><input type="submit" value="この内容で登録する"></div>
             </form>
 END;
                 }
