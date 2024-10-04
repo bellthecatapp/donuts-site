@@ -275,6 +275,61 @@ footer {
   width: 20%;
 }
 
+/* 送信ボタンここから */
+/* <div class="common_form_submit"><input type="submit" value="ボタンの中のテキスト"></div> */
+
+.common_form_submit {
+  margin-top: 40px;
+}
+
+.common_form_submit input {
+  text-align: center;
+  color: #fff;
+  padding: 20px 16px;
+  background: #7F5539;
+  width: 67%;
+  max-width: 200px;
+  transition: all 0.2s ease-in;
+}
+
+.common_form_submit input:hover {
+  background: #EDE0D4;
+  color: #7F5539;
+  border: #7F5539 solid 1px;
+  transition: all 0.2s ease-in;
+  font-weight: 700;
+}
+
+/* 送信ボタンここまで */
+
+/* カートに入れるボタン　ここから*/
+.common_btn_cart {
+  /* margin-top: 40px; */
+}
+
+.common_btn_cart input {
+  text-align: center;
+  color: #fff;
+  font-size: 12px;
+  padding: 11px;
+  background: #7F5539;
+  border: #7F5539 solid 1px;
+  width: 158px;
+  transition: all 0.2s ease-in;
+}
+
+.common_btn_cart input:hover {
+  background: #EDE0D4;
+  color: #7F5539;
+  border: #7F5539 solid 1px;
+  transition: all 0.2s ease-in;
+  font-weight: 700;
+  box-sizing: border-box;
+}
+
+/* カートに入れるボタン　ここまで */
+
+
 /* 共通　フォームの(必須) */
 legend,
 .customer_pass {
