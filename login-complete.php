@@ -77,7 +77,7 @@ END;
             <h1 class="common_subpage">ログイン失敗</h1>
             <div class="login_wrapper">
                 <div class="login_frame_complete">
-                    <p class="complete_text">emailまたはパスワードが違います</p>
+                    <p class="complete_text">メールアドレスまたはパスワードが違います</p>
                 </div>
                 <div class="login_frame2">
                     <p class="linkedtext"><a href="index.php">TOPページへ戻る</a></p>
