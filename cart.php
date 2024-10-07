@@ -19,10 +19,10 @@
 END;
                 echo number_format($product['price']);
                 echo <<<END
- </p>
+
 <p class="count"><span>数量</span>{$product['count']}個</p>
 </div>
-<p class="cart_delete"><a href="cart-delete.php">削除する</a></p>
+<p class="cart_delete"><a href="cart-delete.php?id={$id}">削除する</a></p>
 </div>
 </div>
 END;
