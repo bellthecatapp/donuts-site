@@ -224,6 +224,7 @@
   font-size: 20px;
   padding: 0 6px 8px;
   border-bottom: 4px solid #ffd233;
+  color: #000;
 }
 
 .common_product_form {
@@ -266,7 +267,7 @@
 .common_pricearea {
   width: 100%;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: space-between;
   margin-bottom: 20px;
 }
@@ -377,7 +378,7 @@ footer {
   padding: 11px;
   background: #7F5539;
   border: #7F5539 solid 1px;
-  width: 158px;
+  width: 100%;
   transition: all 0.2s ease-in;
 }
 
@@ -540,12 +541,12 @@ legend,
   }
 
   .common_products_name {
-    font-size: 24px;
+    font-size: clamp(1.25rem, 0.806rem + 0.93vw, 1.5rem);
     margin-bottom: 20px;
   }
 
   .common_price {
-    font-size: 24px;
+    font-size: clamp(1rem, 0.111rem + 1.85vw, 1.5rem);
   }
 
   .common_heart {
@@ -560,11 +561,11 @@ legend,
   .common_btn_cart input {
     text-align: center;
     color: #fff;
-    font-size: 20px;
+    font-size: clamp(1rem, 0.556rem + 0.93vw, 1.25rem);
     padding: 15px;
     background: #7F5539;
     border: #7F5539 solid 1px;
-    width: 260px;
+    width: 80%;
     transition: all 0.2s ease-in;
   }
 
@@ -640,31 +641,6 @@ legend,
   .common_shortinput {
     width: 30%;
   }
-
-  /* カートに入れるボタンPC　ここから*/
-
-  .common_btn_cart input {
-    text-align: center;
-    color: #fff;
-    font-size: 12px;
-    padding: 11px;
-    background: #7F5539;
-    border: #7F5539 solid 1px;
-    width: 260px;
-    transition: all 0.2s ease-in;
-  }
-
-  .common_btn_cart input:hover {
-    background: #EDE0D4;
-    color: #7F5539;
-    transition: all 0.2s ease-in;
-    font-weight: 700;
-    box-sizing: border-box;
-  }
-
-  /* カートに入れるボタンPC　ここまで */
-
-
 
   /* 確認ページのdd要素 */
   .common_ddline {
