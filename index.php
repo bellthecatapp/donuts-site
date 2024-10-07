@@ -57,7 +57,7 @@
           </div>
         </a>
 END;
-        i
+
         ?>
         <h2 class="h2_life">ドーナツのある生活</h2>
         <a href="#" class="donuts_life">
