@@ -23,7 +23,14 @@
             <ol class="bread_crumb">
                 <li><a href="index.php">TOP</a></li>
                 <li><a href="product.php">商品一覧</a></li>
-                <li></li>
+                <?php
+                require 'includes/database.php';
+                $sql = $pdo->query('select * from product where name');
+                foreach ($sql as $row) {
+                    $name = $row['name'];
+                    echo '<li>', $name, '</li>';
+                }
+                ?>
             </ol>
         </nav>
         <hr class="brown_line">
