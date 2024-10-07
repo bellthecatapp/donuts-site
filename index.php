@@ -143,7 +143,7 @@
                 <div class="common_btn_cart">
                 <input type="hidden" name="id" value="{$id}">
                 <input type="hidden" name="name" value="{$product['name']}">
-                <input type="hidden" name="price" value="{$produuct['price']}">
+                <input type="hidden" name="price" value="{$product['price']}">
                 <input type="submit" value="カートに入れる">
                 </div>
               </li>
