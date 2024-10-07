@@ -44,7 +44,7 @@
     <hr class="brown_line">
     <!-- コンテンツ -->
     <main>
-        <section class="product_hero">
+        <section class="sec_1">
             <h1 class="common_title">商品一覧</h1>
             <form action="cart-input.php" method="post" class="common_product_form">
                 <ul class="common_product_content">
@@ -56,6 +56,7 @@
 
                     foreach ($shop as $row) {
                         $id = $row['id'];
+                        $price = number_format($row['price']);
                         echo <<<END
                     <li class="common_product_items">
                      <a href="detail.php?id={$id}">
@@ -64,47 +65,59 @@
                      <a href="detail.php?id={$id}" class="flex_grow">
                          <p class="common_products_name">{$row['name']}</p>
                      </a>
-                         <p class="product_money"><a href="detail.php?id={$id}">税込 &yen;{$row['price']}</a><span class="product_favorite"><img src="common/images/heart.png" alt="favorite"></span></p>
-                         </li>
- END;
-
-                        // ヒアドキュメント2つ目
-                        echo <<<END
+                     <div class="common_pricearea">
+                     <p class="common_price">税込み　 ¥{$price}</p>
+                     <a>
+                     <img src="common/images/heart.png" alt="お気に入りボタン" class="common_heart">
+                     </a>
+                     </div>
+                    </p>
+                    <div class="common_btn_cart">
                         <input type="hidden" name="id" value="{$id}">
                         <input type="hidden" name="name" value="{$row['name']}">
                         <input type="hidden" name="price" value="{$row['price']}">
-                        <p><input type="submit" class="product_submit" value="カートに入れる"></p>
-                        </form>
-                        END;
+                        <input type="submit" class="product_submit" value="カートに入れる">
+                        </div>
+END;
                     }
                     ?>
-                    </div>
+            </form>
+        </section>
+        <section class="sec_2">
+            <h2 class="common_title">バラエティセット</h2>
+            <form action="cart-input.php" method="post" class="common_product_form">
+                <ul class="common_product_content">
+                    <?php
+                    $shop = $pdo->query('select * from product limit 12 offset 6');
 
-                    <h2 class="subtitle">バラエティセット</h2>
-                    <div class="product_content">
-                        <?php
-                        $shop = $pdo->query('select * from product limit 12 offset 6');
 
-
-                        foreach ($shop as $row) {
-                            $id = $row['id'];
-                            echo <<<END
-        <form action="cart-input.php" method="post" class="product_menu">                        <p class="product_img"><a href="detail.php?id={$id}"><img alt="image" src="common/images/{$id}.png"></a></p>
-        <p class="product_submenu"><a href="detail.php?id={$id}">{$row['name']}</a></p>
-         <p class="product_money"><a href="detail.php?id={$id}">税込 &yen;{$row['price']}</a><span class="product_favorite"><img src="common/images/heart.png" alt="favorite"></span></p>
-        END;
-
-                            // ヒアドキュメント2つ目
-                            echo <<<END
+                    foreach ($shop as $row) {
+                        $id = $row['id'];
+                        echo <<<END
+                        <li class="common_product_items">                 <a href="detail.php?id={$id}">
+                        <img alt="image" src="common/images/{$id}.png" class="common_produts_img"></a>
+                        <a href="detail.php?id={$id}" class="flex_grow">
+                         <p class="common_products_name">{$row['name']}</p>
+                        </a>
+                        <div class="common_pricearea">
+                         <p class="common_price">税込み　 ¥{$price}</p>
+                         <a href="#!">
+                             <img src="common/images/heart.png" alt="お気に入りボタン" class="common_heart">
+                         </a>
+                         </div>
+                         <div class="common_btn_cart">
         <input type="hidden" name="id" value="{$id}">
         <input type="hidden" name="name" value="{$row['name']}">
         <input type="hidden" name="price" value="{$row['price']}">
         <p><input type="submit" class="product_submit" value="カートに入れる"></p>
-        </form>
-        END;
-                        }
-                        ?>
-                    </div>
+        </div>
+        </li>
+END;
+                    }
+                    ?>
+                </ul>
+            </form>
+        </section>
 
     </main>
     <?php require 'includes/footer.php'; ?>

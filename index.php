@@ -147,11 +147,14 @@
                 </a>
                 <div class="common_pricearea">
                  <p class="common_price">税込み　 ¥{$price}</p>
-                 <a>
+                 <a href="#!">
                  <img src="common/images/heart.png" alt="お気に入りボタン" class="common_heart">
                  </a>
                 </div>
                 <div class="common_btn_cart">
+                <input type="hidden" name="id" value="{$id}">
+                <input type="hidden" name="name" value="{$product['name']}">
+                <input type="hidden" name="price" value="{$produuct['price']}">
                 <input type="submit" value="カートに入れる">
                 </div>
               </li>
@@ -161,7 +164,6 @@ END;
           ?>
         </ol>
       </form>
-      </div>
     </section>
   </main>
 
