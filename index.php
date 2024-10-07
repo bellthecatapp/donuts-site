@@ -46,12 +46,19 @@
     <section class="sec_1">
       <div class="grid">
         <h2 class="h2_new">サマーシトラス</h2>
-        <a href="" class="new_item">
+        <?php
+        require 'includes/database.php';
+        $pdo->query('select * from product where id');
+        echo <<<END
+        <a href="detail.php?id=5" class="new_item">
           <img src="common/images/5.png" alt="新商品の画像">
           <div class="new_mark">
             <p>新商品</p>
           </div>
         </a>
+END;
+        i
+        ?>
         <h2 class="h2_life">ドーナツのある生活</h2>
         <a href="#" class="donuts_life">
           <img src="common/images/top-dounutslife.png" alt="ドーナツのある生活画像">
@@ -155,27 +162,6 @@ END;
       </form>
     </section>
   </main>
-
-  <!-- パンくずJsonLD-->
-  <!-- <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [{
-          "@type": "ListItem",
-          "position": 1,
-          "name": "TOP",
-          "item": "index.php"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "商品一覧",
-          "item": "product.php"
-        }
-      ]
-    }
-  </script> -->
   <?php
   require 'includes/footer.php';
   ?>
