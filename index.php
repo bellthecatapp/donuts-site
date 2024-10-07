@@ -19,17 +19,6 @@
   ?>
   <main>
 
-
-
-    <!-- パンくず -->
-    <!-- <nav class="navigator">
-      <ol class="bread_crumb">
-        <li><a href="index.php">TOP</a></li>
-        <li>商品一覧</li>
-      </ol>
-    </nav>
-    <hr class="brown_line"> -->
-
     <!-- ようこそユーザー名 -->
     <div class="navigator">
 

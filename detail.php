@@ -17,17 +17,37 @@
     <?php
     require 'includes/header.php';
     ?>
-    <!-- パンくず -->
-
-    <!-- ユーザー名 -->
-
-    <!-- コンテンツ -->
-
     <main>
+        <!-- パンくず -->
+        <nav class="navigator">
+            <ol class="bread_crumb">
+                <li><a href="index.php">TOP</a></li>
+                <li><a href="product.php">商品一覧</a></li>
+                <li></li>
+            </ol>
+        </nav>
+        <hr class="brown_line">
+        <!-- ユーザー名 -->
+        <div class="navigator">
+
+            <?php
+            // データベース接続
+            require 'includes/database.php';
+            // ログインしていたらユーザー名表示、していなければゲスト様を表示
+            if (isset($_SESSION['customer'])) {
+                echo '<p class="greeting">ようこそ　', $_SESSION['customer']['name'], '様</p>';
+            } else {
+                echo '<p class="greeting">ようこそ　ゲスト様</p>';
+            }
+            ?>
+        </div>
+        <hr class="brown_line">
+
+        <!-- コンテンツ -->
 
         <?php
         // データベース接続
-        $pdo = new PDO('mysql:host=localhost;dbname=donuts;charset=utf8', 'donuts', 'password');
+        require 'includes/database.php';
 
         // SQL文の準備
         $sql = $pdo->prepare('select * from product where id=?');
@@ -38,21 +58,18 @@
 
         // HTMLの生成、出力
         foreach ($sql as $row) {
+            $price = number_format($row['price']);
             // ヒアドキュメント1つ目
             echo <<<END
     <form action="cart-input.php" method="post" class="detail_menu">
-    <p class="detail_img"><img alt="image" src="common/images/{$row['id']}.png"></p>
+    <img alt="image" src="common/images/{$row['id']}.png" class="detail_img">
     <p class="detail_submenu">{$row['name']}</p>
     <p class="detail_explain">{$row['description']}</p>
-    <p class="detail_money">税込&emsp;&yen;{$row['price']}<span class="detail_favorite"><img src="common/images/heart.png" alt="favorite"></span></p>
+    <p class="detail_money">税込&emsp;&yen;{$price}<span class="detail_favorite"><a href="#!"><img src="common/images/heart.png" alt="お気に入りボタン"></a></span></p>
  <div class="detail_buy">
- <p class="detail_num"><input type="text" name="count" pattern="^[0-9]{1,9}$" class="detail_text">
+ <p><input type="text" name="count" pattern="^[0-9]{1,9}$" class="detail_text">
  個</p>
-<p class="detail_button"><input type="submit" class="common_btn_sm" value="カートに入れる"></p>
-END;
-
-            // ヒアドキュメント2つ目
-            echo <<<END
+ <input type="submit" class="cart_input" value="カートに入れる">
 </div>
 <input type="hidden" name="id" value="{$row['id']}">
 <input type="hidden" name="name" value="{$row['name']}">
