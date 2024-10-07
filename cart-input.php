@@ -15,37 +15,70 @@
 </head>
 
 <body>
+    <?php require 'includes/header.php'; ?>
     <!-- パンくず -->
-
+    <nav class="navigator">
+        <ol class="bread_crumb">
+            <li><a href="index.php">TOP</a></li>
+            <li>商品一覧</li>
+        </ol>
+    </nav>
+    <hr class="brown_line">
     <!-- ユーザー名 -->
+    <div class="navigator">
 
+        <?php
+        // データベース接続
+        // ログインしていたらユーザー名表示、していなければゲスト様を表示
+        if (isset($_SESSION['customer'])) {
+            echo '<p class="greeting">ようこそ　', $_SESSION['customer']['name'], '様</p>';
+        } else {
+            echo '<p class="greeting">ようこそ　ゲスト様</p>';
+        }
+        ?>
+
+    </div>
+    <hr class="brown_line">
     <!-- コンテンツ -->
     <main>
-        <?php
-        $id = $_REQUEST['id'];
-        if (!isset($_SESSION['product'])) {
-            $_SESSION['product'] = [];
-        }
+        <div class="navigator">
+            <?php
+            $id = $_REQUEST['id'];
+            if (!isset($_SESSION['product'])) {
+                $_SESSION['product'] = [];
+            }
 
-        $count = 0;
+            // $count = 0;
 
-        if (isset($_SESSION['product'][$id])) {
-            $count = $_SESSION['product'][$id]['count'];
-        }
+            // if (isset($_SESSION['product'][$id])) {
+            //     $count = $_SESSION['product'][$id]['count'];
+            // }
 
-        $_SESSION['product'][$id] = [
-            'name' => $_REQUEST['name'],
-            'price' => $_REQUEST['price'],
-            'count' => $count + $_REQUEST['count']
-        ];
+            // if (isset($_SESSION['product'][$id]['count'])) {
+            //     $_SESSION['product'][$id] = [
+            //         'name' => $_REQUEST['name'],
+            //         'price' => $_REQUEST['price'],
+            //         'count' => $count + $_REQUEST['count']
+            //     ];
+            // } else {
+            //     $_SESSION['product'][$id] = [
+            //         'name' => $_REQUEST['name'],
+            //         'price' => $_REQUEST['price']
+            //     ];
+            // }
 
-        echo '<p>カートに商品を追加しました。</p>';
-        echo '<hr>';
+            $_SESSION['product'][$id] = [
+                'name' => $_REQUEST['name'],
+                'price' => $_REQUEST['price'],
+                //         'count' => $count + $_REQUEST['count']
+            ];
 
-        require 'cart.php';
+            echo '<p style="color:#333;">カートに商品を追加しました。</p>';
+            echo '</div>';
+            // echo '<hr>';
 
-        ?>
+            require 'cart.php';
+
+            ?>
     </main>
-</body>
-
-</html>
+    <?php require 'includes/footer.php'; ?>

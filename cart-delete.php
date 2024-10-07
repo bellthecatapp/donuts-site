@@ -15,14 +15,39 @@
 </head>
 
 <body>
+    <?php require 'includes/header.php'; ?>
     <!-- パンくず -->
-
+    <nav class="navigator">
+        <ol class="bread_crumb">
+            <li><a href="index.php">TOP</a></li>
+            <li>商品一覧</li>
+        </ol>
+    </nav>
+    <hr class="brown_line">
     <!-- ユーザー名 -->
+    <div class="navigator">
 
+        <?php
+        // データベース接続
+        // ログインしていたらユーザー名表示、していなければゲスト様を表示
+        if (isset($_SESSION['customer'])) {
+            echo '<p class="greeting">ようこそ　', $_SESSION['customer']['name'], '様</p>';
+        } else {
+            echo '<p class="greeting">ようこそ　ゲスト様</p>';
+        }
+        ?>
+
+    </div>
+    <hr class="brown_line">
     <!-- コンテンツ -->
     <main>
-
+        <div class="navigator">
+            <?php
+            unset($_SESSION['product'][$_REQUEST['id']]);
+            echo '<p style="color:#333;">', 'カートから商品を削除しました。', '</p>';
+            echo '</div>';
+            // echo '<hr>';
+            require 'cart.php';
+            ?>
     </main>
-</body>
-
-</html>
+    <?php require 'includes/footer.php'; ?>
