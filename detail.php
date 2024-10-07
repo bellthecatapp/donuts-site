@@ -70,11 +70,15 @@
     <p class="detail_explain">{$row['description']}</p>
     <p class="detail_money">税込&emsp;&yen;{$price}<span class="detail_favorite"><a href="#!"><img src="common/images/heart.png" alt="お気に入りボタン"></a></span>
     </p>
+
  <div class="detail_buy">
- <p><input type="text" name="count" pattern="^[0-9]{1,9}$" class="detail_text">
- 個</p>
+ <div>
+  <input type="text" name="count" pattern="^[0-9]{1,9}$" class="detail_text">
+  <span>個</span>
+ </div>
  <input type="submit" class="cart_input" value="カートに入れる">
 </div>
+
 <input type="hidden" name="id" value="{$row['id']}">
 <input type="hidden" name="name" value="{$row['name']}">
 <input type="hidden" name="price" value="{$row['price']}">
