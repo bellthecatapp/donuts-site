@@ -124,8 +124,8 @@
   font-size: clamp(1.5rem, 0.546rem + 4.07vw, 2.5rem);
   font-weight: bold;
   text-transform: capitalize;
-  margin-top: 17%;
-  margin-bottom: 3%;
+  margin-top: 100px;
+  margin-bottom: 20px;
 }
 
 .sub_title,
@@ -134,13 +134,13 @@
 }
 
 .inner {
-  margin-top: 11%;
+  margin-top: 60px;
 }
 
 .main_text {
   font-size: clamp(1.25rem, 0.773rem + 2.04vw, 1.75rem);
   text-transform: capitalize;
-  margin-bottom: 2%;
+  margin-bottom: 20px;
 }
 
 .sec_3 {
