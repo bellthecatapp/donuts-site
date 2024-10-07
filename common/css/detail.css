@@ -50,8 +50,16 @@ main {
     width: 100%;
 }
 
-.detail_buy>p {
-    /* vertical-align: bottom; */
+.detail_buy>div {
+    position: relative;
+    width: auto;
+}
+
+.detail_buy>div>span {
+    position: absolute;
+    bottom: 0;
+    margin-left: 4px;
+    font-size: 16px;
 }
 
 .detail_text {
@@ -59,10 +67,11 @@ main {
     width: 56px;
     height: 36px;
     font-size: 16px;
+    padding: 4px;
 }
 
 .cart_input {
-    margin-left: 12px;
+    margin-left: 32px;
     background-color: #7f5539;
     text-align: center;
     color: #fff;
@@ -106,12 +115,13 @@ main {
         margin: 40px 0;
     }
 
-    .detail_buy>p {
+    .detail_buy>div>span {
+        margin-left: 8px;
         font-size: clamp(1rem, 0.111rem + 1.85vw, 1.5rem);
     }
 
     .detail_text {
-        width: 25%;
+        max-width: 80px;
         height: 52px;
         font-size: 24px;
         padding: 8px;
@@ -119,7 +129,7 @@ main {
 
     .cart_input {
         font-size: clamp(0.75rem, -0.139rem + 1.85vw, 1.25rem);
-        margin-left: 20px;
+        margin-left: 52px;
         width: 56%;
     }
 
