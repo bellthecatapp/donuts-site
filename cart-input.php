@@ -54,18 +54,6 @@
                 $count = $_SESSION['product'][$id]['count'];
             }
 
-            // if (isset($_SESSION['product'][$id]['count'])) {
-            //     $_SESSION['product'][$id] = [
-            //         'name' => $_REQUEST['name'],
-            //         'price' => $_REQUEST['price'],
-            //         'count' => $count + $_REQUEST['count']
-            //     ];
-            // } else {
-            //     $_SESSION['product'][$id] = [
-            //         'name' => $_REQUEST['name'],
-            //         'price' => $_REQUEST['price']
-            //     ];
-            // }
 
             $_SESSION['product'][$id] = [
                 'name' => $_REQUEST['name'],

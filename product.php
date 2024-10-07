@@ -109,7 +109,9 @@ END;
         <input type="hidden" name="id" value="{$id}">
         <input type="hidden" name="name" value="{$row['name']}">
         <input type="hidden" name="price" value="{$row['price']}">
-        <p><input type="submit" class="product_submit" value="カートに入れる"></p>
+        <input type="hidden" name="count" value=1>
+        <p><input type="submit" class="product_submit" 
+        name="test" value="カートに入れる"></p>
         </div>
         </li>
 END;
