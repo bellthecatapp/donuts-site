@@ -46,8 +46,9 @@
     <main>
         <section class="sec_1">
             <h1 class="common_title">商品一覧</h1>
-            <form action="cart-input.php" method="post" class="common_product_form">
+            <div class="common_product_form">
                 <ul class="common_product_content">
+
                     <?php
                     //データベース接続
                     require 'includes/database.php';
@@ -58,6 +59,7 @@
                         $id = $row['id'];
                         $price = number_format($row['price']);
                         echo <<<END
+
                     <li class="common_product_items">
                      <a href="detail.php?id={$id}">
                          <img alt="image" src="common/images/{$id}.png" class="common_produts_img">
@@ -72,20 +74,27 @@
                      </a>
                      </div>
                     </p>
-                    <div class="common_btn_cart">
-                        <input type="hidden" name="id" value="{$id}">
-                        <input type="hidden" name="name" value="{$row['name']}">
-                        <input type="hidden" name="price" value="{$row['price']}">
+                <div class="common_btn_cart">
+                 <form action="cart-input.php" method="post" >
+
+                    <input type="hidden" name="id" value="{$id}">
+                    <input type="hidden" name="name" value="{$row['name']}">
+                    <input type="hidden" name="price" value="{$row['price']}">
+                    <input type="hidden" name="count" value=1>
+
                         <input type="submit" class="product_submit" value="カートに入れる">
+                        </form>
                         </div>
+                                    
+
 END;
                     }
                     ?>
-            </form>
+            </div>
         </section>
         <section class="sec_2">
             <h2 class="common_title">バラエティセット</h2>
-            <form action="cart-input.php" method="post" class="common_product_form">
+            <div class="common_product_form">
                 <ul class="common_product_content">
                     <?php
                     $shop = $pdo->query('select * from product limit 12 offset 6');
@@ -106,19 +115,21 @@ END;
                          </a>
                          </div>
                          <div class="common_btn_cart">
+                                     <form action="cart-input.php" method="post" >
+
         <input type="hidden" name="id" value="{$id}">
         <input type="hidden" name="name" value="{$row['name']}">
         <input type="hidden" name="price" value="{$row['price']}">
         <input type="hidden" name="count" value=1>
         <p><input type="submit" class="product_submit" 
         name="test" value="カートに入れる"></p>
+        </form>
         </div>
         </li>
 END;
                     }
                     ?>
                 </ul>
-            </form>
         </section>
 
     </main>
