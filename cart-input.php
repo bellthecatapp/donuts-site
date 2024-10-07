@@ -50,6 +50,8 @@
 
             $count = 0;
 
+
+
             if (isset($_SESSION['product'][$id])) {
                 $count = $_SESSION['product'][$id]['count'];
             }
