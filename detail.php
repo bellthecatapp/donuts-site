@@ -62,10 +62,14 @@
             // ヒアドキュメント1つ目
             echo <<<END
     <form action="cart-input.php" method="post" class="detail_menu">
+    <div class="flex_item1">
     <img alt="image" src="common/images/{$row['id']}.png" class="detail_img">
+    </div>
+    <div class="flex_item2">
     <p class="detail_submenu">{$row['name']}</p>
     <p class="detail_explain">{$row['description']}</p>
-    <p class="detail_money">税込&emsp;&yen;{$price}<span class="detail_favorite"><a href="#!"><img src="common/images/heart.png" alt="お気に入りボタン"></a></span></p>
+    <p class="detail_money">税込&emsp;&yen;{$price}<span class="detail_favorite"><a href="#!"><img src="common/images/heart.png" alt="お気に入りボタン"></a></span>
+    </p>
  <div class="detail_buy">
  <p><input type="text" name="count" pattern="^[0-9]{1,9}$" class="detail_text">
  個</p>
@@ -74,6 +78,7 @@
 <input type="hidden" name="id" value="{$row['id']}">
 <input type="hidden" name="name" value="{$row['name']}">
 <input type="hidden" name="price" value="{$row['price']}">
+</div>
 </form>
 END;
         }

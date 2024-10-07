@@ -40,16 +40,18 @@ main {
 }
 
 .detail_favorite {
-    padding-left: 20px;
+    padding-left: 12px;
     vertical-align: top;
 }
 
 .detail_buy {
     display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
 }
 
 .detail_buy>p {
-    vertical-align: bottom;
+    /* vertical-align: bottom; */
 }
 
 .detail_text {
@@ -68,4 +70,57 @@ main {
 }
 
 /* pc版 */
-@media screen and (min-width: 768px) {}
+@media screen and (min-width: 768px) {
+    .detail_menu {
+        width: 76%;
+        max-width: 1046px;
+        margin: 80px auto 0;
+        display: flex;
+        flex-wrap: nowrap;
+    }
+
+    .flex_item1 {
+        width: 52%;
+    }
+
+    .flex_item2 {
+        width: 48%;
+        margin-left: 4%;
+    }
+
+    .detail_img {
+        margin-bottom: 0px;
+    }
+
+    .detail_submenu {
+        font-size: clamp(1rem, 0.111rem + 1.85vw, 1.5rem);
+    }
+
+    .detail_explain {
+        font-size: clamp(1rem, 0.111rem + 1.85vw, 1.5rem);
+        padding: 40px 0;
+    }
+
+    .detail_money {
+        font-size: clamp(1rem, 0.111rem + 1.85vw, 1.5rem);
+        margin: 40px 0;
+    }
+
+    .detail_buy>p {
+        font-size: clamp(1rem, 0.111rem + 1.85vw, 1.5rem);
+    }
+
+    .detail_text {
+        width: 25%;
+        height: 52px;
+        font-size: 24px;
+        padding: 8px;
+    }
+
+    .cart_input {
+        font-size: clamp(0.75rem, -0.139rem + 1.85vw, 1.25rem);
+        margin-left: 20px;
+        width: 56%;
+    }
+
+}
