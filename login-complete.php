@@ -30,6 +30,8 @@
         <?php
         //既存のセッション破棄
         unset($_SESSION['customer']);
+        unset($_SESSION['product']);
+
         //データベース接続
         require 'includes/database.php';
         //SQL文の準備

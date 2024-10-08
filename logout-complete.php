@@ -28,6 +28,8 @@
         <?php
         if (isset($_SESSION['customer'])) {
             unset($_SESSION['customer']);
+            unset($_SESSION['product']);
+
             echo <<<END
         <div class="inner">
             <h1 class="common_subpage">ログアウト完了</h1>
