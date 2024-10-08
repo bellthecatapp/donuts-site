@@ -23,15 +23,15 @@
         <?php
         if (isset($_SESSION['customer'])) {
           echo <<<END
-          <button><a href="logout-input.php"><img class="header_logouticon" src="common/images/header-logout.svg" alt="ログアウトアイコン"></a></button>
+         <button onclick="loction.href='logput-input.php'"><img class="header_logouticon" src="common/images/header-logout.svg" alt="ログアウトアイコン"></button>
   END;
         } else {
           echo <<<END
-        <button><a href="login-input.php"><img class="header_loginicon" src="common/images/header-login.svg" alt="ログインアイコン"></a></button>
+        <button onclick="loction.href='login-input.php'"><img class="header_loginicon" src="common/images/header-login.svg" alt="ログインアイコン"></button>
   END;
         }
         ?>
-        <button><a href="cart-show.php"><img src="common/images/header-cart.svg" alt="カートアイコン"></a></button>
+        <button onclick="loction.href='cart-show.php'"><img src="common/images/header-cart.svg" alt="カートアイコン"></button>
       </div>
     </nav>
     <div class="header_search"><button><img src="common/images/header-vector.svg" alt="検索アイコン"></button><input type="text"></div>

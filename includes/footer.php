@@ -12,7 +12,7 @@
       <li><a href="#!">当サイトのポリシー</a></li>
     </ul>
     <ul class="footer_snslink">
-      <li><a href="#!"><img src="common/images/footer-instagram.svg" alt="instagramアイコン" srcset=""></a></li>
+      <li><a href="#!"><img src="common/images/footer-instagram.svg" alt="instagramアイコン"></a></li>
       <li><a href="#!"><img src="common/images/footer-facebook.svg" alt="facebookアイコン"></a></li>
       <li><a href="#!"><img src="common/images/footer-x.svg" alt="xアイコン"></a></li>
     </ul>
