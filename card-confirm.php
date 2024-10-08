@@ -45,7 +45,7 @@
           END;
             } else {
                 // ログインしていたら、既にカードが登録済みか確認
-                $pdo = new PDO('mysql:host=localhost;dbname=donuts;charset=utf8', 'donuts', 'password');
+                require 'includes/database.php';
                 $sql = $pdo->prepare('select * from card where id=?');
                 $sql->execute([$_SESSION['customer']['id']]);
             }
@@ -61,13 +61,13 @@
                     <p class="link_pr"><a href="card-input.php">入力ページへ戻る</a></p>
                     </div>
 END;
-                } elseif (!preg_match('/^[A-Z]{1,}$/', $_REQUEST['card_name'])) {
+                } elseif (!preg_match('/^[A-Z\s]{1,}$/', $_REQUEST['card_name'])) {
                     // カードの名義チェック
                     echo <<<END
 <p>カード名義を確認してください。半角大文字での入力でお願いします。</p>
     <a href="card-input.php">入力ページへ戻る</a>
 END;
-                } elseif (!preg_match('/^[0-9]{1,}$/', $_REQUEST['card_mlimit']) || !preg_match('/^[0-9]{4}$/', $_REQUEST['card_ylimit'])) {
+                } elseif (!preg_match('/^[0-9]{2,}$/', $_REQUEST['card_mlimit']) || !preg_match('/^[0-9]{4}$/', $_REQUEST['card_ylimit'])) {
                     // 有効期限が不適切 true
                     echo <<<END
                     <p>カードの有効期限を確認してください</p>
