@@ -45,7 +45,7 @@ END;
             <form action="card-confirm.php" method="post">
                 <fieldset>
                     <legend>お名前<span class="common_required">(必須)</span></legend>
-                    <input type="text" name="card_name" class="common_input" required>
+                    <input type="text" name="card_name" class="common_input" placeholder="DONUTSTARO" required>
                 </fieldset>
                 <fieldset class="card_company">
                     <legend>カード会社<span class="common_required">(必須)</span></legend>
@@ -57,16 +57,16 @@ END;
                 </fieldset>
                 <fieldset class="card_num">
                     <legend>カード番号<span class="common_required">(必須)</span></legend>
-                    <input type="text" name="card_num" class="common_input" required>
+                    <input type="text" name="card_num" class="common_input" placeholder="1234123412341234" required>
                 </fieldset>
                 <fieldset class="card_limit">
                     <legend>有効期限<span class="common_required">(必須)</span></legend>
-                    <p><input type="text" name="card_mlimit" class="common_shortinput" required>月</p>
-                    <p><input type="text" name="card_ylimit" class="common_shortinput" required>年</p>
+                    <p><input type="text" name="card_mlimit" class="common_shortinput" placeholder="01" required>月</p>
+                    <p><input type="text" name="card_ylimit" class="common_shortinput" placeholder="2030" required>年</p>
                 </fieldset>
                 <fieldset>
                     <legend>セキュリティコード<span class="common_required">(必須)</span></legend>
-                    <input type="text" name="card_secnum" class="common_shortinput" required>
+                    <input type="text" name="card_secnum" class="common_shortinput" placeholder="123" required>
                 </fieldset>
                 <!-- ボタンクラス　共通のやつつける、あとで -->
                 <div class="form_submit"><input type="submit" value="ご入力内容を確認する" class="common_btn_lg"></div>
