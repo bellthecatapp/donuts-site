@@ -35,7 +35,15 @@
 
             if (isset($_REQUEST)) {
                 // 入力 あり　true
-                if (!preg_match('/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]{8,}$/', $_REQUEST['cus_pass'])) {
+                if (!preg_match('/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]{8,}$/', $_REQUEST['cus_pass']) && !preg_match('/^[0-9]{7}$/', $_REQUEST['cus_addnum'])) {
+                    echo <<<END
+                    <div class="result_box">
+                <p>パスワードと郵便番号 の入力を確認してください。</p>
+                <p>再入力をお願いいたします。</p>
+                    <p class="link_pr"><a href="customer-input.php">入力ページへ戻る</a></p>
+                    </div>
+END;
+                } elseif (!preg_match('/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]{8,}$/', $_REQUEST['cus_pass'])) {
                     // パスワード入力不備 true　エラー表示
                     echo <<<END
                     <div class="result_box">

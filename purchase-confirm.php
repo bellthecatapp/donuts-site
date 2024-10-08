@@ -50,7 +50,7 @@ END;
 <dt>商品名</dt>
 <dd class="product_name">{$product['name']}</dd>
 <dt>数量</dt>
-<dd class="count"><span>数量</span>{$product['count']}個</dd>
+<dd class="count">{$product['count']}個</dd>
  <dt>小計</dt>
  <dd class="product_price">税込 &yen;
 END;
@@ -83,6 +83,7 @@ END;
                 echo <<<END
     <div class="require_card"><p>お支払方法が選択されていません</p>
     <p>クレジットカード情報を登録してください。</p>
+    <div class="form_submit"><a href="card-input.php"><button>カード情報を登録する</button></a>
     </div>
 END;
             } else {
@@ -103,7 +104,6 @@ END;
 </dl>
 </section>
 <div class="form_submit"><a href="purchase-complete.php"><button>購入を確定する</button></a>
-</form>
 END;
             }
         }
