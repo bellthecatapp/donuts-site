@@ -20,7 +20,7 @@
     <nav class="navigator">
         <ol class="bread_crumb">
             <li><a href="index.php">TOP</a></li>
-            <li>商品一覧</li>
+            <li><a href="product.php">商品一覧</a></li>
         </ol>
     </nav>
     <hr class="brown_line">

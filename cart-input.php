@@ -20,7 +20,7 @@
     <nav class="navigator">
         <ol class="bread_crumb">
             <li><a href="index.php">TOP</a></li>
-            <li>商品一覧</li>
+            <li><a href="product.php">商品一覧</a></li>
         </ol>
     </nav>
     <hr class="brown_line">
@@ -41,45 +41,44 @@
     <hr class="brown_line">
     <!-- コンテンツ -->
     <main>
-        <div class="navigator">
-            <?php
-            $id = $_REQUEST['id'];
-            if (!isset($_SESSION['product'])) {
-                $_SESSION['product'] = [];
-            }
+        <?php
+        $id = $_REQUEST['id'];
+        if (!isset($_SESSION['product'])) {
+            $_SESSION['product'] = [];
+        }
 
-            $count = 0;
-
-
-
-            if (isset($_SESSION['product'][$id])) {
-                $count = $_SESSION['product'][$id]['count'];
-            }
+        $count = 0;
 
 
 
-            if ($_REQUEST['count'] >= 1) {
-                $_SESSION['product'][$id] = [
-                    'name' => $_REQUEST['name'],
-                    'price' => $_REQUEST['price'],
-                    'count' => $count + $_REQUEST['count']
-                ];
-
-                echo '<p style="color:#333;">カートに商品を追加しました。</p>';
-                echo '</div>';
-                // echo '<hr>';
-
-                require 'cart.php';
-            } else {
-                echo <<<END
-    <div class="result-box">
-        <p>0だったら買えんでしょうが</p>
-        <p class="link-pr"><a href="product.php">商品一覧に戻る</a></p>
-    </div>
-END;
-            }
+        if (isset($_SESSION['product'][$id])) {
+            $count = $_SESSION['product'][$id]['count'];
+        }
 
 
-            ?>
+
+        if ($_REQUEST['count'] >= 1) {
+            $_SESSION['product'][$id] = [
+                'name' => $_REQUEST['name'],
+                'price' => $_REQUEST['price'],
+                'count' => $count + $_REQUEST['count']
+            ];
+            echo '<div class="navigator">';
+            echo '<p style="color:#333;">カートに商品を追加しました。</p>';
+            echo '</div>';
+            // echo '<hr>';
+
+            require 'cart.php';
+        } else {
+            // echo <<<END
+            echo '<div class="result_box">';
+            echo '<p>0だったら買えんでしょうが！！</p>';
+            echo '<p class="link_pr"><a href="product.php">商品一覧に戻る</a></p>';
+            echo '</div>';
+            // END;
+        }
+
+
+        ?>
     </main>
     <?php require 'includes/footer.php'; ?>
