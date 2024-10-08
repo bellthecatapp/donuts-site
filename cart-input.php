@@ -72,7 +72,7 @@
             } else {
                 // echo <<<END
                 echo '<div class="result_box">';
-                echo '<p>0だったら買えんでしょうが！！</p>';
+                echo '<p>0個だったら買えんでしょうが！！</p>';
                 echo '<p class="link_pr"><a href="product.php">商品一覧に戻る</a></p>';
                 echo '</div>';
                 // END;
