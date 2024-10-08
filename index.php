@@ -45,28 +45,34 @@
     <!-- セクション１ -->
     <section class="sec_1">
       <div class="grid">
-        <h2 class="h2_new">サマーシトラス</h2>
-        <?php
-        require 'includes/database.php';
-        $pdo->query('select * from product where id');
-        echo <<<END
+        <div class="grid_item1 hover">
+          <h2 class="h2_new">サマーシトラス</h2>
+          <?php
+          require 'includes/database.php';
+          $pdo->query('select * from product where id');
+          echo <<<END
         <a href="detail.php?id=5" class="new_item">
           <img src="common/images/5.png" alt="新商品の画像">
-          <div class="new_mark">
+        </a>
+        <div class="new_mark">
             <p>新商品</p>
           </div>
-        </a>
 END;
 
-        ?>
-        <h2 class="h2_life">ドーナツのある生活</h2>
-        <a href="#" class="donuts_life">
-          <img src="common/images/top-dounutslife.png" alt="ドーナツのある生活画像">
-        </a>
-        <h2 class="h2_banner">商品一覧</h2>
-        <a href=" product.php" class="banner">
-          <img src="common/images/top-banner.png" alt="商品一覧へ行くバナー">
-        </a>
+          ?>
+        </div>
+        <div class="grid_item2 hover">
+          <h2 class="h2_life">ドーナツのある生活</h2>
+          <a href="#" class="donuts_life">
+            <img src="common/images/top-dounutslife.png" alt="ドーナツのある生活画像">
+          </a>
+        </div>
+        <div class="grid_item3 hover">
+          <h2 class="h2_banner">商品一覧</h2>
+          <a href=" product.php" class="banner">
+            <img src="common/images/top-banner.png" alt="商品一覧へ行くバナー">
+          </a>
+        </div>
       </div>
     </section>
 
@@ -134,14 +140,14 @@ END;
                 echo '<div class="ranking_num pink">', $rank, '</div>';
               }
               echo <<<END
-                <a href="detail.php?id={$id}" class="common_products_imglink"> 
+                <a href="detail.php?id={$id}" class="common_products_imglink hover"> 
                  <img src='{$imagePath}' alt='{$product['name']}' class="common_produts_img"/>
                 </a>
                 <a href="detail.php?id={$id}" class="flex_grow">
                  <p class="common_products_name">{$product['name']}</p>
                 </a>
                 <div class="common_pricearea">
-                 <p class="common_price">税込み　 ¥{$price}</p>
+                 <p class="common_price">税込　¥{$price}</p>
                  <a href="#!">
                  <img src="common/images/heart.png" alt="お気に入りボタン" class="common_heart">
                  </a>

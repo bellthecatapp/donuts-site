@@ -30,7 +30,7 @@
   height: 100%;
 }
 
-.new_item {
+.grid_item1 {
   grid-row: 1/2;
   grid-column: 1/2;
   position: relative;
@@ -47,6 +47,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  pointer-events: none;
 }
 
 .new_mark p {
@@ -67,31 +68,39 @@
 
 .h2_new {
   color: #fff;
-  bottom: 42%;
-  left: 25%;
+  bottom: 3%;
+  right: 3%;
 }
 
 .h2_life {
   color: #fff;
-  bottom: 42%;
-  right: 2%;
+  bottom: 3%;
+  right: 3%;
 }
 
 .h2_banner {
-  bottom: 2%;
+  bottom: 5%;
   right: 2%;
   color: #7f5539;
 }
 
-.donuts_life {
+.grid_item2 {
   grid-row: 1/2;
   grid-column: 2/3;
+  position: relative;
+}
+
+.donuts_life {
   width: 100%;
 }
 
-.banner {
+.grid_item3 {
   grid-row: 2/3;
   grid-column: 1/3;
+  position: relative;
+}
+
+.banner {
   width: 100%;
 }
 
@@ -180,6 +189,10 @@
     width: 100%;
   }
 
+  .sec_1 {
+    padding: 8% 0;
+  }
+
   .grid {
     width: 76%;
     max-width: 1040px;
@@ -193,8 +206,8 @@
     position: absolute;
     top: 10px;
     left: 10px;
-    width: 28%;
-    height: 30%;
+    width: 26%;
+    height: 27%;
   }
 
   .new_mark p {
@@ -209,19 +222,75 @@
   }
 
   .h2_new {
-    bottom: 41%;
-    left: 23%;
+    bottom: 3%;
+    right: 3%;
   }
 
   .h2_life {
-    bottom: 41%;
-    right: 2%;
+    bottom: 3%;
+    right: 3%;
   }
 
   .h2_banner {
-    bottom: 1%;
-    right: 1%;
+    bottom: 2%;
+    right: 1.5%;
   }
+
+  .hover {
+    overflow: hidden;
+    transition-duration: .4s;
+  }
+
+  .hover:hover {
+    border-radius: 50%;
+  }
+
+  .hover {
+    position: relative;
+  }
+
+  .hover::before,
+  .hover::after {
+    content: "";
+    display: block;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    margin: auto;
+    transition: .6s cubic-bezier(0.33, 1, 0.68, 1);
+    opacity: 0;
+  }
+
+  .hover::before {
+    background: rgba(196, 155, 102, 0.6);
+    width: 100%;
+    height: 100%;
+    transition-duration: 0.8s;
+  }
+
+  .hover::after {
+    color: #fff;
+    content: "More";
+    font-size: 48px;
+    font-weight: bold;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    bottom: 0;
+    right: 0;
+  }
+
+  .hover:hover::before,
+  .hover:hover::after {
+    opacity: 1;
+  }
+
+  .hover:hover::after {
+    transition-delay: 0.5s;
+  }
+
 
   .bg_sp {
     display: none;
