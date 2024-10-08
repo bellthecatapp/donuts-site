@@ -68,7 +68,6 @@ END;
           <img src="common/images/top-banner.png" alt="商品一覧へ行くバナー">
         </a>
       </div>
-      </div>
     </section>
 
     <!-- セクション2 -->
@@ -168,5 +167,3 @@ END;
   <?php
   require 'includes/footer.php';
   ?>
-
-</html>
