@@ -236,7 +236,10 @@ dt {
   dt {
     font-size: 24px;
   }
-
+  .form_submit input{
+    width: 78%;
+    max-width: 300px;
+  }
   .result_box {
     width: 78%;
     max-width: 600px;

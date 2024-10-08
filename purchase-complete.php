@@ -7,10 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="common/css/reset.css">
     <link rel="stylesheet" href="common/css/common.css">
+    <link rel="stylesheet" href="common/css/purchase.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="">
     <!-- ↑ページ別の.cssをリンク -->
     <title>ご購入完了｜C.C.Donuts</title>
 </head>
@@ -35,11 +35,12 @@
             }
             unset($_SESSION['product']);
             echo <<<END
-        <div class="result_box">
+            <h1>ご購入完了</h1>
+        <div class="result_box complete">
 <p>ご購入が完了しました。</p>
     <p>今後ともご愛顧の程、宜しくお願いいたします。</p>
     </div>
-    <p><a href="index.php">TOPページに戻る</a></p>
+    <div class="box_link"><p><a href="index.php">TOPページに戻る</a></p></div>
 END;
         } else {
             echo <<<END
