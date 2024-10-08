@@ -32,23 +32,23 @@
             <form action="customer-confirm.php" method="post">
                 <fieldset>
                     <legend>お名前<span class="common_required">(必須)</span></legend>
-                    <input type="text" name="cus_name" class="common_input" required>
+                    <input type="text" name="cus_name" class="common_input" placeholder="ドーナツ太郎" required>
                 </fieldset>
                 <fieldset>
                     <legend>お名前(フリガナ)<span class="common_required">(必須)</span></legend>
-                    <input type="text" name="cus_ruby" class="common_input" required>
+                    <input type="text" name="cus_ruby" class="common_input" placeholder="ドーナツタロウ" required>
                 </fieldset>
                 <fieldset class="customer_addnum">
                     <legend>郵便番号<span class="common_required">(必須)</span></legend>
-                    <input type="text" name="cus_addnum" class="common_input" required>
+                    <input type="text" name="cus_addnum" class="common_input" placeholder="1234567" required>
                 </fieldset>
                 <fieldset>
                     <legend>住所<span class="common_required">(必須)</span></legend>
-                    <input type="text" name="cus_address" class="common_input" required>
+                    <input type="text" name="cus_address" class="common_input" placeholder="東京都〇〇区1-1-1" required>
                 </fieldset>
                 <fieldset>
                     <legend>メールアドレス<span class="common_required">(必須)</span></legend>
-                    <input type="email" name="cus_mail" class="common_input" required>
+                    <input type="email" name="cus_mail" class="common_input" placeholder="info@example.com" required>
                 </fieldset>
                 <fieldset>
                     <legend>パスワード<span class="common_required">(必須)</span></legend>
