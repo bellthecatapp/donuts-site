@@ -106,18 +106,20 @@ input[type="radio"]:checked {
 .form_submit input {
   text-align: center;
   color: #fff;
-  padding: 20px 16px;
+  padding: 19px 15px;
   background: #7F5539;
-  width: 67%;
-  max-width: 200px;
-  transition: all 0.3s ease-in;
+  border: #7F5539 solid 1px;
+  width: 200px;
+  transition: all 0.2s ease-in;
 
 }
 
 .form_submit input:hover {
   background: #EDE0D4;
   color: #7F5539;
-  transition: all 0.3s ease-in;
+  transition: all 0.2s ease-in;
+  font-weight: 700;
+  box-sizing: border-box;
 }
 
 /* confirm */
