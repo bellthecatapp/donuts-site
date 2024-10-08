@@ -514,7 +514,7 @@ legend,
     padding: 12px 0 12px 103px;
   }
 
-  .bread_crumb li:not(:last-child):hover {
+  .bread_crumb li a:hover {
     text-decoration: underline;
     text-decoration-color: #7f5539;
   }
