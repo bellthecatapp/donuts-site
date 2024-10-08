@@ -6,12 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="common/css/reset.css">
     <link rel="stylesheet" href="common/css/common.css">
+    <link rel="stylesheet" href="common/css/cart_show.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="">
     <!-- ↑ページ別の.cssをリンク -->
-    <title>ページ名入力｜C.C.Donuts</title>
+    <title>ショッピングカート｜C.C.Donuts</title>
 </head>
 
 <body>
@@ -57,17 +58,28 @@
             }
 
 
-            $_SESSION['product'][$id] = [
-                'name' => $_REQUEST['name'],
-                'price' => $_REQUEST['price'],
-                'count' => $count + $_REQUEST['count']
-            ];
 
-            echo '<p style="color:#333;">カートに商品を追加しました。</p>';
-            echo '</div>';
-            // echo '<hr>';
+            if ($_REQUEST['count'] >= 1) {
+                $_SESSION['product'][$id] = [
+                    'name' => $_REQUEST['name'],
+                    'price' => $_REQUEST['price'],
+                    'count' => $count + $_REQUEST['count']
+                ];
 
-            require 'cart.php';
+                echo '<p style="color:#333;">カートに商品を追加しました。</p>';
+                echo '</div>';
+                // echo '<hr>';
+
+                require 'cart.php';
+            } else {
+                echo <<<END
+    <div class="result-box">
+        <p>0だったら買えんでしょうが</p>
+        <p class="link-pr"><a href="product.php">商品一覧に戻る</a></p>
+    </div>
+END;
+            }
+
 
             ?>
     </main>
