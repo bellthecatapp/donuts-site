@@ -9,18 +9,18 @@ function handle() {
   if (window.matchMedia('(min-width: 768px)'.matches)) {
     openButton.onclick = function () {
       hammenu.style.left = '0';
-    }
+    };
     closeButton.onclick = function () {
       hammenu.style.left = '-100vw';
-    }
+    };
 
   } else {
     openButton.onclick = function () {
       hammenu.style.left = '0';
-    }
+    };
     closeButton.onclick = function () {
       hammenu.style.left = '-100vw';
-    }
+    };
   }
 }
 

@@ -23,7 +23,7 @@
         <?php
         if (isset($_SESSION['customer'])) {
           echo <<<END
-         <button onclick=onclick="location.href='logout-input.php'"><img class="header_logouticon" src="common/images/header-logout.svg" alt="ログアウトアイコン"></button>
+         <button onclick="location.href='logout-input.php'"><img class="header_logouticon" src="common/images/header-logout.svg" alt="ログアウトアイコン"></button>
   END;
         } else {
           echo <<<END
