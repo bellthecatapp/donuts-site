@@ -68,7 +68,7 @@
                          <p class="common_products_name">{$row['name']}</p>
                      </a>
                      <div class="common_pricearea">
-                     <p class="common_price">税込み　 ¥{$price}</p>
+                     <p class="common_price">税込　 ¥{$price}</p>
                      <a href="#!">
                      <img src="common/images/heart.png" alt="お気に入りボタン" class="common_heart">
                      </a>
@@ -110,7 +110,7 @@ END;
                          <p class="common_products_name">{$row['name']}</p>
                         </a>
                         <div class="common_pricearea">
-                         <p class="common_price">税込み　 ¥{$price}</p>
+                         <p class="common_price">税込　 ¥{$price}</p>
                          <a href="#!">
                              <img src="common/images/heart.png" alt="お気に入りボタン" class="common_heart">
                          </a>
