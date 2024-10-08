@@ -97,4 +97,29 @@ END;
 
         ?>
     </main>
+    <!-- パンくずJsonLD-->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [{
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "TOP",
+                    "item": "index.php"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "商品一覧",
+                    "item": "product.php"
+                } {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "商品詳細",
+                    "item": "detail.php"
+                }
+            ]
+        }
+    </script>
     <?php require 'includes/footer.php'; ?>

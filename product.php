@@ -61,7 +61,7 @@
                         echo <<<END
 
                     <li class="common_product_items">
-                     <a href="detail.php?id={$id}">
+                     <a href="detail.php?id={$id}" class="common_products_imglink">
                          <img alt="image" src="common/images/{$id}.png" class="common_produts_img">
                      </a>
                      <a href="detail.php?id={$id}" class="flex_grow">
@@ -69,7 +69,7 @@
                      </a>
                      <div class="common_pricearea">
                      <p class="common_price">税込み　 ¥{$price}</p>
-                     <a>
+                     <a href="#!">
                      <img src="common/images/heart.png" alt="お気に入りボタン" class="common_heart">
                      </a>
                      </div>
