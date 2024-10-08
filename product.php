@@ -73,7 +73,7 @@
                      <img src="common/images/heart.png" alt="お気に入りボタン" class="common_heart">
                      </a>
                      </div>
-                    </p>
+                    
                 <div class="common_btn_cart">
                  <form action="cart-input.php" method="post" >
 
@@ -90,6 +90,7 @@
 END;
                     }
                     ?>
+                </ul>
             </div>
         </section>
         <section class="sec_2">
@@ -113,8 +114,8 @@ END;
                          <a href="#!">
                              <img src="common/images/heart.png" alt="お気に入りボタン" class="common_heart">
                          </a>
-                         </div>
-                         <div class="common_btn_cart">
+        </div>
+     <div class="common_btn_cart">
                                      <form action="cart-input.php" method="post" >
 
         <input type="hidden" name="id" value="{$id}">
@@ -125,11 +126,13 @@ END;
         name="test" value="カートに入れる"></p>
         </form>
         </div>
+       
         </li>
 END;
                     }
                     ?>
                 </ul>
+            </div>
         </section>
 
     </main>
