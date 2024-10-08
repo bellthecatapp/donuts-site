@@ -135,7 +135,7 @@ END;
                 echo '<div class="ranking_num pink">', $rank, '</div>';
               }
               echo <<<END
-                <a href="detail.php?id={$id}"> 
+                <a href="detail.php?id={$id}" class="common_products_imglink"> 
                  <img src='{$imagePath}' alt='{$product['name']}' class="common_produts_img"/>
                 </a>
                 <a href="detail.php?id={$id}" class="flex_grow">

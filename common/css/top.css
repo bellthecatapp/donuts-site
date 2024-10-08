@@ -186,6 +186,7 @@
     margin: 0 auto;
     grid-template-columns: 49.9% 49.9%;
     grid-column-gap: 0.2%;
+    grid-column-gap: 5%;
   }
 
   .new_mark {
@@ -220,10 +221,6 @@
   .h2_banner {
     bottom: 1%;
     right: 1%;
-  }
-
-  .donuts_life {
-    padding-left: 8%;
   }
 
   .bg_sp {
