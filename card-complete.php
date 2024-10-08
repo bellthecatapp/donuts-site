@@ -50,7 +50,7 @@
                       <h1>カード情報登録完了</h1>
                 <div class="result_box">
                     <p>クレジットカード情報を登録しました。</p>
-                    <p class="link_pr"><a href="purchase-comfirm.php">購入手続きを続ける</a></p>
+                    <p class="link_pr"><a href="purchase-confirm.php">購入手続きを続ける</a></p>
                 </div>
  END;
         } else {
