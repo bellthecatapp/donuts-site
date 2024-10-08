@@ -25,8 +25,9 @@
                 <li><a href="product.php">商品一覧</a></li>
                 <?php
                 require 'includes/database.php';
-                $sql = $pdo->query('select * from product where name');
-                foreach ($sql as $row) {
+                $place = $pdo->prepare('select * from product where id=?');
+                $place->execute([$_REQUEST['id']]);
+                foreach ($place as $row) {
                     $name = $row['name'];
                     echo '<li>', $name, '</li>';
                 }
