@@ -185,12 +185,14 @@ dt {
   .form_submit input {
     font-size: 20px;
     padding: 20px 50px;
-    max-width: 300px;
+    width: 300px;
 
   }
 
   dl {
+    min-width: 300px;
     width: 22%;
+    margin: 0 auto;
   }
 
   dt {

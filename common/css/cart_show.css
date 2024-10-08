@@ -64,6 +64,8 @@
 
 p .common_btn_cart {
   background: #BF0000;
+  border: #BF0000 solid 1px;
+
 
 }
 
@@ -73,7 +75,7 @@ p .common_btn_cart {
   font-size: 12px;
   padding: 11px;
   background: #7F5539;
-  border: #BF0000 solid 1px;
+  border: #7F5539 solid 1px;
   width: 158px;
   transition: all 0.2s ease-in;
 }
