@@ -43,40 +43,42 @@
     <main>
         <?php
         $id = $_REQUEST['id'];
-        if (!isset($_SESSION['product'])) {
-            $_SESSION['product'] = [];
+        if (isset($_SESSION['customer'])) {
+            if (!isset($_SESSION['product'])) {
+                $_SESSION['product'] = [];
+            }
+
+            $count = 0;
+
+
+
+            if (isset($_SESSION['product'][$id])) {
+                $count = $_SESSION['product'][$id]['count'];
+            }
+
+
+
+            if ($_REQUEST['count'] >= 1) {
+                $_SESSION['product'][$id] = [
+                    'name' => $_REQUEST['name'],
+                    'price' => $_REQUEST['price'],
+                    'count' => $count + $_REQUEST['count']
+                ];
+                echo '<div class="navigator">';
+                echo '<p style="color:#333;">カートに商品を追加しました。</p>';
+                echo '</div>';
+                // echo '<hr>';
+
+            } else {
+                // echo <<<END
+                echo '<div class="result_box">';
+                echo '<p>0だったら買えんでしょうが！！</p>';
+                echo '<p class="link_pr"><a href="product.php">商品一覧に戻る</a></p>';
+                echo '</div>';
+                // END;
+            }
         }
-
-        $count = 0;
-
-
-
-        if (isset($_SESSION['product'][$id])) {
-            $count = $_SESSION['product'][$id]['count'];
-        }
-
-
-
-        if ($_REQUEST['count'] >= 1) {
-            $_SESSION['product'][$id] = [
-                'name' => $_REQUEST['name'],
-                'price' => $_REQUEST['price'],
-                'count' => $count + $_REQUEST['count']
-            ];
-            echo '<div class="navigator">';
-            echo '<p style="color:#333;">カートに商品を追加しました。</p>';
-            echo '</div>';
-            // echo '<hr>';
-
-            require 'cart.php';
-        } else {
-            // echo <<<END
-            echo '<div class="result_box">';
-            echo '<p>0だったら買えんでしょうが！！</p>';
-            echo '<p class="link_pr"><a href="product.php">商品一覧に戻る</a></p>';
-            echo '</div>';
-            // END;
-        }
+        require 'cart.php';
 
 
         ?>
