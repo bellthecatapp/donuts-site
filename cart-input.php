@@ -6,11 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="common/css/reset.css">
     <link rel="stylesheet" href="common/css/common.css">
-    <link rel="stylesheet" href="common/css/cart_show.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="common/css/cart_show.css">
     <!-- ↑ページ別の.cssをリンク -->
     <title>ショッピングカート｜C.C.Donuts</title>
 </head>
