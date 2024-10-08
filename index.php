@@ -97,7 +97,7 @@ END;
     <!-- セクション3 -->
     <section class="sec_3">
       <h2 class="common_title">人気ランキング</h2>
-      <form action="cart-input.php" method="post" class="common_product_form">
+      <div class="common_product_form">
         <ol class="common_product_content">
           <?php
           // データベース接続
@@ -148,10 +148,13 @@ END;
                  </a>
                 </div>
                 <div class="common_btn_cart">
+                 <form action="cart-input.php" method="post" >
                 <input type="hidden" name="id" value="{$id}">
                 <input type="hidden" name="name" value="{$product['name']}">
                 <input type="hidden" name="price" value="{$product['price']}">
+                <input type="hidden" name="count" value=1>
                 <input type="submit" value="カートに入れる">
+                </form>
                 </div>
               </li>
 END;
@@ -159,7 +162,7 @@ END;
           }
           ?>
         </ol>
-      </form>
+      </div>
     </section>
   </main>
   <?php
