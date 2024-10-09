@@ -68,21 +68,21 @@ END;
 </dd></div>
 </dl>
 END;
-}
-echo<<<END
+            }
+            echo <<<END
 <div class="total_box">
 <dl class="flex_box">
 <dt>合計</dt>
 <dd class="total_price common_ddline">税込 &yen;
 END;
-echo number_format($total);
-echo <<<END
+            echo number_format($total);
+            echo <<<END
 </dd>
 </dl>
 </div>
 </section>
 END;
-            
+
 
             echo <<<END
 <section class="puc_address">
@@ -130,8 +130,8 @@ END;
 <dt>カード番号</dt>
 <dd  class="common_ddline">
 END;
-echo mb_substr($row['card_no'], 0, 5, 'UTF8') . str_repeat('・', mb_strlen($row['card_no'], 'UTF8') - 5);
- echo<<<END
+                    echo mb_substr($row['card_no'], 0, 6, 'UTF8') . str_repeat('・', mb_strlen($row['card_no'], 'UTF8') - 6);
+                    echo <<<END
 </dd>
 </div>
 END;

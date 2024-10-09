@@ -174,6 +174,12 @@ dt {
 }
 
 @media screen and (min-width: 768px) {
+  header {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
   header img {
     width: 80px;
   }
@@ -236,10 +242,12 @@ dt {
   dt {
     font-size: 24px;
   }
-  .form_submit input{
+
+  .form_submit input {
     width: 78%;
     max-width: 300px;
   }
+
   .result_box {
     width: 78%;
     max-width: 600px;
