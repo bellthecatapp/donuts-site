@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="商品一覧：CCドーナツ当店オリジナル、チョコレートディライト、キャラメルクリーム、プレーンクラシック、(新商品)サマーシトラス、ストロベリークラッシュ、その他バラエティセットをご紹介。">
     <link rel="stylesheet" href="common/css/reset.css">
     <link rel="stylesheet" href="common/css/common.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -62,10 +63,10 @@
 
                     <li class="common_product_items">
                      <a href="detail.php?id={$id}" class="common_products_imglink">
-                         <img alt="image" src="common/images/{$id}.png" class="common_produts_img">
+                         <img alt="image" src="common/images/{$id}.png" class="common_produts_img hover">
                      </a>
                      <a href="detail.php?id={$id}" class="flex_grow">
-                         <p class="common_products_name">{$row['name']}</p>
+                         <p class="common_products_name hover_text">{$row['name']}</p>
                      </a>
                      <div class="common_pricearea">
                      <p class="common_price">税込　 ¥{$price}</p>
@@ -105,9 +106,9 @@ END;
                         $id = $row['id'];
                         echo <<<END
                         <li class="common_product_items">                 <a href="detail.php?id={$id}">
-                        <img alt="image" src="common/images/{$id}.png" class="common_produts_img"></a>
+                        <img alt="image" src="common/images/{$id}.png" class="common_produts_img hover"></a>
                         <a href="detail.php?id={$id}" class="flex_grow">
-                         <p class="common_products_name">{$row['name']}</p>
+                         <p class="common_products_name hover_text">{$row['name']}</p>
                         </a>
                         <div class="common_pricearea">
                          <p class="common_price">税込　 ¥{$price}</p>
