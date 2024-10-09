@@ -50,7 +50,7 @@ END;
                     <legend>カード会社<span class="common_required">(必須)</span></legend>
                     <div>
                         <label> <input type="radio" name="card_com" value="JCB" checked><span>JCB</span></label>
-                        <label> <input type="radio" name="card_com" value="Visa"><span>Visa</span></label>
+                        <label> <input type="radio" name="card_com" value="Visa"><span>VISA</span></label>
                         <label><input type="radio" name="card_com" value="Mastercard"><span>Mastercard</span></label>
                     </div>
                 </fieldset>
