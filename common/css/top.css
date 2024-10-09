@@ -236,64 +236,6 @@
     right: 1.5%;
   }
 
-  .hover {
-    overflow: hidden;
-    transition-duration: .4s;
-  }
-
-  .hover:hover {
-    border-radius: 50%;
-  }
-
-  .hover {
-    position: relative;
-  }
-
-  .hover::before,
-  .hover::after {
-    content: "";
-    display: block;
-    position: absolute;
-    margin: auto;
-    top: 0;
-    left: 0;
-    margin: auto;
-    transition: .6s cubic-bezier(0.33, 1, 0.68, 1);
-    opacity: 0;
-  }
-
-  .hover::before {
-    background: rgba(196, 155, 102, 0.6);
-    width: 100%;
-    height: 100%;
-    transition-duration: 0.8s;
-    pointer-events: none;
-  }
-
-  .hover::after {
-    color: #fff;
-    content: "More";
-    font-size: 48px;
-    font-weight: bold;
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    bottom: 0;
-    right: 0;
-    pointer-events: none;
-  }
-
-  .hover:hover::before,
-  .hover:hover::after {
-    opacity: 1;
-  }
-
-  .hover:hover::after {
-    transition-delay: 0.5s;
-  }
-
-
   .bg_sp {
     display: none;
   }
@@ -338,6 +280,64 @@
     width: 60px;
     padding: 18px;
     font-size: 24px;
+  }
+
+  /* hover */
+  .hover {
+    overflow: hidden;
+    transition-duration: .4s;
+  }
+
+  .hover:hover {
+    border-radius: 50%;
+  }
+
+  .hover {
+    position: relative;
+  }
+
+  .hover::before,
+  .hover::after {
+    content: "";
+    display: block;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    margin: auto;
+    transition: .6s cubic-bezier(0.33, 1, 0.68, 1);
+    opacity: 0;
+  }
+
+  .hover::before {
+    background: rgba(196, 155, 102, 0.6);
+    width: 100%;
+    height: 100%;
+    transition-duration: 0.8s;
+    pointer-events: none;
+  }
+
+  .hover::after {
+    color: #fff;
+    content: "More";
+    font-size: 42px;
+    font-weight: bold;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    bottom: 0;
+    right: 0;
+    pointer-events: none;
+  }
+
+  .hover:hover::before,
+  .hover:hover::after {
+    opacity: 1;
+  }
+
+  .hover:hover::after {
+    transition-delay: 0.2s;
   }
 
 }
