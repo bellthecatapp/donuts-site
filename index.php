@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="C.C.donutsの公式サイトです。新商品や人気商品、メニュー紹介、オンライン購入などさまざまな情報をご紹介します。">
   <title>C.C.Donuts</title>
   <link rel="stylesheet" href="common/css/reset.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -144,7 +145,7 @@ END;
                  <img src='{$imagePath}' alt='{$product['name']}' class="common_produts_img"/>
                 </a>
                 <a href="detail.php?id={$id}" class="flex_grow">
-                 <p class="common_products_name">{$product['name']}</p>
+                 <p class="common_products_name hover_text">{$product['name']}</p>
                 </a>
                 <div class="common_pricearea">
                  <p class="common_price">税込　¥{$price}</p>

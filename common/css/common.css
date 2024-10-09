@@ -665,6 +665,11 @@ legend,
   .common_ddline {
     margin-bottom: 40px;
   }
+
+  /* 商品名のhover */
+  .hover_text:hover {
+    color: #c99878;
+  }
 }
 
 @media screen and (min-width: 1200px) {
